@@ -110,14 +110,8 @@ namespace RDS.BUSplice
         }
 
         /// <summary>Dung frame theo rafter "from", truc X huong ve rafter "to".</summary>
-        public static Frame FrameOf(BuMember from, BuMember to)
-        {
-            List<V3> a = from.AllPts.ToList();
-            V3 c = Geo.Centroid(a), ct = Geo.Centroid(to.AllPts.ToList());
-            V3 ax = Geo.Principal(a);
-            if (ax.Dot(ct - c) < 0) ax = ax * -1;
-            return Frame.FromAxis(c, ax);
-        }
+        public static Frame FrameOf(BuMember from, BuMember to) =>
+            Frame.FromMember(from.TopPts, from.AllPts.ToList(), Geo.Centroid(to.AllPts.ToList()));
 
         // ============================ tao splice ============================
 

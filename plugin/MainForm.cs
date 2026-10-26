@@ -23,6 +23,7 @@ namespace RDS.BUSplice
         {
             InitializeComponent();
             SetComboDefaults();
+            WheelOnHover(this);
             cboFlangeOn.SelectedIndexChanged += (s, e) => EnableGroup(cboFlangeOn, "FlangeProfile", "FlangeLength", "FlName", "FlPrefix", "FlStart", "FlMaterial", "FlClass");
             cboStiffOn.SelectedIndexChanged += (s, e) => EnableGroup(cboStiffOn, "StiffT", "StiffB", "StiffL", "StiffChamX", "StiffChamY", "StName", "StPrefix", "StStart", "StMaterial", "StClass");
         }
@@ -38,6 +39,21 @@ namespace RDS.BUSplice
                 if (cb == null || cb.Items.Count == 0) continue;
                 int i = Convert.ToInt32(kv.Value, CultureInfo.InvariantCulture);
                 if (i >= 0 && i < cb.Items.Count) cb.SelectedIndex = i;
+            }
+        }
+
+        /// <summary>
+        /// Lan chuot tren ComboBox (No/Yes, Top/Middle) doi gia tri ngay khi re chuot len, khong can click truoc:
+        /// WinForms chi gui MouseWheel cho control dang focus -> focus combo khi chuot vao.
+        /// </summary>
+        private static void WheelOnHover(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                var cb = c as ComboBox;
+                if (cb != null && cb.DropDownStyle == ComboBoxStyle.DropDownList)
+                    cb.MouseEnter += (s, e) => { if (cb.Enabled && !cb.ContainsFocus) cb.Focus(); };
+                if (c.HasChildren) WheelOnHover(c);
             }
         }
 

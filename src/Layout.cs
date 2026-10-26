@@ -79,10 +79,17 @@ namespace RDS.BUSplice
             double x0 = r.X0, s2 = r.FitLargeX;
 
             // ---------------- Bolt ----------------
-            double yRef = S.TopY(x0);
-            double y = yRef + p.BoltTopOffset;
+            // Top: tinh tu top rafter nho. Middle: tam nhom bolt = giua chieu cao rafter nho (+ offset), giong Joining plates (14).
+            var down = Geo.ParseList(p.BoltDistDown);
+            double y;
+            if (p.BoltVertRef == 1)
+            {
+                double h = 0; foreach (double dd in down) h += dd;
+                y = 0.5 * (S.TopY(x0) + S.BotY(x0)) + p.BoltTopOffset + h / 2;
+            }
+            else y = S.TopY(x0) + p.BoltTopOffset;
             r.BoltY.Add(y);
-            foreach (double d in Geo.ParseList(p.BoltDistDown)) { y -= d; r.BoltY.Add(y); }
+            foreach (double d in down) { y -= d; r.BoltY.Add(y); }
             foreach (double z in Geo.CenteredPositions(Geo.ParseList(p.BoltDistAcross))) r.BoltZ.Add(S.WebZc + z);
 
             // Bolt bi xoa (kieu Joining plates 14): danh so theo hang tu TREN xuong, trong hang tu TRAI sang PHAI

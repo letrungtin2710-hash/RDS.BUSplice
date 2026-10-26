@@ -120,6 +120,23 @@ static class GeoTests
         True("Bolt so 2 (tren-phai) con", layB.BoltKeep.Exists(k => k.X == layB.BoltY[0] && k.Y == layB.BoltZ[1]));
         Eq("Endplate van theo luoi day du", layB.Ep1.YTop, lay.Ep1.YTop);
 
+        // Middle: tam nhom bolt = giua chieu cao rafter nho (S cao 600, tim y = 0), offset 0
+        var pm = new Settings { BoltVertRef = 1, BoltTopOffset = 0 };
+        var layM = SpliceLayout.Compute(pm, S, L);
+        Eq("Middle: tam nhom bolt = giua rafter nho", 0.5 * (layM.BoltY[0] + layM.BoltY[layM.BoltY.Count - 1]), 0, 0.01);
+        pm.BoltTopOffset = 20;
+        layM = SpliceLayout.Compute(pm, S, L);
+        Eq("Middle + offset 20 (len)", 0.5 * (layM.BoltY[0] + layM.BoltY[layM.BoltY.Count - 1]), 20, 0.01);
+
+        // Frame theo TOP FLANGE (rafter tapered ngan): X // top flange, KHONG theo PCA ca tiet dien
+        // top flange ngang dai 1500, bottom flange doc xuong 15% -> PCA ca tiet dien lech, top flange thi khong
+        var topF = new List<V3>(); var all = new List<V3>();
+        foreach (double x in new[] { 0.0, 1500.0 }) foreach (double z in new[] { -115.0, 115.0 }) foreach (double dy in new[] { 0.0, -12.0 })
+        { topF.Add(new V3(x, 0, 600 + dy)); all.Add(new V3(x, 0, 600 + dy)); all.Add(new V3(x, 0, -0.15 * x + dy)); }
+        Frame ft = Frame.FromMember(topF, all, new V3(5000, 0, 0));
+        Eq("Frame X // top flange (tapered)", ft.X.X, 1, 1e-9);
+        True("PCA ca tiet dien lech (ly do sua)", Math.Abs(Geo.Principal(all).Unit.Z) > 0.01);
+
         // settings ini round-trip
         string tmp = System.IO.Path.GetTempFileName();
         var s1 = new Settings { BoltDistDown = "3*100", Ep2Bot = 77 }; s1.PStiff.Class = "7";
