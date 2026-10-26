@@ -33,6 +33,8 @@ namespace RDS.BUSplice
         readonly Action<string> _log;
         readonly List<ModelObject> _created = new List<ModelObject>();
         public List<string> Warnings = new List<string>();
+        /// <summary>Macro: true (tu commit). Plugin: false (Tekla tu commit sau Run).</summary>
+        public bool CommitAtEnd = true;
 
         public Engine(Model model, Action<string> log) { _model = model; _log = log ?? (s => { }); }
 
@@ -174,7 +176,7 @@ namespace RDS.BUSplice
             }
 
             foreach (Part x in largeExtras) AddToAssembly(L.Web, x);
-            _model.CommitChanges();
+            if (CommitAtEnd) _model.CommitChanges();
         }
 
         // ============================ helper Tekla ============================

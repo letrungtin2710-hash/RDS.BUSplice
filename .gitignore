@@ -5,3 +5,4 @@ libs/
 *.dll
 *.pdb
 .vs/
+lib/
