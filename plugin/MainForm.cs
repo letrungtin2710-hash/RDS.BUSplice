@@ -71,5 +71,12 @@ namespace RDS.BUSplice
         private void okApply_GetClicked(object sender, EventArgs e) { Get(); }
         private void okApply_OnOffClicked(object sender, EventArgs e) { ToggleSelection(); }
         private void okApply_CancelClicked(object sender, EventArgs e) { Close(); }
+
+        // Handler rong do VS Designer sinh (Designer.cs dang tham chieu) - xoa thi phai go dong "+=" trong Designer truoc.
+        private void lbl1_Click(object sender, EventArgs e) { }
+        private void lbl6_Click(object sender, EventArgs e) { }
+        private void lbl26_Click(object sender, EventArgs e) { }
+        private void chkEpClass_CheckedChanged(object sender, EventArgs e) { }
+        private void txtEpClass_TextChanged(object sender, EventArgs e) { }
     }
 }
