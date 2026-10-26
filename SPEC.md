@@ -23,6 +23,7 @@ Giai đoạn 1 = **macro** (test không cần tắt Tekla), giai đoạn 2 = plu
 | B4 | Xoá bolt | Ô "xoá bolt số" kiểu Joining plates (14): đánh số hàng trên→dưới, trong hàng trái→phải (trái = −Z). Có xoá thì dùng BoltXYList, không xoá dùng BoltArray. Kích thước endplate vẫn theo lưới đầy đủ. |
 | F1 | Bật/tắt | Checkbox Flange (1) / Stiffener (2) nằm ngoài tab (luôn thấy), tắt thì khoá các ô của nhóm. |
 | E2 | Weld | Không tạo. Snit tự key trong bản vẽ. |
+| G1 | Plugin (26-Oct) | `RDS _ BU Splice` (PluginBase, thư mục `plugin\`), dùng chung `src\Geo/Layout/Settings/Engine.cs`. Input: pick 2 part → chuột giữa. Dialog 3 tab dùng 2 hình Snit gửi (Joining plates + splice), MainForm sửa được bằng VS Designer. Mọi ô có checkbox lọc; ô chiều dài kiểu Distance (hiện thập phân); ô căn lề trái. Bật/tắt flange / stiff = ComboBox No/Yes. |
 
 ## Rủi ro đã biết
 - PEB Member chạy lại thì tạo lại part (KNOWLEDGE §7.31): fitting / cut / assembly do tool gắn lên part PEB có thể mất → chạy lại tool sau khi modify PEB.
