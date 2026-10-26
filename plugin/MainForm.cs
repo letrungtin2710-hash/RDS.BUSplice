@@ -23,8 +23,8 @@ namespace RDS.BUSplice
         {
             InitializeComponent();
             SetComboDefaults();
-            cboFlangeOn.SelectedIndexChanged += (s, e) => EnableGroup(cboFlangeOn, "FlangeProfile", "FlangeLength", "FlName", "FlPrefix", "FlStart", "FlMaterial", "FlClass", "FlFinish");
-            cboStiffOn.SelectedIndexChanged += (s, e) => EnableGroup(cboStiffOn, "StiffT", "StiffB", "StiffL", "StiffChamX", "StiffChamY", "StName", "StPrefix", "StStart", "StMaterial", "StClass", "StFinish");
+            cboFlangeOn.SelectedIndexChanged += (s, e) => EnableGroup(cboFlangeOn, "FlangeProfile", "FlangeLength", "FlName", "FlPrefix", "FlStart", "FlMaterial", "FlClass");
+            cboStiffOn.SelectedIndexChanged += (s, e) => EnableGroup(cboStiffOn, "StiffT", "StiffB", "StiffL", "StiffChamX", "StiffChamY", "StName", "StPrefix", "StStart", "StMaterial", "StClass");
         }
 
         /// <summary>ComboBox trong Designer khong luu SelectedIndex - dat mac dinh o day (Tekla ghi de bang file attribute neu co).</summary>

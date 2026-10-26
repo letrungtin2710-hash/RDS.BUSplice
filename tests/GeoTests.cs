@@ -122,10 +122,10 @@ static class GeoTests
 
         // settings ini round-trip
         string tmp = System.IO.Path.GetTempFileName();
-        var s1 = new Settings { BoltDistDown = "3*100", Ep2Bot = 77 }; s1.PStiff.Finish = "GALV";
+        var s1 = new Settings { BoltDistDown = "3*100", Ep2Bot = 77 }; s1.PStiff.Class = "7";
         s1.Save(tmp);
         var s2 = Settings.Load(tmp);
-        True("Settings round-trip", s2.BoltDistDown == "3*100" && s2.Ep2Bot == 77 && s2.PStiff.Finish == "GALV" && s2.FlangeOn);
+        True("Settings round-trip", s2.BoltDistDown == "3*100" && s2.Ep2Bot == 77 && s2.PStiff.Class == "7" && s2.FlangeOn);
 
         Console.WriteLine(fail == 0 ? "ALL PASS" : fail + " FAIL");
         return fail;

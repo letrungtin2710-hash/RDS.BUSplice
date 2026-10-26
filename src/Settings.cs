@@ -10,10 +10,10 @@ using System.Text;
 
 namespace RDS.BUSplice
 {
-    /// <summary>Thong tin part (name / prefix / material / class / finish). Class, Finish rong = lay theo web rafter.</summary>
+    /// <summary>Thong tin part. Class rong = lay theo web rafter. Finish LUON theo web rafter (part han vao rafter).</summary>
     public sealed class PartInfo
     {
-        public string Name = "", Prefix = "f", Material = "250", Class = "", Finish = "";
+        public string Name = "", Prefix = "f", Material = "250", Class = "";
         public int Start = 1;
     }
 
@@ -21,10 +21,12 @@ namespace RDS.BUSplice
     {
         // ---------- Endplate 1 (rafter nho) ----------
         public double Ep1T = 12;
-        public double Ep1Top = 45, Ep1Bot = 45, Ep1Left = 45, Ep1Right = 45;   // mep tinh tu bolt ngoai cung
+        public double Ep1Top = 45, Ep1Bot = 45;                  // mep tinh tu bolt ngoai cung
         // ---------- Endplate 2 (rafter lon) ----------
         public double Ep2T = 12;
-        public double Ep2Top = 45, Ep2Bot = 45, Ep2Left = 45, Ep2Right = 45;
+        public double Ep2Top = 45, Ep2Bot = 45;
+        // ---------- Mep trai / phai: DUNG CHUNG cho 2 endplate ----------
+        public double EpLeft = 45, EpRight = 45;
 
         // ---------- Bolt (tham chieu Joining plates 14) ----------
         public double BoltTopOffset = 56;           // tam hang bolt tren cung -> top rafter nho (duong = phia tren)

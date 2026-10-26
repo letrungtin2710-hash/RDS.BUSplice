@@ -97,9 +97,8 @@ namespace RDS.BUSplice
         {
             var d = _data; var s = new Settings();
             s.Ep1T = D(d.Ep1T, s.Ep1T); s.Ep1Top = D(d.Ep1Top, s.Ep1Top); s.Ep1Bot = D(d.Ep1Bot, s.Ep1Bot);
-            s.Ep1Left = D(d.Ep1Left, s.Ep1Left); s.Ep1Right = D(d.Ep1Right, s.Ep1Right);
             s.Ep2T = D(d.Ep2T, s.Ep2T); s.Ep2Top = D(d.Ep2Top, s.Ep2Top); s.Ep2Bot = D(d.Ep2Bot, s.Ep2Bot);
-            s.Ep2Left = D(d.Ep2Left, s.Ep2Left); s.Ep2Right = D(d.Ep2Right, s.Ep2Right);
+            s.EpLeft = D(d.EpLeft, s.EpLeft); s.EpRight = D(d.EpRight, s.EpRight);
 
             s.BoltTopOffset = D(d.BoltTopOffset, s.BoltTopOffset);
             s.BoltDistDown = S(d.BoltDistDown, s.BoltDistDown);
@@ -117,21 +116,21 @@ namespace RDS.BUSplice
             s.StiffT = D(d.StiffT, s.StiffT); s.StiffB = D(d.StiffB, s.StiffB); s.StiffL = D(d.StiffL, s.StiffL);
             s.StiffChamX = D(d.StiffChamX, s.StiffChamX); s.StiffChamY = D(d.StiffChamY, s.StiffChamY);
 
-            Part(s.PEndplate, d.EpName, d.EpPrefix, d.EpStart, d.EpMaterial, d.EpClass, d.EpFinish);
-            Part(s.PFlange, d.FlName, d.FlPrefix, d.FlStart, d.FlMaterial, d.FlClass, d.FlFinish);
-            Part(s.PStiff, d.StName, d.StPrefix, d.StStart, d.StMaterial, d.StClass, d.StFinish);
+            Part(s.PEndplate, d.EpName, d.EpPrefix, d.EpStart, d.EpMaterial, d.EpClass);
+            Part(s.PFlange, d.FlName, d.FlPrefix, d.FlStart, d.FlMaterial, d.FlClass);
+            Part(s.PStiff, d.StName, d.StPrefix, d.StStart, d.StMaterial, d.StClass);
             return s;
         }
 
-        private void Part(PartInfo pi, string name, string pre, int start, string mat, string cls, string fin)
+        private void Part(PartInfo pi, string name, string pre, int start, string mat, string cls)
         {
             pi.Name = S(name, pi.Name); pi.Prefix = S(pre, pi.Prefix); pi.Start = I(start, pi.Start);
-            pi.Material = S(mat, pi.Material); pi.Class = S(cls, "", true); pi.Finish = S(fin, "", true);
+            pi.Material = S(mat, pi.Material); pi.Class = S(cls, "", true);
         }
 
         private double D(double v, double def) { return IsDefaultValue(v) ? def : v; }
         private int I(int v, int def) { return IsDefaultValue(v) ? def : v; }
-        /// <summary>allowEmpty = o de trong la co nghia (Class / Finish / xoa bolt).</summary>
+        /// <summary>allowEmpty = o de trong la co nghia (Class / xoa bolt).</summary>
         private string S(string v, string def, bool allowEmpty = false)
         {
             if (v == null || IsDefaultValue(v)) return def;

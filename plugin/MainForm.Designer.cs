@@ -46,71 +46,65 @@
             this.chkEp2Bot = new System.Windows.Forms.CheckBox();
             this.txtEp2Bot = new System.Windows.Forms.TextBox();
             this.lbl3 = new System.Windows.Forms.Label();
-            this.chkEp1Left = new System.Windows.Forms.CheckBox();
-            this.txtEp1Left = new System.Windows.Forms.TextBox();
+            this.chkEpLeft = new System.Windows.Forms.CheckBox();
+            this.txtEpLeft = new System.Windows.Forms.TextBox();
             this.chkBoltDistAcross = new System.Windows.Forms.CheckBox();
             this.txtBoltDistAcross = new System.Windows.Forms.TextBox();
-            this.chkEp1Right = new System.Windows.Forms.CheckBox();
-            this.txtEp1Right = new System.Windows.Forms.TextBox();
+            this.chkEpRight = new System.Windows.Forms.CheckBox();
+            this.txtEpRight = new System.Windows.Forms.TextBox();
             this.lbl4 = new System.Windows.Forms.Label();
-            this.chkEp2Left = new System.Windows.Forms.CheckBox();
-            this.txtEp2Left = new System.Windows.Forms.TextBox();
-            this.chkEp2Right = new System.Windows.Forms.CheckBox();
-            this.txtEp2Right = new System.Windows.Forms.TextBox();
             this.lbl5 = new System.Windows.Forms.Label();
-            this.lbl6 = new System.Windows.Forms.Label();
             this.chkBoltDistDown = new System.Windows.Forms.CheckBox();
             this.txtBoltDistDown = new System.Windows.Forms.TextBox();
-            this.lbl7 = new System.Windows.Forms.Label();
+            this.lbl6 = new System.Windows.Forms.Label();
             this.chkBoltDelete = new System.Windows.Forms.CheckBox();
             this.txtBoltDelete = new System.Windows.Forms.TextBox();
-            this.lbl8 = new System.Windows.Forms.Label();
+            this.lbl7 = new System.Windows.Forms.Label();
             this.chkBoltSize = new System.Windows.Forms.CheckBox();
             this.bszBoltSize = new Tekla.Structures.Dialog.UIControls.BoltCatalogSize();
-            this.lbl9 = new System.Windows.Forms.Label();
+            this.lbl8 = new System.Windows.Forms.Label();
             this.chkBoltStandard = new System.Windows.Forms.CheckBox();
             this.bcsBoltStandard = new Tekla.Structures.Dialog.UIControls.BoltCatalogStandard();
-            this.lbl10 = new System.Windows.Forms.Label();
+            this.lbl9 = new System.Windows.Forms.Label();
             this.chkBoltTolerance = new System.Windows.Forms.CheckBox();
             this.txtBoltTolerance = new System.Windows.Forms.TextBox();
+            this.lbl10 = new System.Windows.Forms.Label();
             this.lbl11 = new System.Windows.Forms.Label();
             this.lbl12 = new System.Windows.Forms.Label();
-            this.lbl13 = new System.Windows.Forms.Label();
             this.chkFlangeLength = new System.Windows.Forms.CheckBox();
             this.txtFlangeLength = new System.Windows.Forms.TextBox();
             this.picFlange = new System.Windows.Forms.PictureBox();
             this.chkStiffL = new System.Windows.Forms.CheckBox();
             this.txtStiffL = new System.Windows.Forms.TextBox();
+            this.lbl13 = new System.Windows.Forms.Label();
             this.lbl14 = new System.Windows.Forms.Label();
-            this.lbl15 = new System.Windows.Forms.Label();
             this.chkFlangeOn = new System.Windows.Forms.CheckBox();
             this.cboFlangeOn = new System.Windows.Forms.ComboBox();
-            this.lbl16 = new System.Windows.Forms.Label();
+            this.lbl15 = new System.Windows.Forms.Label();
             this.chkFlangeProfile = new System.Windows.Forms.CheckBox();
             this.txtFlangeProfile = new System.Windows.Forms.TextBox();
+            this.lbl16 = new System.Windows.Forms.Label();
             this.lbl17 = new System.Windows.Forms.Label();
-            this.lbl18 = new System.Windows.Forms.Label();
             this.chkStiffOn = new System.Windows.Forms.CheckBox();
             this.cboStiffOn = new System.Windows.Forms.ComboBox();
-            this.lbl19 = new System.Windows.Forms.Label();
+            this.lbl18 = new System.Windows.Forms.Label();
             this.chkStiffT = new System.Windows.Forms.CheckBox();
             this.txtStiffT = new System.Windows.Forms.TextBox();
-            this.lbl20 = new System.Windows.Forms.Label();
+            this.lbl19 = new System.Windows.Forms.Label();
             this.chkStiffB = new System.Windows.Forms.CheckBox();
             this.txtStiffB = new System.Windows.Forms.TextBox();
-            this.lbl21 = new System.Windows.Forms.Label();
+            this.lbl20 = new System.Windows.Forms.Label();
             this.chkStiffChamX = new System.Windows.Forms.CheckBox();
             this.txtStiffChamX = new System.Windows.Forms.TextBox();
-            this.lbl22 = new System.Windows.Forms.Label();
+            this.lbl21 = new System.Windows.Forms.Label();
             this.chkStiffChamY = new System.Windows.Forms.CheckBox();
             this.txtStiffChamY = new System.Windows.Forms.TextBox();
+            this.lbl22 = new System.Windows.Forms.Label();
             this.lbl23 = new System.Windows.Forms.Label();
             this.lbl24 = new System.Windows.Forms.Label();
             this.lbl25 = new System.Windows.Forms.Label();
             this.lbl26 = new System.Windows.Forms.Label();
             this.lbl27 = new System.Windows.Forms.Label();
-            this.lbl28 = new System.Windows.Forms.Label();
-            this.lbl29 = new System.Windows.Forms.Label();
             this.chkEpName = new System.Windows.Forms.CheckBox();
             this.txtEpName = new System.Windows.Forms.TextBox();
             this.chkEpPrefix = new System.Windows.Forms.CheckBox();
@@ -121,9 +115,7 @@
             this.txtEpMaterial = new System.Windows.Forms.TextBox();
             this.chkEpClass = new System.Windows.Forms.CheckBox();
             this.txtEpClass = new System.Windows.Forms.TextBox();
-            this.chkEpFinish = new System.Windows.Forms.CheckBox();
-            this.txtEpFinish = new System.Windows.Forms.TextBox();
-            this.lbl30 = new System.Windows.Forms.Label();
+            this.lbl28 = new System.Windows.Forms.Label();
             this.chkFlName = new System.Windows.Forms.CheckBox();
             this.txtFlName = new System.Windows.Forms.TextBox();
             this.chkFlPrefix = new System.Windows.Forms.CheckBox();
@@ -134,9 +126,7 @@
             this.txtFlMaterial = new System.Windows.Forms.TextBox();
             this.chkFlClass = new System.Windows.Forms.CheckBox();
             this.txtFlClass = new System.Windows.Forms.TextBox();
-            this.chkFlFinish = new System.Windows.Forms.CheckBox();
-            this.txtFlFinish = new System.Windows.Forms.TextBox();
-            this.lbl31 = new System.Windows.Forms.Label();
+            this.lbl29 = new System.Windows.Forms.Label();
             this.chkStName = new System.Windows.Forms.CheckBox();
             this.txtStName = new System.Windows.Forms.TextBox();
             this.chkStPrefix = new System.Windows.Forms.CheckBox();
@@ -147,9 +137,7 @@
             this.txtStMaterial = new System.Windows.Forms.TextBox();
             this.chkStClass = new System.Windows.Forms.CheckBox();
             this.txtStClass = new System.Windows.Forms.TextBox();
-            this.chkStFinish = new System.Windows.Forms.CheckBox();
-            this.txtStFinish = new System.Windows.Forms.TextBox();
-            this.lbl32 = new System.Windows.Forms.Label();
+            this.lbl30 = new System.Windows.Forms.Label();
             this.lblCredit = new System.Windows.Forms.Label();
             this.okApplyModifyGetOnOffCancel = new Tekla.Structures.Dialog.UIControls.OkApplyModifyGetOnOffCancel();
             this.saveLoad = new Tekla.Structures.Dialog.UIControls.SaveLoad();
@@ -199,36 +187,31 @@
             this.tabEndplate.Controls.Add(this.chkEp2Bot);
             this.tabEndplate.Controls.Add(this.txtEp2Bot);
             this.tabEndplate.Controls.Add(this.lbl3);
-            this.tabEndplate.Controls.Add(this.chkEp1Left);
-            this.tabEndplate.Controls.Add(this.txtEp1Left);
+            this.tabEndplate.Controls.Add(this.chkEpLeft);
+            this.tabEndplate.Controls.Add(this.txtEpLeft);
             this.tabEndplate.Controls.Add(this.chkBoltDistAcross);
             this.tabEndplate.Controls.Add(this.txtBoltDistAcross);
-            this.tabEndplate.Controls.Add(this.chkEp1Right);
-            this.tabEndplate.Controls.Add(this.txtEp1Right);
+            this.tabEndplate.Controls.Add(this.chkEpRight);
+            this.tabEndplate.Controls.Add(this.txtEpRight);
             this.tabEndplate.Controls.Add(this.lbl4);
-            this.tabEndplate.Controls.Add(this.chkEp2Left);
-            this.tabEndplate.Controls.Add(this.txtEp2Left);
-            this.tabEndplate.Controls.Add(this.chkEp2Right);
-            this.tabEndplate.Controls.Add(this.txtEp2Right);
             this.tabEndplate.Controls.Add(this.lbl5);
-            this.tabEndplate.Controls.Add(this.lbl6);
             this.tabEndplate.Controls.Add(this.chkBoltDistDown);
             this.tabEndplate.Controls.Add(this.txtBoltDistDown);
-            this.tabEndplate.Controls.Add(this.lbl7);
+            this.tabEndplate.Controls.Add(this.lbl6);
             this.tabEndplate.Controls.Add(this.chkBoltDelete);
             this.tabEndplate.Controls.Add(this.txtBoltDelete);
-            this.tabEndplate.Controls.Add(this.lbl8);
+            this.tabEndplate.Controls.Add(this.lbl7);
             this.tabEndplate.Controls.Add(this.chkBoltSize);
             this.tabEndplate.Controls.Add(this.bszBoltSize);
-            this.tabEndplate.Controls.Add(this.lbl9);
+            this.tabEndplate.Controls.Add(this.lbl8);
             this.tabEndplate.Controls.Add(this.chkBoltStandard);
             this.tabEndplate.Controls.Add(this.bcsBoltStandard);
-            this.tabEndplate.Controls.Add(this.lbl10);
+            this.tabEndplate.Controls.Add(this.lbl9);
             this.tabEndplate.Controls.Add(this.chkBoltTolerance);
             this.tabEndplate.Controls.Add(this.txtBoltTolerance);
+            this.tabEndplate.Controls.Add(this.lbl10);
             this.tabEndplate.Controls.Add(this.lbl11);
             this.tabEndplate.Controls.Add(this.lbl12);
-            this.tabEndplate.Controls.Add(this.lbl13);
             this.tabEndplate.Location = new System.Drawing.Point(4, 24);
             this.tabEndplate.Name = "tabEndplate";
             this.tabEndplate.Padding = new System.Windows.Forms.Padding(3);
@@ -247,27 +230,27 @@
             this.tabFlange.Controls.Add(this.picFlange);
             this.tabFlange.Controls.Add(this.chkStiffL);
             this.tabFlange.Controls.Add(this.txtStiffL);
+            this.tabFlange.Controls.Add(this.lbl13);
             this.tabFlange.Controls.Add(this.lbl14);
-            this.tabFlange.Controls.Add(this.lbl15);
             this.tabFlange.Controls.Add(this.chkFlangeOn);
             this.tabFlange.Controls.Add(this.cboFlangeOn);
-            this.tabFlange.Controls.Add(this.lbl16);
+            this.tabFlange.Controls.Add(this.lbl15);
             this.tabFlange.Controls.Add(this.chkFlangeProfile);
             this.tabFlange.Controls.Add(this.txtFlangeProfile);
+            this.tabFlange.Controls.Add(this.lbl16);
             this.tabFlange.Controls.Add(this.lbl17);
-            this.tabFlange.Controls.Add(this.lbl18);
             this.tabFlange.Controls.Add(this.chkStiffOn);
             this.tabFlange.Controls.Add(this.cboStiffOn);
-            this.tabFlange.Controls.Add(this.lbl19);
+            this.tabFlange.Controls.Add(this.lbl18);
             this.tabFlange.Controls.Add(this.chkStiffT);
             this.tabFlange.Controls.Add(this.txtStiffT);
-            this.tabFlange.Controls.Add(this.lbl20);
+            this.tabFlange.Controls.Add(this.lbl19);
             this.tabFlange.Controls.Add(this.chkStiffB);
             this.tabFlange.Controls.Add(this.txtStiffB);
-            this.tabFlange.Controls.Add(this.lbl21);
+            this.tabFlange.Controls.Add(this.lbl20);
             this.tabFlange.Controls.Add(this.chkStiffChamX);
             this.tabFlange.Controls.Add(this.txtStiffChamX);
-            this.tabFlange.Controls.Add(this.lbl22);
+            this.tabFlange.Controls.Add(this.lbl21);
             this.tabFlange.Controls.Add(this.chkStiffChamY);
             this.tabFlange.Controls.Add(this.txtStiffChamY);
             this.tabFlange.Location = new System.Drawing.Point(4, 24);
@@ -283,13 +266,12 @@
             this.structuresExtender.SetAttributeName(this.tabParts, null);
             this.structuresExtender.SetAttributeTypeName(this.tabParts, null);
             this.structuresExtender.SetBindPropertyName(this.tabParts, null);
+            this.tabParts.Controls.Add(this.lbl22);
             this.tabParts.Controls.Add(this.lbl23);
             this.tabParts.Controls.Add(this.lbl24);
             this.tabParts.Controls.Add(this.lbl25);
             this.tabParts.Controls.Add(this.lbl26);
             this.tabParts.Controls.Add(this.lbl27);
-            this.tabParts.Controls.Add(this.lbl28);
-            this.tabParts.Controls.Add(this.lbl29);
             this.tabParts.Controls.Add(this.chkEpName);
             this.tabParts.Controls.Add(this.txtEpName);
             this.tabParts.Controls.Add(this.chkEpPrefix);
@@ -300,9 +282,7 @@
             this.tabParts.Controls.Add(this.txtEpMaterial);
             this.tabParts.Controls.Add(this.chkEpClass);
             this.tabParts.Controls.Add(this.txtEpClass);
-            this.tabParts.Controls.Add(this.chkEpFinish);
-            this.tabParts.Controls.Add(this.txtEpFinish);
-            this.tabParts.Controls.Add(this.lbl30);
+            this.tabParts.Controls.Add(this.lbl28);
             this.tabParts.Controls.Add(this.chkFlName);
             this.tabParts.Controls.Add(this.txtFlName);
             this.tabParts.Controls.Add(this.chkFlPrefix);
@@ -313,9 +293,7 @@
             this.tabParts.Controls.Add(this.txtFlMaterial);
             this.tabParts.Controls.Add(this.chkFlClass);
             this.tabParts.Controls.Add(this.txtFlClass);
-            this.tabParts.Controls.Add(this.chkFlFinish);
-            this.tabParts.Controls.Add(this.txtFlFinish);
-            this.tabParts.Controls.Add(this.lbl31);
+            this.tabParts.Controls.Add(this.lbl29);
             this.tabParts.Controls.Add(this.chkStName);
             this.tabParts.Controls.Add(this.txtStName);
             this.tabParts.Controls.Add(this.chkStPrefix);
@@ -326,9 +304,7 @@
             this.tabParts.Controls.Add(this.txtStMaterial);
             this.tabParts.Controls.Add(this.chkStClass);
             this.tabParts.Controls.Add(this.txtStClass);
-            this.tabParts.Controls.Add(this.chkStFinish);
-            this.tabParts.Controls.Add(this.txtStFinish);
-            this.tabParts.Controls.Add(this.lbl32);
+            this.tabParts.Controls.Add(this.lbl30);
             this.tabParts.Location = new System.Drawing.Point(4, 24);
             this.tabParts.Name = "tabParts";
             this.tabParts.Padding = new System.Windows.Forms.Padding(3);
@@ -559,36 +535,36 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl3, null);
             this.structuresExtender.SetBindPropertyName(this.lbl3, null);
             this.lbl3.AutoSize = true;
-            this.lbl3.Location = new System.Drawing.Point(252, 366);
-            this.lbl3.Text = "Endplate 1";
+            this.lbl3.Location = new System.Drawing.Point(240, 366);
+            this.lbl3.Text = "Endplate 1 + 2";
             this.lbl3.Name = "lbl3";
             this.lbl3.TabIndex = 21;
             // 
-            // chkEp1Left
+            // chkEpLeft
             // 
-            this.structuresExtender.SetAttributeName(this.chkEp1Left, "Ep1Left");
-            this.structuresExtender.SetAttributeTypeName(this.chkEp1Left, null);
-            this.structuresExtender.SetBindPropertyName(this.chkEp1Left, "Checked");
-            this.structuresExtender.SetIsFilter(this.chkEp1Left, true);
-            this.chkEp1Left.AutoSize = true;
-            this.chkEp1Left.Checked = true;
-            this.chkEp1Left.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEp1Left.Location = new System.Drawing.Point(330, 366);
-            this.chkEp1Left.Size = new System.Drawing.Size(15, 14);
-            this.chkEp1Left.UseVisualStyleBackColor = true;
-            this.chkEp1Left.Name = "chkEp1Left";
-            this.chkEp1Left.TabIndex = 22;
+            this.structuresExtender.SetAttributeName(this.chkEpLeft, "EpLeft");
+            this.structuresExtender.SetAttributeTypeName(this.chkEpLeft, null);
+            this.structuresExtender.SetBindPropertyName(this.chkEpLeft, "Checked");
+            this.structuresExtender.SetIsFilter(this.chkEpLeft, true);
+            this.chkEpLeft.AutoSize = true;
+            this.chkEpLeft.Checked = true;
+            this.chkEpLeft.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkEpLeft.Location = new System.Drawing.Point(330, 366);
+            this.chkEpLeft.Size = new System.Drawing.Size(15, 14);
+            this.chkEpLeft.UseVisualStyleBackColor = true;
+            this.chkEpLeft.Name = "chkEpLeft";
+            this.chkEpLeft.TabIndex = 22;
             // 
-            // txtEp1Left
+            // txtEpLeft
             // 
-            this.structuresExtender.SetAttributeName(this.txtEp1Left, "Ep1Left");
-            this.structuresExtender.SetAttributeTypeName(this.txtEp1Left, "Distance");
-            this.structuresExtender.SetBindPropertyName(this.txtEp1Left, "Text");
-            this.txtEp1Left.Location = new System.Drawing.Point(348, 362);
-            this.txtEp1Left.Size = new System.Drawing.Size(45, 23);
-            this.txtEp1Left.Text = "45.00";
-            this.txtEp1Left.Name = "txtEp1Left";
-            this.txtEp1Left.TabIndex = 23;
+            this.structuresExtender.SetAttributeName(this.txtEpLeft, "EpLeft");
+            this.structuresExtender.SetAttributeTypeName(this.txtEpLeft, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtEpLeft, "Text");
+            this.txtEpLeft.Location = new System.Drawing.Point(348, 362);
+            this.txtEpLeft.Size = new System.Drawing.Size(45, 23);
+            this.txtEpLeft.Text = "45.00";
+            this.txtEpLeft.Name = "txtEpLeft";
+            this.txtEpLeft.TabIndex = 23;
             // 
             // chkBoltDistAcross
             // 
@@ -616,31 +592,31 @@
             this.txtBoltDistAcross.Name = "txtBoltDistAcross";
             this.txtBoltDistAcross.TabIndex = 25;
             // 
-            // chkEp1Right
+            // chkEpRight
             // 
-            this.structuresExtender.SetAttributeName(this.chkEp1Right, "Ep1Right");
-            this.structuresExtender.SetAttributeTypeName(this.chkEp1Right, null);
-            this.structuresExtender.SetBindPropertyName(this.chkEp1Right, "Checked");
-            this.structuresExtender.SetIsFilter(this.chkEp1Right, true);
-            this.chkEp1Right.AutoSize = true;
-            this.chkEp1Right.Checked = true;
-            this.chkEp1Right.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEp1Right.Location = new System.Drawing.Point(476, 366);
-            this.chkEp1Right.Size = new System.Drawing.Size(15, 14);
-            this.chkEp1Right.UseVisualStyleBackColor = true;
-            this.chkEp1Right.Name = "chkEp1Right";
-            this.chkEp1Right.TabIndex = 26;
+            this.structuresExtender.SetAttributeName(this.chkEpRight, "EpRight");
+            this.structuresExtender.SetAttributeTypeName(this.chkEpRight, null);
+            this.structuresExtender.SetBindPropertyName(this.chkEpRight, "Checked");
+            this.structuresExtender.SetIsFilter(this.chkEpRight, true);
+            this.chkEpRight.AutoSize = true;
+            this.chkEpRight.Checked = true;
+            this.chkEpRight.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkEpRight.Location = new System.Drawing.Point(476, 366);
+            this.chkEpRight.Size = new System.Drawing.Size(15, 14);
+            this.chkEpRight.UseVisualStyleBackColor = true;
+            this.chkEpRight.Name = "chkEpRight";
+            this.chkEpRight.TabIndex = 26;
             // 
-            // txtEp1Right
+            // txtEpRight
             // 
-            this.structuresExtender.SetAttributeName(this.txtEp1Right, "Ep1Right");
-            this.structuresExtender.SetAttributeTypeName(this.txtEp1Right, "Distance");
-            this.structuresExtender.SetBindPropertyName(this.txtEp1Right, "Text");
-            this.txtEp1Right.Location = new System.Drawing.Point(494, 362);
-            this.txtEp1Right.Size = new System.Drawing.Size(45, 23);
-            this.txtEp1Right.Text = "45.00";
-            this.txtEp1Right.Name = "txtEp1Right";
-            this.txtEp1Right.TabIndex = 27;
+            this.structuresExtender.SetAttributeName(this.txtEpRight, "EpRight");
+            this.structuresExtender.SetAttributeTypeName(this.txtEpRight, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtEpRight, "Text");
+            this.txtEpRight.Location = new System.Drawing.Point(494, 362);
+            this.txtEpRight.Size = new System.Drawing.Size(45, 23);
+            this.txtEpRight.Text = "45.00";
+            this.txtEpRight.Name = "txtEpRight";
+            this.txtEpRight.TabIndex = 27;
             // 
             // lbl4
             // 
@@ -648,62 +624,11 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl4, null);
             this.structuresExtender.SetBindPropertyName(this.lbl4, null);
             this.lbl4.AutoSize = true;
-            this.lbl4.Location = new System.Drawing.Point(252, 394);
-            this.lbl4.Text = "Endplate 2";
+            this.lbl4.Location = new System.Drawing.Point(540, 44);
+            this.lbl4.Text = "Bolt";
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.lbl4.Name = "lbl4";
             this.lbl4.TabIndex = 28;
-            // 
-            // chkEp2Left
-            // 
-            this.structuresExtender.SetAttributeName(this.chkEp2Left, "Ep2Left");
-            this.structuresExtender.SetAttributeTypeName(this.chkEp2Left, null);
-            this.structuresExtender.SetBindPropertyName(this.chkEp2Left, "Checked");
-            this.structuresExtender.SetIsFilter(this.chkEp2Left, true);
-            this.chkEp2Left.AutoSize = true;
-            this.chkEp2Left.Checked = true;
-            this.chkEp2Left.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEp2Left.Location = new System.Drawing.Point(330, 394);
-            this.chkEp2Left.Size = new System.Drawing.Size(15, 14);
-            this.chkEp2Left.UseVisualStyleBackColor = true;
-            this.chkEp2Left.Name = "chkEp2Left";
-            this.chkEp2Left.TabIndex = 29;
-            // 
-            // txtEp2Left
-            // 
-            this.structuresExtender.SetAttributeName(this.txtEp2Left, "Ep2Left");
-            this.structuresExtender.SetAttributeTypeName(this.txtEp2Left, "Distance");
-            this.structuresExtender.SetBindPropertyName(this.txtEp2Left, "Text");
-            this.txtEp2Left.Location = new System.Drawing.Point(348, 390);
-            this.txtEp2Left.Size = new System.Drawing.Size(45, 23);
-            this.txtEp2Left.Text = "45.00";
-            this.txtEp2Left.Name = "txtEp2Left";
-            this.txtEp2Left.TabIndex = 30;
-            // 
-            // chkEp2Right
-            // 
-            this.structuresExtender.SetAttributeName(this.chkEp2Right, "Ep2Right");
-            this.structuresExtender.SetAttributeTypeName(this.chkEp2Right, null);
-            this.structuresExtender.SetBindPropertyName(this.chkEp2Right, "Checked");
-            this.structuresExtender.SetIsFilter(this.chkEp2Right, true);
-            this.chkEp2Right.AutoSize = true;
-            this.chkEp2Right.Checked = true;
-            this.chkEp2Right.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEp2Right.Location = new System.Drawing.Point(476, 394);
-            this.chkEp2Right.Size = new System.Drawing.Size(15, 14);
-            this.chkEp2Right.UseVisualStyleBackColor = true;
-            this.chkEp2Right.Name = "chkEp2Right";
-            this.chkEp2Right.TabIndex = 31;
-            // 
-            // txtEp2Right
-            // 
-            this.structuresExtender.SetAttributeName(this.txtEp2Right, "Ep2Right");
-            this.structuresExtender.SetAttributeTypeName(this.txtEp2Right, "Distance");
-            this.structuresExtender.SetBindPropertyName(this.txtEp2Right, "Text");
-            this.txtEp2Right.Location = new System.Drawing.Point(494, 390);
-            this.txtEp2Right.Size = new System.Drawing.Size(45, 23);
-            this.txtEp2Right.Text = "45.00";
-            this.txtEp2Right.Name = "txtEp2Right";
-            this.txtEp2Right.TabIndex = 32;
             // 
             // lbl5
             // 
@@ -711,22 +636,10 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl5, null);
             this.structuresExtender.SetBindPropertyName(this.lbl5, null);
             this.lbl5.AutoSize = true;
-            this.lbl5.Location = new System.Drawing.Point(540, 44);
-            this.lbl5.Text = "Bolt";
-            this.lbl5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl5.Location = new System.Drawing.Point(540, 74);
+            this.lbl5.Text = "Khoảng cách hàng ↓";
             this.lbl5.Name = "lbl5";
-            this.lbl5.TabIndex = 33;
-            // 
-            // lbl6
-            // 
-            this.structuresExtender.SetAttributeName(this.lbl6, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl6, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl6, null);
-            this.lbl6.AutoSize = true;
-            this.lbl6.Location = new System.Drawing.Point(540, 74);
-            this.lbl6.Text = "Khoảng cách hàng ↓";
-            this.lbl6.Name = "lbl6";
-            this.lbl6.TabIndex = 34;
+            this.lbl5.TabIndex = 29;
             // 
             // chkBoltDistDown
             // 
@@ -741,7 +654,7 @@
             this.chkBoltDistDown.Size = new System.Drawing.Size(15, 14);
             this.chkBoltDistDown.UseVisualStyleBackColor = true;
             this.chkBoltDistDown.Name = "chkBoltDistDown";
-            this.chkBoltDistDown.TabIndex = 35;
+            this.chkBoltDistDown.TabIndex = 30;
             // 
             // txtBoltDistDown
             // 
@@ -752,18 +665,18 @@
             this.txtBoltDistDown.Size = new System.Drawing.Size(130, 23);
             this.txtBoltDistDown.Text = "125 600 170 125";
             this.txtBoltDistDown.Name = "txtBoltDistDown";
-            this.txtBoltDistDown.TabIndex = 36;
+            this.txtBoltDistDown.TabIndex = 31;
             // 
-            // lbl7
+            // lbl6
             // 
-            this.structuresExtender.SetAttributeName(this.lbl7, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl7, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl7, null);
-            this.lbl7.AutoSize = true;
-            this.lbl7.Location = new System.Drawing.Point(540, 104);
-            this.lbl7.Text = "Xoá bolt số";
-            this.lbl7.Name = "lbl7";
-            this.lbl7.TabIndex = 37;
+            this.structuresExtender.SetAttributeName(this.lbl6, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl6, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl6, null);
+            this.lbl6.AutoSize = true;
+            this.lbl6.Location = new System.Drawing.Point(540, 104);
+            this.lbl6.Text = "Xoá bolt số";
+            this.lbl6.Name = "lbl6";
+            this.lbl6.TabIndex = 32;
             // 
             // chkBoltDelete
             // 
@@ -778,7 +691,7 @@
             this.chkBoltDelete.Size = new System.Drawing.Size(15, 14);
             this.chkBoltDelete.UseVisualStyleBackColor = true;
             this.chkBoltDelete.Name = "chkBoltDelete";
-            this.chkBoltDelete.TabIndex = 38;
+            this.chkBoltDelete.TabIndex = 33;
             // 
             // txtBoltDelete
             // 
@@ -789,18 +702,18 @@
             this.txtBoltDelete.Size = new System.Drawing.Size(130, 23);
             this.txtBoltDelete.Text = "";
             this.txtBoltDelete.Name = "txtBoltDelete";
-            this.txtBoltDelete.TabIndex = 39;
+            this.txtBoltDelete.TabIndex = 34;
             // 
-            // lbl8
+            // lbl7
             // 
-            this.structuresExtender.SetAttributeName(this.lbl8, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl8, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl8, null);
-            this.lbl8.AutoSize = true;
-            this.lbl8.Location = new System.Drawing.Point(540, 140);
-            this.lbl8.Text = "Bolt size";
-            this.lbl8.Name = "lbl8";
-            this.lbl8.TabIndex = 40;
+            this.structuresExtender.SetAttributeName(this.lbl7, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl7, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl7, null);
+            this.lbl7.AutoSize = true;
+            this.lbl7.Location = new System.Drawing.Point(540, 140);
+            this.lbl7.Text = "Bolt size";
+            this.lbl7.Name = "lbl7";
+            this.lbl7.TabIndex = 35;
             // 
             // chkBoltSize
             // 
@@ -815,7 +728,7 @@
             this.chkBoltSize.Size = new System.Drawing.Size(15, 14);
             this.chkBoltSize.UseVisualStyleBackColor = true;
             this.chkBoltSize.Name = "chkBoltSize";
-            this.chkBoltSize.TabIndex = 41;
+            this.chkBoltSize.TabIndex = 36;
             // 
             // bszBoltSize
             // 
@@ -825,18 +738,18 @@
             this.bszBoltSize.Location = new System.Drawing.Point(672, 136);
             this.bszBoltSize.Size = new System.Drawing.Size(70, 23);
             this.bszBoltSize.Name = "bszBoltSize";
-            this.bszBoltSize.TabIndex = 42;
+            this.bszBoltSize.TabIndex = 37;
             // 
-            // lbl9
+            // lbl8
             // 
-            this.structuresExtender.SetAttributeName(this.lbl9, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl9, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl9, null);
-            this.lbl9.AutoSize = true;
-            this.lbl9.Location = new System.Drawing.Point(540, 170);
-            this.lbl9.Text = "Bolt standard";
-            this.lbl9.Name = "lbl9";
-            this.lbl9.TabIndex = 43;
+            this.structuresExtender.SetAttributeName(this.lbl8, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl8, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl8, null);
+            this.lbl8.AutoSize = true;
+            this.lbl8.Location = new System.Drawing.Point(540, 170);
+            this.lbl8.Text = "Bolt standard";
+            this.lbl8.Name = "lbl8";
+            this.lbl8.TabIndex = 38;
             // 
             // chkBoltStandard
             // 
@@ -851,7 +764,7 @@
             this.chkBoltStandard.Size = new System.Drawing.Size(15, 14);
             this.chkBoltStandard.UseVisualStyleBackColor = true;
             this.chkBoltStandard.Name = "chkBoltStandard";
-            this.chkBoltStandard.TabIndex = 44;
+            this.chkBoltStandard.TabIndex = 39;
             // 
             // bcsBoltStandard
             // 
@@ -862,18 +775,18 @@
             this.bcsBoltStandard.Location = new System.Drawing.Point(672, 166);
             this.bcsBoltStandard.Size = new System.Drawing.Size(110, 23);
             this.bcsBoltStandard.Name = "bcsBoltStandard";
-            this.bcsBoltStandard.TabIndex = 45;
+            this.bcsBoltStandard.TabIndex = 40;
             // 
-            // lbl10
+            // lbl9
             // 
-            this.structuresExtender.SetAttributeName(this.lbl10, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl10, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl10, null);
-            this.lbl10.AutoSize = true;
-            this.lbl10.Location = new System.Drawing.Point(540, 200);
-            this.lbl10.Text = "Tolerance";
-            this.lbl10.Name = "lbl10";
-            this.lbl10.TabIndex = 46;
+            this.structuresExtender.SetAttributeName(this.lbl9, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl9, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl9, null);
+            this.lbl9.AutoSize = true;
+            this.lbl9.Location = new System.Drawing.Point(540, 200);
+            this.lbl9.Text = "Tolerance";
+            this.lbl9.Name = "lbl9";
+            this.lbl9.TabIndex = 41;
             // 
             // chkBoltTolerance
             // 
@@ -888,7 +801,7 @@
             this.chkBoltTolerance.Size = new System.Drawing.Size(15, 14);
             this.chkBoltTolerance.UseVisualStyleBackColor = true;
             this.chkBoltTolerance.Name = "chkBoltTolerance";
-            this.chkBoltTolerance.TabIndex = 47;
+            this.chkBoltTolerance.TabIndex = 42;
             // 
             // txtBoltTolerance
             // 
@@ -899,7 +812,18 @@
             this.txtBoltTolerance.Size = new System.Drawing.Size(50, 23);
             this.txtBoltTolerance.Text = "2.00";
             this.txtBoltTolerance.Name = "txtBoltTolerance";
-            this.txtBoltTolerance.TabIndex = 48;
+            this.txtBoltTolerance.TabIndex = 43;
+            // 
+            // lbl10
+            // 
+            this.structuresExtender.SetAttributeName(this.lbl10, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl10, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl10, null);
+            this.lbl10.AutoSize = true;
+            this.lbl10.Location = new System.Drawing.Point(540, 240);
+            this.lbl10.Text = "Đánh số bolt: hàng trên → dưới,";
+            this.lbl10.Name = "lbl10";
+            this.lbl10.TabIndex = 44;
             // 
             // lbl11
             // 
@@ -907,10 +831,10 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl11, null);
             this.structuresExtender.SetBindPropertyName(this.lbl11, null);
             this.lbl11.AutoSize = true;
-            this.lbl11.Location = new System.Drawing.Point(540, 240);
-            this.lbl11.Text = "Đánh số bolt: hàng trên → dưới,";
+            this.lbl11.Location = new System.Drawing.Point(540, 258);
+            this.lbl11.Text = "trong hàng trái → phải (vd 1 2).";
             this.lbl11.Name = "lbl11";
-            this.lbl11.TabIndex = 49;
+            this.lbl11.TabIndex = 45;
             // 
             // lbl12
             // 
@@ -918,21 +842,10 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl12, null);
             this.structuresExtender.SetBindPropertyName(this.lbl12, null);
             this.lbl12.AutoSize = true;
-            this.lbl12.Location = new System.Drawing.Point(540, 258);
-            this.lbl12.Text = "trong hàng trái → phải (vd 1 2).";
+            this.lbl12.Location = new System.Drawing.Point(540, 276);
+            this.lbl12.Text = "Trái / phải: nhìn từ rafter 1 sang 2.";
             this.lbl12.Name = "lbl12";
-            this.lbl12.TabIndex = 50;
-            // 
-            // lbl13
-            // 
-            this.structuresExtender.SetAttributeName(this.lbl13, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl13, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl13, null);
-            this.lbl13.AutoSize = true;
-            this.lbl13.Location = new System.Drawing.Point(540, 276);
-            this.lbl13.Text = "Trái / phải: nhìn từ rafter 1 sang 2.";
-            this.lbl13.Name = "lbl13";
-            this.lbl13.TabIndex = 51;
+            this.lbl12.TabIndex = 46;
             // 
             // chkFlangeLength
             // 
@@ -947,7 +860,7 @@
             this.chkFlangeLength.Size = new System.Drawing.Size(15, 14);
             this.chkFlangeLength.UseVisualStyleBackColor = true;
             this.chkFlangeLength.Name = "chkFlangeLength";
-            this.chkFlangeLength.TabIndex = 52;
+            this.chkFlangeLength.TabIndex = 47;
             // 
             // txtFlangeLength
             // 
@@ -958,7 +871,7 @@
             this.txtFlangeLength.Size = new System.Drawing.Size(60, 23);
             this.txtFlangeLength.Text = "600.00";
             this.txtFlangeLength.Name = "txtFlangeLength";
-            this.txtFlangeLength.TabIndex = 53;
+            this.txtFlangeLength.TabIndex = 48;
             // 
             // picFlange
             // 
@@ -970,7 +883,7 @@
             this.picFlange.Size = new System.Drawing.Size(478, 342);
             this.picFlange.TabStop = false;
             this.picFlange.Name = "picFlange";
-            this.picFlange.TabIndex = 54;
+            this.picFlange.TabIndex = 49;
             // 
             // chkStiffL
             // 
@@ -985,7 +898,7 @@
             this.chkStiffL.Size = new System.Drawing.Size(15, 14);
             this.chkStiffL.UseVisualStyleBackColor = true;
             this.chkStiffL.Name = "chkStiffL";
-            this.chkStiffL.TabIndex = 55;
+            this.chkStiffL.TabIndex = 50;
             // 
             // txtStiffL
             // 
@@ -996,7 +909,19 @@
             this.txtStiffL.Size = new System.Drawing.Size(60, 23);
             this.txtStiffL.Text = "300.00";
             this.txtStiffL.Name = "txtStiffL";
-            this.txtStiffL.TabIndex = 56;
+            this.txtStiffL.TabIndex = 51;
+            // 
+            // lbl13
+            // 
+            this.structuresExtender.SetAttributeName(this.lbl13, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl13, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl13, null);
+            this.lbl13.AutoSize = true;
+            this.lbl13.Location = new System.Drawing.Point(540, 44);
+            this.lbl13.Text = "Flange (1)";
+            this.lbl13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lbl13.Name = "lbl13";
+            this.lbl13.TabIndex = 52;
             // 
             // lbl14
             // 
@@ -1004,22 +929,10 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl14, null);
             this.structuresExtender.SetBindPropertyName(this.lbl14, null);
             this.lbl14.AutoSize = true;
-            this.lbl14.Location = new System.Drawing.Point(540, 44);
-            this.lbl14.Text = "Flange (1)";
-            this.lbl14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl14.Location = new System.Drawing.Point(540, 74);
+            this.lbl14.Text = "Tạo";
             this.lbl14.Name = "lbl14";
-            this.lbl14.TabIndex = 57;
-            // 
-            // lbl15
-            // 
-            this.structuresExtender.SetAttributeName(this.lbl15, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl15, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl15, null);
-            this.lbl15.AutoSize = true;
-            this.lbl15.Location = new System.Drawing.Point(540, 74);
-            this.lbl15.Text = "Tạo";
-            this.lbl15.Name = "lbl15";
-            this.lbl15.TabIndex = 58;
+            this.lbl14.TabIndex = 53;
             // 
             // chkFlangeOn
             // 
@@ -1034,7 +947,7 @@
             this.chkFlangeOn.Size = new System.Drawing.Size(15, 14);
             this.chkFlangeOn.UseVisualStyleBackColor = true;
             this.chkFlangeOn.Name = "chkFlangeOn";
-            this.chkFlangeOn.TabIndex = 59;
+            this.chkFlangeOn.TabIndex = 54;
             // 
             // cboFlangeOn
             // 
@@ -1047,18 +960,18 @@
             this.cboFlangeOn.Location = new System.Drawing.Point(690, 70);
             this.cboFlangeOn.Size = new System.Drawing.Size(60, 23);
             this.cboFlangeOn.Name = "cboFlangeOn";
-            this.cboFlangeOn.TabIndex = 60;
+            this.cboFlangeOn.TabIndex = 55;
             // 
-            // lbl16
+            // lbl15
             // 
-            this.structuresExtender.SetAttributeName(this.lbl16, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl16, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl16, null);
-            this.lbl16.AutoSize = true;
-            this.lbl16.Location = new System.Drawing.Point(540, 104);
-            this.lbl16.Text = "Profile (PLTt*b)";
-            this.lbl16.Name = "lbl16";
-            this.lbl16.TabIndex = 61;
+            this.structuresExtender.SetAttributeName(this.lbl15, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl15, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl15, null);
+            this.lbl15.AutoSize = true;
+            this.lbl15.Location = new System.Drawing.Point(540, 104);
+            this.lbl15.Text = "Profile (PLTt*b)";
+            this.lbl15.Name = "lbl15";
+            this.lbl15.TabIndex = 56;
             // 
             // chkFlangeProfile
             // 
@@ -1073,7 +986,7 @@
             this.chkFlangeProfile.Size = new System.Drawing.Size(15, 14);
             this.chkFlangeProfile.UseVisualStyleBackColor = true;
             this.chkFlangeProfile.Name = "chkFlangeProfile";
-            this.chkFlangeProfile.TabIndex = 62;
+            this.chkFlangeProfile.TabIndex = 57;
             // 
             // txtFlangeProfile
             // 
@@ -1084,7 +997,19 @@
             this.txtFlangeProfile.Size = new System.Drawing.Size(100, 23);
             this.txtFlangeProfile.Text = "PLT20*230";
             this.txtFlangeProfile.Name = "txtFlangeProfile";
-            this.txtFlangeProfile.TabIndex = 63;
+            this.txtFlangeProfile.TabIndex = 58;
+            // 
+            // lbl16
+            // 
+            this.structuresExtender.SetAttributeName(this.lbl16, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl16, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl16, null);
+            this.lbl16.AutoSize = true;
+            this.lbl16.Location = new System.Drawing.Point(540, 154);
+            this.lbl16.Text = "Stiffener (2)";
+            this.lbl16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lbl16.Name = "lbl16";
+            this.lbl16.TabIndex = 59;
             // 
             // lbl17
             // 
@@ -1092,22 +1017,10 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl17, null);
             this.structuresExtender.SetBindPropertyName(this.lbl17, null);
             this.lbl17.AutoSize = true;
-            this.lbl17.Location = new System.Drawing.Point(540, 154);
-            this.lbl17.Text = "Stiffener (2)";
-            this.lbl17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl17.Location = new System.Drawing.Point(540, 184);
+            this.lbl17.Text = "Tạo";
             this.lbl17.Name = "lbl17";
-            this.lbl17.TabIndex = 64;
-            // 
-            // lbl18
-            // 
-            this.structuresExtender.SetAttributeName(this.lbl18, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl18, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl18, null);
-            this.lbl18.AutoSize = true;
-            this.lbl18.Location = new System.Drawing.Point(540, 184);
-            this.lbl18.Text = "Tạo";
-            this.lbl18.Name = "lbl18";
-            this.lbl18.TabIndex = 65;
+            this.lbl17.TabIndex = 60;
             // 
             // chkStiffOn
             // 
@@ -1122,7 +1035,7 @@
             this.chkStiffOn.Size = new System.Drawing.Size(15, 14);
             this.chkStiffOn.UseVisualStyleBackColor = true;
             this.chkStiffOn.Name = "chkStiffOn";
-            this.chkStiffOn.TabIndex = 66;
+            this.chkStiffOn.TabIndex = 61;
             // 
             // cboStiffOn
             // 
@@ -1135,18 +1048,18 @@
             this.cboStiffOn.Location = new System.Drawing.Point(690, 180);
             this.cboStiffOn.Size = new System.Drawing.Size(60, 23);
             this.cboStiffOn.Name = "cboStiffOn";
-            this.cboStiffOn.TabIndex = 67;
+            this.cboStiffOn.TabIndex = 62;
             // 
-            // lbl19
+            // lbl18
             // 
-            this.structuresExtender.SetAttributeName(this.lbl19, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl19, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl19, null);
-            this.lbl19.AutoSize = true;
-            this.lbl19.Location = new System.Drawing.Point(540, 214);
-            this.lbl19.Text = "t";
-            this.lbl19.Name = "lbl19";
-            this.lbl19.TabIndex = 68;
+            this.structuresExtender.SetAttributeName(this.lbl18, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl18, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl18, null);
+            this.lbl18.AutoSize = true;
+            this.lbl18.Location = new System.Drawing.Point(540, 214);
+            this.lbl18.Text = "t";
+            this.lbl18.Name = "lbl18";
+            this.lbl18.TabIndex = 63;
             // 
             // chkStiffT
             // 
@@ -1161,7 +1074,7 @@
             this.chkStiffT.Size = new System.Drawing.Size(15, 14);
             this.chkStiffT.UseVisualStyleBackColor = true;
             this.chkStiffT.Name = "chkStiffT";
-            this.chkStiffT.TabIndex = 69;
+            this.chkStiffT.TabIndex = 64;
             // 
             // txtStiffT
             // 
@@ -1172,18 +1085,18 @@
             this.txtStiffT.Size = new System.Drawing.Size(60, 23);
             this.txtStiffT.Text = "16.00";
             this.txtStiffT.Name = "txtStiffT";
-            this.txtStiffT.TabIndex = 70;
+            this.txtStiffT.TabIndex = 65;
             // 
-            // lbl20
+            // lbl19
             // 
-            this.structuresExtender.SetAttributeName(this.lbl20, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl20, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl20, null);
-            this.lbl20.AutoSize = true;
-            this.lbl20.Location = new System.Drawing.Point(540, 244);
-            this.lbl20.Text = "b (0 = tới mép flange)";
-            this.lbl20.Name = "lbl20";
-            this.lbl20.TabIndex = 71;
+            this.structuresExtender.SetAttributeName(this.lbl19, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl19, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl19, null);
+            this.lbl19.AutoSize = true;
+            this.lbl19.Location = new System.Drawing.Point(540, 244);
+            this.lbl19.Text = "b (0 = tới mép flange)";
+            this.lbl19.Name = "lbl19";
+            this.lbl19.TabIndex = 66;
             // 
             // chkStiffB
             // 
@@ -1198,7 +1111,7 @@
             this.chkStiffB.Size = new System.Drawing.Size(15, 14);
             this.chkStiffB.UseVisualStyleBackColor = true;
             this.chkStiffB.Name = "chkStiffB";
-            this.chkStiffB.TabIndex = 72;
+            this.chkStiffB.TabIndex = 67;
             // 
             // txtStiffB
             // 
@@ -1209,18 +1122,18 @@
             this.txtStiffB.Size = new System.Drawing.Size(60, 23);
             this.txtStiffB.Text = "0.00";
             this.txtStiffB.Name = "txtStiffB";
-            this.txtStiffB.TabIndex = 73;
+            this.txtStiffB.TabIndex = 68;
             // 
-            // lbl21
+            // lbl20
             // 
-            this.structuresExtender.SetAttributeName(this.lbl21, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl21, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl21, null);
-            this.lbl21.AutoSize = true;
-            this.lbl21.Location = new System.Drawing.Point(540, 274);
-            this.lbl21.Text = "Chamfer X";
-            this.lbl21.Name = "lbl21";
-            this.lbl21.TabIndex = 74;
+            this.structuresExtender.SetAttributeName(this.lbl20, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl20, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl20, null);
+            this.lbl20.AutoSize = true;
+            this.lbl20.Location = new System.Drawing.Point(540, 274);
+            this.lbl20.Text = "Chamfer X";
+            this.lbl20.Name = "lbl20";
+            this.lbl20.TabIndex = 69;
             // 
             // chkStiffChamX
             // 
@@ -1235,7 +1148,7 @@
             this.chkStiffChamX.Size = new System.Drawing.Size(15, 14);
             this.chkStiffChamX.UseVisualStyleBackColor = true;
             this.chkStiffChamX.Name = "chkStiffChamX";
-            this.chkStiffChamX.TabIndex = 75;
+            this.chkStiffChamX.TabIndex = 70;
             // 
             // txtStiffChamX
             // 
@@ -1246,18 +1159,18 @@
             this.txtStiffChamX.Size = new System.Drawing.Size(60, 23);
             this.txtStiffChamX.Text = "15.00";
             this.txtStiffChamX.Name = "txtStiffChamX";
-            this.txtStiffChamX.TabIndex = 76;
+            this.txtStiffChamX.TabIndex = 71;
             // 
-            // lbl22
+            // lbl21
             // 
-            this.structuresExtender.SetAttributeName(this.lbl22, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl22, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl22, null);
-            this.lbl22.AutoSize = true;
-            this.lbl22.Location = new System.Drawing.Point(540, 304);
-            this.lbl22.Text = "Chamfer Y";
-            this.lbl22.Name = "lbl22";
-            this.lbl22.TabIndex = 77;
+            this.structuresExtender.SetAttributeName(this.lbl21, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl21, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl21, null);
+            this.lbl21.AutoSize = true;
+            this.lbl21.Location = new System.Drawing.Point(540, 304);
+            this.lbl21.Text = "Chamfer Y";
+            this.lbl21.Name = "lbl21";
+            this.lbl21.TabIndex = 72;
             // 
             // chkStiffChamY
             // 
@@ -1272,7 +1185,7 @@
             this.chkStiffChamY.Size = new System.Drawing.Size(15, 14);
             this.chkStiffChamY.UseVisualStyleBackColor = true;
             this.chkStiffChamY.Name = "chkStiffChamY";
-            this.chkStiffChamY.TabIndex = 78;
+            this.chkStiffChamY.TabIndex = 73;
             // 
             // txtStiffChamY
             // 
@@ -1283,7 +1196,18 @@
             this.txtStiffChamY.Size = new System.Drawing.Size(60, 23);
             this.txtStiffChamY.Text = "15.00";
             this.txtStiffChamY.Name = "txtStiffChamY";
-            this.txtStiffChamY.TabIndex = 79;
+            this.txtStiffChamY.TabIndex = 74;
+            // 
+            // lbl22
+            // 
+            this.structuresExtender.SetAttributeName(this.lbl22, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl22, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl22, null);
+            this.lbl22.AutoSize = true;
+            this.lbl22.Location = new System.Drawing.Point(160, 14);
+            this.lbl22.Text = "Name";
+            this.lbl22.Name = "lbl22";
+            this.lbl22.TabIndex = 75;
             // 
             // lbl23
             // 
@@ -1291,10 +1215,10 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl23, null);
             this.structuresExtender.SetBindPropertyName(this.lbl23, null);
             this.lbl23.AutoSize = true;
-            this.lbl23.Location = new System.Drawing.Point(160, 14);
-            this.lbl23.Text = "Name";
+            this.lbl23.Location = new System.Drawing.Point(300, 14);
+            this.lbl23.Text = "Prefix";
             this.lbl23.Name = "lbl23";
-            this.lbl23.TabIndex = 80;
+            this.lbl23.TabIndex = 76;
             // 
             // lbl24
             // 
@@ -1302,10 +1226,10 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl24, null);
             this.structuresExtender.SetBindPropertyName(this.lbl24, null);
             this.lbl24.AutoSize = true;
-            this.lbl24.Location = new System.Drawing.Point(300, 14);
-            this.lbl24.Text = "Prefix";
+            this.lbl24.Location = new System.Drawing.Point(383, 14);
+            this.lbl24.Text = "Start";
             this.lbl24.Name = "lbl24";
-            this.lbl24.TabIndex = 81;
+            this.lbl24.TabIndex = 77;
             // 
             // lbl25
             // 
@@ -1313,10 +1237,10 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl25, null);
             this.structuresExtender.SetBindPropertyName(this.lbl25, null);
             this.lbl25.AutoSize = true;
-            this.lbl25.Location = new System.Drawing.Point(383, 14);
-            this.lbl25.Text = "Start";
+            this.lbl25.Location = new System.Drawing.Point(461, 14);
+            this.lbl25.Text = "Material";
             this.lbl25.Name = "lbl25";
-            this.lbl25.TabIndex = 82;
+            this.lbl25.TabIndex = 78;
             // 
             // lbl26
             // 
@@ -1324,10 +1248,10 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl26, null);
             this.structuresExtender.SetBindPropertyName(this.lbl26, null);
             this.lbl26.AutoSize = true;
-            this.lbl26.Location = new System.Drawing.Point(461, 14);
-            this.lbl26.Text = "Material";
+            this.lbl26.Location = new System.Drawing.Point(569, 14);
+            this.lbl26.Text = "Class";
             this.lbl26.Name = "lbl26";
-            this.lbl26.TabIndex = 83;
+            this.lbl26.TabIndex = 79;
             // 
             // lbl27
             // 
@@ -1335,32 +1259,10 @@
             this.structuresExtender.SetAttributeTypeName(this.lbl27, null);
             this.structuresExtender.SetBindPropertyName(this.lbl27, null);
             this.lbl27.AutoSize = true;
-            this.lbl27.Location = new System.Drawing.Point(569, 14);
-            this.lbl27.Text = "Class";
+            this.lbl27.Location = new System.Drawing.Point(12, 44);
+            this.lbl27.Text = "Endplate";
             this.lbl27.Name = "lbl27";
-            this.lbl27.TabIndex = 84;
-            // 
-            // lbl28
-            // 
-            this.structuresExtender.SetAttributeName(this.lbl28, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl28, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl28, null);
-            this.lbl28.AutoSize = true;
-            this.lbl28.Location = new System.Drawing.Point(647, 14);
-            this.lbl28.Text = "Finish";
-            this.lbl28.Name = "lbl28";
-            this.lbl28.TabIndex = 85;
-            // 
-            // lbl29
-            // 
-            this.structuresExtender.SetAttributeName(this.lbl29, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl29, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl29, null);
-            this.lbl29.AutoSize = true;
-            this.lbl29.Location = new System.Drawing.Point(12, 44);
-            this.lbl29.Text = "Endplate";
-            this.lbl29.Name = "lbl29";
-            this.lbl29.TabIndex = 86;
+            this.lbl27.TabIndex = 80;
             // 
             // chkEpName
             // 
@@ -1375,7 +1277,7 @@
             this.chkEpName.Size = new System.Drawing.Size(15, 14);
             this.chkEpName.UseVisualStyleBackColor = true;
             this.chkEpName.Name = "chkEpName";
-            this.chkEpName.TabIndex = 87;
+            this.chkEpName.TabIndex = 81;
             // 
             // txtEpName
             // 
@@ -1386,7 +1288,7 @@
             this.txtEpName.Size = new System.Drawing.Size(110, 23);
             this.txtEpName.Text = "END PLATE";
             this.txtEpName.Name = "txtEpName";
-            this.txtEpName.TabIndex = 88;
+            this.txtEpName.TabIndex = 82;
             // 
             // chkEpPrefix
             // 
@@ -1401,7 +1303,7 @@
             this.chkEpPrefix.Size = new System.Drawing.Size(15, 14);
             this.chkEpPrefix.UseVisualStyleBackColor = true;
             this.chkEpPrefix.Name = "chkEpPrefix";
-            this.chkEpPrefix.TabIndex = 89;
+            this.chkEpPrefix.TabIndex = 83;
             // 
             // txtEpPrefix
             // 
@@ -1412,7 +1314,7 @@
             this.txtEpPrefix.Size = new System.Drawing.Size(55, 23);
             this.txtEpPrefix.Text = "f";
             this.txtEpPrefix.Name = "txtEpPrefix";
-            this.txtEpPrefix.TabIndex = 90;
+            this.txtEpPrefix.TabIndex = 84;
             // 
             // chkEpStart
             // 
@@ -1427,7 +1329,7 @@
             this.chkEpStart.Size = new System.Drawing.Size(15, 14);
             this.chkEpStart.UseVisualStyleBackColor = true;
             this.chkEpStart.Name = "chkEpStart";
-            this.chkEpStart.TabIndex = 91;
+            this.chkEpStart.TabIndex = 85;
             // 
             // txtEpStart
             // 
@@ -1438,7 +1340,7 @@
             this.txtEpStart.Size = new System.Drawing.Size(50, 23);
             this.txtEpStart.Text = "1";
             this.txtEpStart.Name = "txtEpStart";
-            this.txtEpStart.TabIndex = 92;
+            this.txtEpStart.TabIndex = 86;
             // 
             // chkEpMaterial
             // 
@@ -1453,7 +1355,7 @@
             this.chkEpMaterial.Size = new System.Drawing.Size(15, 14);
             this.chkEpMaterial.UseVisualStyleBackColor = true;
             this.chkEpMaterial.Name = "chkEpMaterial";
-            this.chkEpMaterial.TabIndex = 93;
+            this.chkEpMaterial.TabIndex = 87;
             // 
             // txtEpMaterial
             // 
@@ -1464,7 +1366,7 @@
             this.txtEpMaterial.Size = new System.Drawing.Size(80, 23);
             this.txtEpMaterial.Text = "250";
             this.txtEpMaterial.Name = "txtEpMaterial";
-            this.txtEpMaterial.TabIndex = 94;
+            this.txtEpMaterial.TabIndex = 88;
             // 
             // chkEpClass
             // 
@@ -1479,7 +1381,7 @@
             this.chkEpClass.Size = new System.Drawing.Size(15, 14);
             this.chkEpClass.UseVisualStyleBackColor = true;
             this.chkEpClass.Name = "chkEpClass";
-            this.chkEpClass.TabIndex = 95;
+            this.chkEpClass.TabIndex = 89;
             // 
             // txtEpClass
             // 
@@ -1490,44 +1392,18 @@
             this.txtEpClass.Size = new System.Drawing.Size(50, 23);
             this.txtEpClass.Text = "";
             this.txtEpClass.Name = "txtEpClass";
-            this.txtEpClass.TabIndex = 96;
+            this.txtEpClass.TabIndex = 90;
             // 
-            // chkEpFinish
+            // lbl28
             // 
-            this.structuresExtender.SetAttributeName(this.chkEpFinish, "EpFinish");
-            this.structuresExtender.SetAttributeTypeName(this.chkEpFinish, null);
-            this.structuresExtender.SetBindPropertyName(this.chkEpFinish, "Checked");
-            this.structuresExtender.SetIsFilter(this.chkEpFinish, true);
-            this.chkEpFinish.AutoSize = true;
-            this.chkEpFinish.Checked = true;
-            this.chkEpFinish.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEpFinish.Location = new System.Drawing.Point(629, 44);
-            this.chkEpFinish.Size = new System.Drawing.Size(15, 14);
-            this.chkEpFinish.UseVisualStyleBackColor = true;
-            this.chkEpFinish.Name = "chkEpFinish";
-            this.chkEpFinish.TabIndex = 97;
-            // 
-            // txtEpFinish
-            // 
-            this.structuresExtender.SetAttributeName(this.txtEpFinish, "EpFinish");
-            this.structuresExtender.SetAttributeTypeName(this.txtEpFinish, "String");
-            this.structuresExtender.SetBindPropertyName(this.txtEpFinish, "Text");
-            this.txtEpFinish.Location = new System.Drawing.Point(647, 40);
-            this.txtEpFinish.Size = new System.Drawing.Size(90, 23);
-            this.txtEpFinish.Text = "";
-            this.txtEpFinish.Name = "txtEpFinish";
-            this.txtEpFinish.TabIndex = 98;
-            // 
-            // lbl30
-            // 
-            this.structuresExtender.SetAttributeName(this.lbl30, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl30, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl30, null);
-            this.lbl30.AutoSize = true;
-            this.lbl30.Location = new System.Drawing.Point(12, 74);
-            this.lbl30.Text = "Flange (1)";
-            this.lbl30.Name = "lbl30";
-            this.lbl30.TabIndex = 99;
+            this.structuresExtender.SetAttributeName(this.lbl28, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl28, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl28, null);
+            this.lbl28.AutoSize = true;
+            this.lbl28.Location = new System.Drawing.Point(12, 74);
+            this.lbl28.Text = "Flange (1)";
+            this.lbl28.Name = "lbl28";
+            this.lbl28.TabIndex = 91;
             // 
             // chkFlName
             // 
@@ -1542,7 +1418,7 @@
             this.chkFlName.Size = new System.Drawing.Size(15, 14);
             this.chkFlName.UseVisualStyleBackColor = true;
             this.chkFlName.Name = "chkFlName";
-            this.chkFlName.TabIndex = 100;
+            this.chkFlName.TabIndex = 92;
             // 
             // txtFlName
             // 
@@ -1553,7 +1429,7 @@
             this.txtFlName.Size = new System.Drawing.Size(110, 23);
             this.txtFlName.Text = "FLANGE PLATE";
             this.txtFlName.Name = "txtFlName";
-            this.txtFlName.TabIndex = 101;
+            this.txtFlName.TabIndex = 93;
             // 
             // chkFlPrefix
             // 
@@ -1568,7 +1444,7 @@
             this.chkFlPrefix.Size = new System.Drawing.Size(15, 14);
             this.chkFlPrefix.UseVisualStyleBackColor = true;
             this.chkFlPrefix.Name = "chkFlPrefix";
-            this.chkFlPrefix.TabIndex = 102;
+            this.chkFlPrefix.TabIndex = 94;
             // 
             // txtFlPrefix
             // 
@@ -1579,7 +1455,7 @@
             this.txtFlPrefix.Size = new System.Drawing.Size(55, 23);
             this.txtFlPrefix.Text = "f";
             this.txtFlPrefix.Name = "txtFlPrefix";
-            this.txtFlPrefix.TabIndex = 103;
+            this.txtFlPrefix.TabIndex = 95;
             // 
             // chkFlStart
             // 
@@ -1594,7 +1470,7 @@
             this.chkFlStart.Size = new System.Drawing.Size(15, 14);
             this.chkFlStart.UseVisualStyleBackColor = true;
             this.chkFlStart.Name = "chkFlStart";
-            this.chkFlStart.TabIndex = 104;
+            this.chkFlStart.TabIndex = 96;
             // 
             // txtFlStart
             // 
@@ -1605,7 +1481,7 @@
             this.txtFlStart.Size = new System.Drawing.Size(50, 23);
             this.txtFlStart.Text = "1";
             this.txtFlStart.Name = "txtFlStart";
-            this.txtFlStart.TabIndex = 105;
+            this.txtFlStart.TabIndex = 97;
             // 
             // chkFlMaterial
             // 
@@ -1620,7 +1496,7 @@
             this.chkFlMaterial.Size = new System.Drawing.Size(15, 14);
             this.chkFlMaterial.UseVisualStyleBackColor = true;
             this.chkFlMaterial.Name = "chkFlMaterial";
-            this.chkFlMaterial.TabIndex = 106;
+            this.chkFlMaterial.TabIndex = 98;
             // 
             // txtFlMaterial
             // 
@@ -1631,7 +1507,7 @@
             this.txtFlMaterial.Size = new System.Drawing.Size(80, 23);
             this.txtFlMaterial.Text = "250";
             this.txtFlMaterial.Name = "txtFlMaterial";
-            this.txtFlMaterial.TabIndex = 107;
+            this.txtFlMaterial.TabIndex = 99;
             // 
             // chkFlClass
             // 
@@ -1646,7 +1522,7 @@
             this.chkFlClass.Size = new System.Drawing.Size(15, 14);
             this.chkFlClass.UseVisualStyleBackColor = true;
             this.chkFlClass.Name = "chkFlClass";
-            this.chkFlClass.TabIndex = 108;
+            this.chkFlClass.TabIndex = 100;
             // 
             // txtFlClass
             // 
@@ -1657,44 +1533,18 @@
             this.txtFlClass.Size = new System.Drawing.Size(50, 23);
             this.txtFlClass.Text = "";
             this.txtFlClass.Name = "txtFlClass";
-            this.txtFlClass.TabIndex = 109;
+            this.txtFlClass.TabIndex = 101;
             // 
-            // chkFlFinish
+            // lbl29
             // 
-            this.structuresExtender.SetAttributeName(this.chkFlFinish, "FlFinish");
-            this.structuresExtender.SetAttributeTypeName(this.chkFlFinish, null);
-            this.structuresExtender.SetBindPropertyName(this.chkFlFinish, "Checked");
-            this.structuresExtender.SetIsFilter(this.chkFlFinish, true);
-            this.chkFlFinish.AutoSize = true;
-            this.chkFlFinish.Checked = true;
-            this.chkFlFinish.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkFlFinish.Location = new System.Drawing.Point(629, 74);
-            this.chkFlFinish.Size = new System.Drawing.Size(15, 14);
-            this.chkFlFinish.UseVisualStyleBackColor = true;
-            this.chkFlFinish.Name = "chkFlFinish";
-            this.chkFlFinish.TabIndex = 110;
-            // 
-            // txtFlFinish
-            // 
-            this.structuresExtender.SetAttributeName(this.txtFlFinish, "FlFinish");
-            this.structuresExtender.SetAttributeTypeName(this.txtFlFinish, "String");
-            this.structuresExtender.SetBindPropertyName(this.txtFlFinish, "Text");
-            this.txtFlFinish.Location = new System.Drawing.Point(647, 70);
-            this.txtFlFinish.Size = new System.Drawing.Size(90, 23);
-            this.txtFlFinish.Text = "";
-            this.txtFlFinish.Name = "txtFlFinish";
-            this.txtFlFinish.TabIndex = 111;
-            // 
-            // lbl31
-            // 
-            this.structuresExtender.SetAttributeName(this.lbl31, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl31, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl31, null);
-            this.lbl31.AutoSize = true;
-            this.lbl31.Location = new System.Drawing.Point(12, 104);
-            this.lbl31.Text = "Stiffener (2)";
-            this.lbl31.Name = "lbl31";
-            this.lbl31.TabIndex = 112;
+            this.structuresExtender.SetAttributeName(this.lbl29, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl29, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl29, null);
+            this.lbl29.AutoSize = true;
+            this.lbl29.Location = new System.Drawing.Point(12, 104);
+            this.lbl29.Text = "Stiffener (2)";
+            this.lbl29.Name = "lbl29";
+            this.lbl29.TabIndex = 102;
             // 
             // chkStName
             // 
@@ -1709,7 +1559,7 @@
             this.chkStName.Size = new System.Drawing.Size(15, 14);
             this.chkStName.UseVisualStyleBackColor = true;
             this.chkStName.Name = "chkStName";
-            this.chkStName.TabIndex = 113;
+            this.chkStName.TabIndex = 103;
             // 
             // txtStName
             // 
@@ -1720,7 +1570,7 @@
             this.txtStName.Size = new System.Drawing.Size(110, 23);
             this.txtStName.Text = "STIFFENER";
             this.txtStName.Name = "txtStName";
-            this.txtStName.TabIndex = 114;
+            this.txtStName.TabIndex = 104;
             // 
             // chkStPrefix
             // 
@@ -1735,7 +1585,7 @@
             this.chkStPrefix.Size = new System.Drawing.Size(15, 14);
             this.chkStPrefix.UseVisualStyleBackColor = true;
             this.chkStPrefix.Name = "chkStPrefix";
-            this.chkStPrefix.TabIndex = 115;
+            this.chkStPrefix.TabIndex = 105;
             // 
             // txtStPrefix
             // 
@@ -1746,7 +1596,7 @@
             this.txtStPrefix.Size = new System.Drawing.Size(55, 23);
             this.txtStPrefix.Text = "f";
             this.txtStPrefix.Name = "txtStPrefix";
-            this.txtStPrefix.TabIndex = 116;
+            this.txtStPrefix.TabIndex = 106;
             // 
             // chkStStart
             // 
@@ -1761,7 +1611,7 @@
             this.chkStStart.Size = new System.Drawing.Size(15, 14);
             this.chkStStart.UseVisualStyleBackColor = true;
             this.chkStStart.Name = "chkStStart";
-            this.chkStStart.TabIndex = 117;
+            this.chkStStart.TabIndex = 107;
             // 
             // txtStStart
             // 
@@ -1772,7 +1622,7 @@
             this.txtStStart.Size = new System.Drawing.Size(50, 23);
             this.txtStStart.Text = "1";
             this.txtStStart.Name = "txtStStart";
-            this.txtStStart.TabIndex = 118;
+            this.txtStStart.TabIndex = 108;
             // 
             // chkStMaterial
             // 
@@ -1787,7 +1637,7 @@
             this.chkStMaterial.Size = new System.Drawing.Size(15, 14);
             this.chkStMaterial.UseVisualStyleBackColor = true;
             this.chkStMaterial.Name = "chkStMaterial";
-            this.chkStMaterial.TabIndex = 119;
+            this.chkStMaterial.TabIndex = 109;
             // 
             // txtStMaterial
             // 
@@ -1798,7 +1648,7 @@
             this.txtStMaterial.Size = new System.Drawing.Size(80, 23);
             this.txtStMaterial.Text = "250";
             this.txtStMaterial.Name = "txtStMaterial";
-            this.txtStMaterial.TabIndex = 120;
+            this.txtStMaterial.TabIndex = 110;
             // 
             // chkStClass
             // 
@@ -1813,7 +1663,7 @@
             this.chkStClass.Size = new System.Drawing.Size(15, 14);
             this.chkStClass.UseVisualStyleBackColor = true;
             this.chkStClass.Name = "chkStClass";
-            this.chkStClass.TabIndex = 121;
+            this.chkStClass.TabIndex = 111;
             // 
             // txtStClass
             // 
@@ -1824,44 +1674,18 @@
             this.txtStClass.Size = new System.Drawing.Size(50, 23);
             this.txtStClass.Text = "";
             this.txtStClass.Name = "txtStClass";
-            this.txtStClass.TabIndex = 122;
+            this.txtStClass.TabIndex = 112;
             // 
-            // chkStFinish
+            // lbl30
             // 
-            this.structuresExtender.SetAttributeName(this.chkStFinish, "StFinish");
-            this.structuresExtender.SetAttributeTypeName(this.chkStFinish, null);
-            this.structuresExtender.SetBindPropertyName(this.chkStFinish, "Checked");
-            this.structuresExtender.SetIsFilter(this.chkStFinish, true);
-            this.chkStFinish.AutoSize = true;
-            this.chkStFinish.Checked = true;
-            this.chkStFinish.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkStFinish.Location = new System.Drawing.Point(629, 104);
-            this.chkStFinish.Size = new System.Drawing.Size(15, 14);
-            this.chkStFinish.UseVisualStyleBackColor = true;
-            this.chkStFinish.Name = "chkStFinish";
-            this.chkStFinish.TabIndex = 123;
-            // 
-            // txtStFinish
-            // 
-            this.structuresExtender.SetAttributeName(this.txtStFinish, "StFinish");
-            this.structuresExtender.SetAttributeTypeName(this.txtStFinish, "String");
-            this.structuresExtender.SetBindPropertyName(this.txtStFinish, "Text");
-            this.txtStFinish.Location = new System.Drawing.Point(647, 100);
-            this.txtStFinish.Size = new System.Drawing.Size(90, 23);
-            this.txtStFinish.Text = "";
-            this.txtStFinish.Name = "txtStFinish";
-            this.txtStFinish.TabIndex = 124;
-            // 
-            // lbl32
-            // 
-            this.structuresExtender.SetAttributeName(this.lbl32, null);
-            this.structuresExtender.SetAttributeTypeName(this.lbl32, null);
-            this.structuresExtender.SetBindPropertyName(this.lbl32, null);
-            this.lbl32.AutoSize = true;
-            this.lbl32.Location = new System.Drawing.Point(12, 140);
-            this.lbl32.Text = "Class / Finish để trống = lấy theo web rafter.";
-            this.lbl32.Name = "lbl32";
-            this.lbl32.TabIndex = 125;
+            this.structuresExtender.SetAttributeName(this.lbl30, null);
+            this.structuresExtender.SetAttributeTypeName(this.lbl30, null);
+            this.structuresExtender.SetBindPropertyName(this.lbl30, null);
+            this.lbl30.AutoSize = true;
+            this.lbl30.Location = new System.Drawing.Point(12, 140);
+            this.lbl30.Text = "Class để trống = lấy theo web rafter. Finish luôn theo web rafter (part hàn vào rafter).";
+            this.lbl30.Name = "lbl30";
+            this.lbl30.TabIndex = 113;
             // 
             // lblCredit
             // 
@@ -1869,13 +1693,13 @@
             this.structuresExtender.SetAttributeTypeName(this.lblCredit, null);
             this.structuresExtender.SetBindPropertyName(this.lblCredit, null);
             this.lblCredit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblCredit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
+            this.lblCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
             this.lblCredit.ForeColor = System.Drawing.Color.DimGray;
             this.lblCredit.Location = new System.Drawing.Point(6, 497);
             this.lblCredit.Name = "lblCredit";
             this.lblCredit.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.lblCredit.Size = new System.Drawing.Size(848, 18);
-            this.lblCredit.TabIndex = 126;
+            this.lblCredit.TabIndex = 114;
             this.lblCredit.Text = "Create by Snit";
             this.lblCredit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -1888,7 +1712,7 @@
             this.okApplyModifyGetOnOffCancel.Location = new System.Drawing.Point(6, 515);
             this.okApplyModifyGetOnOffCancel.Name = "okApplyModifyGetOnOffCancel";
             this.okApplyModifyGetOnOffCancel.Size = new System.Drawing.Size(848, 30);
-            this.okApplyModifyGetOnOffCancel.TabIndex = 127;
+            this.okApplyModifyGetOnOffCancel.TabIndex = 115;
             this.okApplyModifyGetOnOffCancel.OkClicked += new System.EventHandler(this.okApply_OkClicked);
             this.okApplyModifyGetOnOffCancel.ApplyClicked += new System.EventHandler(this.okApply_ApplyClicked);
             this.okApplyModifyGetOnOffCancel.ModifyClicked += new System.EventHandler(this.okApply_ModifyClicked);
@@ -1909,7 +1733,7 @@
             this.saveLoad.Name = "saveLoad";
             this.saveLoad.SaveAsText = "";
             this.saveLoad.Size = new System.Drawing.Size(848, 43);
-            this.saveLoad.TabIndex = 128;
+            this.saveLoad.TabIndex = 116;
             this.saveLoad.UserDefinedHelpFilePath = null;
             // 
             // MainForm
@@ -1917,7 +1741,7 @@
             this.structuresExtender.SetAttributeName(this, null);
             this.structuresExtender.SetAttributeTypeName(this, null);
             this.structuresExtender.SetBindPropertyName(this, null);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(860, 547);
@@ -1925,7 +1749,7 @@
             this.Controls.Add(this.lblCredit);
             this.Controls.Add(this.okApplyModifyGetOnOffCancel);
             this.Controls.Add(this.saveLoad);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -1969,71 +1793,65 @@
         private System.Windows.Forms.CheckBox chkEp2Bot;
         private System.Windows.Forms.TextBox txtEp2Bot;
         private System.Windows.Forms.Label lbl3;
-        private System.Windows.Forms.CheckBox chkEp1Left;
-        private System.Windows.Forms.TextBox txtEp1Left;
+        private System.Windows.Forms.CheckBox chkEpLeft;
+        private System.Windows.Forms.TextBox txtEpLeft;
         private System.Windows.Forms.CheckBox chkBoltDistAcross;
         private System.Windows.Forms.TextBox txtBoltDistAcross;
-        private System.Windows.Forms.CheckBox chkEp1Right;
-        private System.Windows.Forms.TextBox txtEp1Right;
+        private System.Windows.Forms.CheckBox chkEpRight;
+        private System.Windows.Forms.TextBox txtEpRight;
         private System.Windows.Forms.Label lbl4;
-        private System.Windows.Forms.CheckBox chkEp2Left;
-        private System.Windows.Forms.TextBox txtEp2Left;
-        private System.Windows.Forms.CheckBox chkEp2Right;
-        private System.Windows.Forms.TextBox txtEp2Right;
         private System.Windows.Forms.Label lbl5;
-        private System.Windows.Forms.Label lbl6;
         private System.Windows.Forms.CheckBox chkBoltDistDown;
         private System.Windows.Forms.TextBox txtBoltDistDown;
-        private System.Windows.Forms.Label lbl7;
+        private System.Windows.Forms.Label lbl6;
         private System.Windows.Forms.CheckBox chkBoltDelete;
         private System.Windows.Forms.TextBox txtBoltDelete;
-        private System.Windows.Forms.Label lbl8;
+        private System.Windows.Forms.Label lbl7;
         private System.Windows.Forms.CheckBox chkBoltSize;
         private Tekla.Structures.Dialog.UIControls.BoltCatalogSize bszBoltSize;
-        private System.Windows.Forms.Label lbl9;
+        private System.Windows.Forms.Label lbl8;
         private System.Windows.Forms.CheckBox chkBoltStandard;
         private Tekla.Structures.Dialog.UIControls.BoltCatalogStandard bcsBoltStandard;
-        private System.Windows.Forms.Label lbl10;
+        private System.Windows.Forms.Label lbl9;
         private System.Windows.Forms.CheckBox chkBoltTolerance;
         private System.Windows.Forms.TextBox txtBoltTolerance;
+        private System.Windows.Forms.Label lbl10;
         private System.Windows.Forms.Label lbl11;
         private System.Windows.Forms.Label lbl12;
-        private System.Windows.Forms.Label lbl13;
         private System.Windows.Forms.CheckBox chkFlangeLength;
         private System.Windows.Forms.TextBox txtFlangeLength;
         private System.Windows.Forms.PictureBox picFlange;
         private System.Windows.Forms.CheckBox chkStiffL;
         private System.Windows.Forms.TextBox txtStiffL;
+        private System.Windows.Forms.Label lbl13;
         private System.Windows.Forms.Label lbl14;
-        private System.Windows.Forms.Label lbl15;
         private System.Windows.Forms.CheckBox chkFlangeOn;
         private System.Windows.Forms.ComboBox cboFlangeOn;
-        private System.Windows.Forms.Label lbl16;
+        private System.Windows.Forms.Label lbl15;
         private System.Windows.Forms.CheckBox chkFlangeProfile;
         private System.Windows.Forms.TextBox txtFlangeProfile;
+        private System.Windows.Forms.Label lbl16;
         private System.Windows.Forms.Label lbl17;
-        private System.Windows.Forms.Label lbl18;
         private System.Windows.Forms.CheckBox chkStiffOn;
         private System.Windows.Forms.ComboBox cboStiffOn;
-        private System.Windows.Forms.Label lbl19;
+        private System.Windows.Forms.Label lbl18;
         private System.Windows.Forms.CheckBox chkStiffT;
         private System.Windows.Forms.TextBox txtStiffT;
-        private System.Windows.Forms.Label lbl20;
+        private System.Windows.Forms.Label lbl19;
         private System.Windows.Forms.CheckBox chkStiffB;
         private System.Windows.Forms.TextBox txtStiffB;
-        private System.Windows.Forms.Label lbl21;
+        private System.Windows.Forms.Label lbl20;
         private System.Windows.Forms.CheckBox chkStiffChamX;
         private System.Windows.Forms.TextBox txtStiffChamX;
-        private System.Windows.Forms.Label lbl22;
+        private System.Windows.Forms.Label lbl21;
         private System.Windows.Forms.CheckBox chkStiffChamY;
         private System.Windows.Forms.TextBox txtStiffChamY;
+        private System.Windows.Forms.Label lbl22;
         private System.Windows.Forms.Label lbl23;
         private System.Windows.Forms.Label lbl24;
         private System.Windows.Forms.Label lbl25;
         private System.Windows.Forms.Label lbl26;
         private System.Windows.Forms.Label lbl27;
-        private System.Windows.Forms.Label lbl28;
-        private System.Windows.Forms.Label lbl29;
         private System.Windows.Forms.CheckBox chkEpName;
         private System.Windows.Forms.TextBox txtEpName;
         private System.Windows.Forms.CheckBox chkEpPrefix;
@@ -2044,9 +1862,7 @@
         private System.Windows.Forms.TextBox txtEpMaterial;
         private System.Windows.Forms.CheckBox chkEpClass;
         private System.Windows.Forms.TextBox txtEpClass;
-        private System.Windows.Forms.CheckBox chkEpFinish;
-        private System.Windows.Forms.TextBox txtEpFinish;
-        private System.Windows.Forms.Label lbl30;
+        private System.Windows.Forms.Label lbl28;
         private System.Windows.Forms.CheckBox chkFlName;
         private System.Windows.Forms.TextBox txtFlName;
         private System.Windows.Forms.CheckBox chkFlPrefix;
@@ -2057,9 +1873,7 @@
         private System.Windows.Forms.TextBox txtFlMaterial;
         private System.Windows.Forms.CheckBox chkFlClass;
         private System.Windows.Forms.TextBox txtFlClass;
-        private System.Windows.Forms.CheckBox chkFlFinish;
-        private System.Windows.Forms.TextBox txtFlFinish;
-        private System.Windows.Forms.Label lbl31;
+        private System.Windows.Forms.Label lbl29;
         private System.Windows.Forms.CheckBox chkStName;
         private System.Windows.Forms.TextBox txtStName;
         private System.Windows.Forms.CheckBox chkStPrefix;
@@ -2070,9 +1884,7 @@
         private System.Windows.Forms.TextBox txtStMaterial;
         private System.Windows.Forms.CheckBox chkStClass;
         private System.Windows.Forms.TextBox txtStClass;
-        private System.Windows.Forms.CheckBox chkStFinish;
-        private System.Windows.Forms.TextBox txtStFinish;
-        private System.Windows.Forms.Label lbl32;
+        private System.Windows.Forms.Label lbl30;
         private System.Windows.Forms.Label lblCredit;
         private Tekla.Structures.Dialog.UIControls.OkApplyModifyGetOnOffCancel okApplyModifyGetOnOffCancel;
         private Tekla.Structures.Dialog.UIControls.SaveLoad saveLoad;

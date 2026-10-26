@@ -13,13 +13,11 @@ namespace RDS.BUSplice
         [StructuresField("Ep1T")] public double Ep1T;
         [StructuresField("Ep1Top")] public double Ep1Top;
         [StructuresField("Ep1Bot")] public double Ep1Bot;
-        [StructuresField("Ep1Left")] public double Ep1Left;
-        [StructuresField("Ep1Right")] public double Ep1Right;
         [StructuresField("Ep2T")] public double Ep2T;
         [StructuresField("Ep2Top")] public double Ep2Top;
         [StructuresField("Ep2Bot")] public double Ep2Bot;
-        [StructuresField("Ep2Left")] public double Ep2Left;
-        [StructuresField("Ep2Right")] public double Ep2Right;
+        [StructuresField("EpLeft")] public double EpLeft;     // mep trai / phai dung chung 2 endplate
+        [StructuresField("EpRight")] public double EpRight;
 
         // ---------- Bolt ----------
         [StructuresField("BoltTopOffset")] public double BoltTopOffset;   // tam hang tren cung -> top rafter nho (+ = phia tren)
@@ -43,27 +41,24 @@ namespace RDS.BUSplice
         [StructuresField("StiffChamX")] public double StiffChamX;
         [StructuresField("StiffChamY")] public double StiffChamY;
 
-        // ---------- Parts (Class / Finish trong = lay theo web rafter) ----------
+        // ---------- Parts (Class trong = lay theo web rafter; Finish luon theo web rafter) ----------
         [StructuresField("EpName")] public string EpName;
         [StructuresField("EpPrefix")] public string EpPrefix;
         [StructuresField("EpStart")] public int EpStart;
         [StructuresField("EpMaterial")] public string EpMaterial;
         [StructuresField("EpClass")] public string EpClass;
-        [StructuresField("EpFinish")] public string EpFinish;
 
         [StructuresField("FlName")] public string FlName;
         [StructuresField("FlPrefix")] public string FlPrefix;
         [StructuresField("FlStart")] public int FlStart;
         [StructuresField("FlMaterial")] public string FlMaterial;
         [StructuresField("FlClass")] public string FlClass;
-        [StructuresField("FlFinish")] public string FlFinish;
 
         [StructuresField("StName")] public string StName;
         [StructuresField("StPrefix")] public string StPrefix;
         [StructuresField("StStart")] public int StStart;
         [StructuresField("StMaterial")] public string StMaterial;
         [StructuresField("StClass")] public string StClass;
-        [StructuresField("StFinish")] public string StFinish;
     }
 
     /// <summary>Gia tri mac dinh cho ComboBox (index) - dat trong constructor MainForm.</summary>

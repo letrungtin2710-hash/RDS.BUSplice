@@ -225,7 +225,7 @@ namespace RDS.BUSplice
             part.PartNumber.StartNumber = info.Start;
             part.Material.MaterialString = info.Material;
             part.Class = string.IsNullOrEmpty(info.Class) ? refPart.Class : info.Class;
-            part.Finish = string.IsNullOrEmpty(info.Finish) ? refPart.Finish : info.Finish;
+            part.Finish = refPart.Finish;   // part han vao rafter -> finish theo rafter
         }
 
         /// <summary>Tam (1) = Beam profile PLT, tu xoay de be rong b nam theo Z local.</summary>

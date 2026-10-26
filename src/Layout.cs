@@ -103,8 +103,8 @@ namespace RDS.BUSplice
             double bL = r.BoltZ[0], bR = r.BoltZ[r.BoltZ.Count - 1];
 
             // ---------------- Endplate (mep tinh tu bolt ngoai cung, KHONG vat) ----------------
-            r.Ep1 = new RectPlate { X = x0 - p.Ep1T / 2, T = p.Ep1T, YTop = bTop + p.Ep1Top, YBot = bBot - p.Ep1Bot, ZLeft = bL - p.Ep1Left, ZRight = bR + p.Ep1Right };
-            r.Ep2 = new RectPlate { X = x0 + p.Ep2T / 2, T = p.Ep2T, YTop = bTop + p.Ep2Top, YBot = bBot - p.Ep2Bot, ZLeft = bL - p.Ep2Left, ZRight = bR + p.Ep2Right };
+            r.Ep1 = new RectPlate { X = x0 - p.Ep1T / 2, T = p.Ep1T, YTop = bTop + p.Ep1Top, YBot = bBot - p.Ep1Bot, ZLeft = bL - p.EpLeft, ZRight = bR + p.EpRight };
+            r.Ep2 = new RectPlate { X = x0 + p.Ep2T / 2, T = p.Ep2T, YTop = bTop + p.Ep2Top, YBot = bBot - p.Ep2Bot, ZLeft = bL - p.EpLeft, ZRight = bR + p.EpRight };
 
             if (r.Ep1.YTop < S.TopY(x0) - 0.5 || r.Ep1.YBot > S.BotY(x0) + 0.5)
                 r.Warnings.Add("Endplate 1 khong phu het chieu cao rafter nho");
