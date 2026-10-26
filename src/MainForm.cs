@@ -29,9 +29,17 @@ namespace RDS.BUSplice
             MaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
             TopMost = true;
-            ClientSize = new Size(560, 640);
+            ClientSize = new Size(560, 694);
 
-            var tabs = new TabControl { Location = new Point(8, 8), Size = new Size(544, 384) };
+            // ---------------- bat / tat flange (1) + stiff (2): luon thay, ngoai tab ----------------
+            var onFl = new CheckBox { Text = "Flange (1)", Location = new Point(12, 10), AutoSize = true, ForeColor = CNavy, Font = new Font("Segoe UI", 9.5f, FontStyle.Bold) };
+            var onSt = new CheckBox { Text = "Stiffener (2)", Location = new Point(140, 10), AutoSize = true, ForeColor = CNavy, Font = new Font("Segoe UI", 9.5f, FontStyle.Bold) };
+            Controls.Add(onFl); Controls.Add(onSt);
+            _fields["FlangeOn"] = onFl; _fields["StiffOn"] = onSt;
+            onFl.CheckedChanged += (s, e) => EnableGroup(onFl.Checked, "Flange", "PFlange.");
+            onSt.CheckedChanged += (s, e) => EnableGroup(onSt.Checked, "Stiff", "PStiff.");
+
+            var tabs = new TabControl { Location = new Point(8, 36), Size = new Size(544, 410) };
             Controls.Add(tabs);
 
             // ---------------- Tab Endplate / Bolt ----------------
@@ -46,6 +54,7 @@ namespace RDS.BUSplice
             y = Field(t1, y, "Hàng trên cùng → top rafter nhỏ (+ = phía trên)", "BoltTopOffset", 80);
             y = Field(t1, y, "Khoảng cách hàng, tính xuống (vd 125 600 3*100)", "BoltDistDown", 200);
             y = Field(t1, y, "Khoảng cách cột (đối xứng tim web)", "BoltDistAcross", 200);
+            y = Field(t1, y, "Xoá bolt số (hàng trên→dưới, trái→phải; vd 1 2)", "BoltDelete", 200);
             y = Field(t1, y, "Bolt size", "BoltSize", 80);
             y = Field(t1, y, "Bolt standard", "BoltStandard", 120);
             Field(t1, y, "Tolerance", "BoltTolerance", 80);
@@ -53,11 +62,11 @@ namespace RDS.BUSplice
             // ---------------- Tab Flange / Stiff ----------------
             var t2 = NewTab(tabs, "Flange (1) / Stiff (2)");
             y = 10;
-            y = Check(t2, y, "Tạo flange (1) + cắt top flange / web rafter lớn", "FlangeOn");
+            y = Header(t2, "Flange (1) - cắt top flange / web rafter lớn, 2 đầu tấm cắt vuông", y);
             y = Field(t2, y, "Profile (PLTt*b)", "FlangeProfile", 120);
             y = Field(t2, y, "Chiều dài L từ mặt endplate (dọc top flange lớn)", "FlangeLength", 80);
             y += 10;
-            y = Check(t2, y, "Tạo stiffener (2) - 2 tấm, mỗi bên web", "StiffOn");
+            y = Header(t2, "Stiffener (2) - 2 tấm, mỗi bên web", y);
             y = Field(t2, y, "t", "StiffT", 80);
             y = Field(t2, y, "b (0 = tới mép flange rafter lớn)", "StiffB", 80);
             y = Field(t2, y, "L từ mặt endplate", "StiffL", 80);
@@ -74,25 +83,36 @@ namespace RDS.BUSplice
             Note(t3, y + 4, "Class / Finish để trống = lấy theo web rafter.");
 
             // ---------------- nut ----------------
-            var run = Btn("Pick 2 rafter → Tạo", true); run.Location = new Point(8, 400); run.Size = new Size(200, 32);
+            var run = Btn("Pick 2 rafter → Tạo", true); run.Location = new Point(8, 454); run.Size = new Size(200, 32);
             run.Click += (s, e) => { if (!Busy) RunClicked?.Invoke(); };
-            var undo = Btn("Xoá lần chạy trước", false); undo.ForeColor = CErr; undo.Location = new Point(216, 400); undo.Size = new Size(150, 32);
+            var undo = Btn("Xoá lần chạy trước", false); undo.ForeColor = CErr; undo.Location = new Point(216, 454); undo.Size = new Size(150, 32);
             undo.Click += (s, e) => { if (!Busy) UndoClicked?.Invoke(); };
-            var def = Btn("Mặc định", false); def.Location = new Point(374, 400); def.Size = new Size(90, 32);
+            var def = Btn("Mặc định", false); def.Location = new Point(374, 454); def.Size = new Size(90, 32);
             def.Click += (s, e) => { if (!Busy) { SetSettings(new Settings()); Log("Đã nạp giá trị mặc định", CNavy); } };
             Controls.AddRange(new Control[] { run, undo, def });
 
-            _log = new RichTextBox { Location = new Point(8, 440), Size = new Size(544, 172), ReadOnly = true, BackColor = CLogBg, Font = new Font("Consolas", 8.5f), BorderStyle = BorderStyle.FixedSingle };
+            _log = new RichTextBox { Location = new Point(8, 494), Size = new Size(544, 172), ReadOnly = true, BackColor = CLogBg, Font = new Font("Consolas", 8.5f), BorderStyle = BorderStyle.FixedSingle };
             Controls.Add(_log);
 
             var cr = new Label
             {
                 Text = "(c) 2026 Rockford Drafting Services (RDS). All rights reserved.   Create by Snit",
                 ForeColor = CRed, Font = new Font("Segoe UI", 8.5f, FontStyle.Bold),
-                TextAlign = ContentAlignment.MiddleCenter, Location = new Point(0, 616), Size = new Size(560, 20)
+                TextAlign = ContentAlignment.MiddleCenter, Location = new Point(0, 670), Size = new Size(560, 20)
             };
             Controls.Add(cr);
             Shown += (s, e) => Activate();
+        }
+
+        /// <summary>Mo / khoa cac o thuoc nhom (ten key bat dau bang prefix), tru chinh o bat tat.</summary>
+        void EnableGroup(bool on, params string[] prefixes)
+        {
+            foreach (var kv in _fields)
+            {
+                if (kv.Key.EndsWith("On")) continue;
+                foreach (string pf in prefixes)
+                    if (kv.Key.StartsWith(pf)) kv.Value.Enabled = on;
+            }
         }
 
         static string[] Keys(string p) => new[] { p + ".Name", p + ".Prefix", p + ".Start", p + ".Material", p + ".Class", p + ".Finish" };
@@ -119,13 +139,6 @@ namespace RDS.BUSplice
             parent.Controls.Add(new Label { Text = label, Location = new Point(8, y + 3), Size = new Size(300, 18) });
             var tb = new TextBox { Location = new Point(312, y), Width = w };
             parent.Controls.Add(tb); _fields[key] = tb;
-            return y + 26;
-        }
-
-        int Check(Control parent, int y, string label, string key)
-        {
-            var cb = new CheckBox { Text = label, Location = new Point(8, y), AutoSize = true, ForeColor = CNavy, Font = new Font("Segoe UI", 9f, FontStyle.Bold) };
-            parent.Controls.Add(cb); _fields[key] = cb;
             return y + 26;
         }
 
@@ -164,6 +177,8 @@ namespace RDS.BUSplice
                 if (kv.Value is CheckBox cb) cb.Checked = v == "1";
                 else kv.Value.Text = v;
             }
+            EnableGroup(s.FlangeOn, "Flange", "PFlange.");
+            EnableGroup(s.StiffOn, "Stiff", "PStiff.");
         }
 
         /// <summary>Doc form -> Settings. O sai dinh dang -> nem loi kem ten o.</summary>

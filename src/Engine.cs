@@ -161,12 +161,7 @@ namespace RDS.BUSplice
             if (lay.HasFlange)
             {
                 Beam fl = FlangePlate(p, f, lay, L.Web);
-                if (fl != null)
-                {
-                    FitPlane(fl, f.ToGlobal(lay.FitLargeX, 0, 0), f.Y, f.Z);
-                    FitPlane(fl, f.ToGlobal(lay.FarPoint, 0), f.Dir(lay.FarNormal.Left), f.Z);
-                    largeExtras.Add(fl);
-                }
+                if (fl != null) largeExtras.Add(fl);   // KHONG fitting: 2 dau tam cat vuong theo phuong tam
                 CutWeb(f, lay.WebCut, gl.WebZc, gl.WebT + 20, L.Web);
             }
 
@@ -290,48 +285,107 @@ namespace RDS.BUSplice
             V3 a = f.ToGlobal(lay.X0, lay.BoltY[0], zc);
             V3 e = lay.BoltY.Count > 1 ? f.ToGlobal(lay.X0, lay.BoltY[lay.BoltY.Count - 1], zc) : f.ToGlobal(lay.X0, lay.BoltY[0] - 100, zc);
 
-            var b = new BoltArray
+            if (lay.BoltKeep.Count == 0) { Warnings.Add("Khong con bolt nao - bo qua bolt"); return; }
+            bool deleted = lay.BoltDeleted.Count > 0;
+            // Vi tri bolt mong muon (global): kiem tra ca huong truc LAN phia trai/phai (XY list khong doi xung).
+            var expect = lay.BoltKeep.Select(k => f.ToGlobal(lay.X0, k.X, k.Y)).ToList();
+
+            // Khong xoa bolt -> BoltArray (sua tay trong Tekla de hon). Co xoa -> BoltXYList chi chua bolt con lai.
+            // BoltXYList KHONG co Remove/Set dist (reflection dll 2020) -> doi dau Y = xoa group, tao lai.
+            Func<int, Position.RotationEnum, BoltGroup> make = (sg, rot) =>
             {
-                PartToBoltTo = ep2,
-                PartToBeBolted = ep1,
-                FirstPosition = P(a),
-                SecondPosition = P(e),
-                BoltSize = size,
-                BoltStandard = std,
-                Tolerance = p.BoltTolerance,
-                BoltType = BoltGroup.BoltTypeEnum.BOLT_TYPE_SITE,
-                ThreadInMaterial = BoltGroup.BoltThreadInMaterialEnum.THREAD_IN_MATERIAL_YES,
-                CutLength = 2 * (p.Ep1T + p.Ep2T) + 40,
-                ExtraLength = 0,
-                Bolt = true, Washer1 = false, Washer2 = false, Washer3 = true, Nut1 = true, Nut2 = false,
-                Hole1 = true, Hole2 = true, Hole3 = true, Hole4 = true, Hole5 = true
+                BoltGroup g = deleted ? (BoltGroup)XYList(lay, zc, sg) : ArrayOf(lay, p);
+                g.PartToBoltTo = ep2;
+                g.PartToBeBolted = ep1;
+                g.FirstPosition = P(a);
+                g.SecondPosition = P(e);
+                g.BoltSize = size;
+                g.BoltStandard = std;
+                g.Tolerance = p.BoltTolerance;
+                g.BoltType = BoltGroup.BoltTypeEnum.BOLT_TYPE_SITE;
+                g.ThreadInMaterial = BoltGroup.BoltThreadInMaterialEnum.THREAD_IN_MATERIAL_YES;
+                g.CutLength = 2 * (p.Ep1T + p.Ep2T) + 40;
+                g.ExtraLength = 0;
+                g.Bolt = true; g.Washer1 = false; g.Washer2 = false; g.Washer3 = true; g.Nut1 = true; g.Nut2 = false;
+                g.Hole1 = true; g.Hole2 = true; g.Hole3 = true; g.Hole4 = true; g.Hole5 = true;
+                g.Position.Plane = Position.PlaneEnum.MIDDLE;
+                g.Position.Depth = Position.DepthEnum.MIDDLE;
+                g.Position.Rotation = rot;
+                return g.Insert() ? g : null;
             };
-            b.Position.Plane = Position.PlaneEnum.MIDDLE;
-            b.Position.Depth = Position.DepthEnum.MIDDLE;
-            b.Position.Rotation = Position.RotationEnum.FRONT;
-            if (lay.BoltY.Count == 1) b.AddBoltDistX(0);
-            for (int i = 1; i < lay.BoltY.Count; i++) b.AddBoltDistX(Math.Round(lay.BoltY[i - 1] - lay.BoltY[i], 2));
-            var across = Geo.ParseList(p.BoltDistAcross);
-            if (across.Count == 0) b.AddBoltDistY(0);
-            foreach (double d in across) b.AddBoltDistY(d);
 
-            if (!b.Insert()) { Warnings.Add("Khong tao duoc bolt"); return; }
-            _created.Add(b);
+            BoltGroup b = make(1, Position.RotationEnum.FRONT);
+            if (b == null) { Warnings.Add("Khong tao duoc bolt"); return; }
 
-            // xoay toi khi truc bolt // X local (truc rafter nho)
-            Position.RotationEnum best = b.Position.Rotation; double bestDot = -1;
+            // 1) chon rotation: truc bolt // X local (truc rafter nho), uu tien vi tri khop
+            Position.RotationEnum best = b.Position.Rotation; double bestScore = double.MaxValue;
             foreach (var rot in new[] { Position.RotationEnum.FRONT, Position.RotationEnum.TOP, Position.RotationEnum.BACK, Position.RotationEnum.BELOW })
             {
                 b.Position.Rotation = rot; b.Modify();
                 CoordinateSystem cs = b.GetCoordinateSystem();
                 Vector z = Vector.Cross(cs.AxisX, cs.AxisY); z.Normalize();
                 double dot = Math.Abs(z.X * f.X.X + z.Y * f.X.Y + z.Z * f.X.Z);
-                _log(string.Format(CultureInfo.InvariantCulture, "  bolt rot={0} |z.X|={1:0.###}", rot, dot));
-                if (dot > bestDot + 1e-6) { bestDot = dot; best = rot; }
+                double err = PosError(b, expect);
+                double score = (dot < 0.99 ? 1e6 : 0) + err;
+                _log(string.Format(CultureInfo.InvariantCulture, "  bolt rot={0} |z.X|={1:0.###} posErr={2:0.#}", rot, dot, err));
+                if (score < bestScore - 1e-6) { bestScore = score; best = rot; }
             }
-            if (b.Position.Rotation != best) { b.Position.Rotation = best; b.Modify(); }
-            if (bestDot < 0.99) Warnings.Add("Bolt khong xoay dung truc - kiem tra");
-            _log(string.Format("Bolt {0} M{1} rows={2} cols={3} rot={4}", std, size, lay.BoltY.Count, lay.BoltZ.Count, best));
+            b.Position.Rotation = best; b.Modify();
+            int sign = 1;
+
+            // 2) XY list bi lat trai/phai -> tao lai voi dau Y nguoc, giu ban tot hon
+            if (deleted && bestScore > 1 && bestScore < 1e6)
+            {
+                BoltGroup b2 = make(-1, best);
+                double err2 = b2 == null ? 1e5 : PosError(b2, expect);
+                _log(string.Format(CultureInfo.InvariantCulture, "  bolt sign=-1 rot={0} posErr={1:0.#}", best, err2));
+                if (b2 != null && err2 < bestScore) { b.Delete(); b = b2; bestScore = err2; sign = -1; }
+                else if (b2 != null) b2.Delete();
+            }
+            _created.Add(b);
+
+            if (bestScore >= 1e6) Warnings.Add("Bolt khong xoay dung truc - kiem tra");
+            else if (bestScore > 1) Warnings.Add("Vi tri bolt lech " + bestScore.ToString("0.#", CultureInfo.InvariantCulture) + " mm - kiem tra");
+            _log(string.Format("Bolt {0} M{1} rows={2} cols={3} xoa=[{4}] con={5} rot={6} sign={7}", std, size, lay.BoltY.Count, lay.BoltZ.Count,
+                string.Join(" ", lay.BoltDeleted), lay.BoltKeep.Count, best, sign));
+        }
+
+        static BoltArray ArrayOf(SpliceLayout lay, Settings p)
+        {
+            var ba = new BoltArray();
+            if (lay.BoltY.Count == 1) ba.AddBoltDistX(0);
+            for (int i = 1; i < lay.BoltY.Count; i++) ba.AddBoltDistX(Math.Round(lay.BoltY[i - 1] - lay.BoltY[i], 2));
+            var across = Geo.ParseList(p.BoltDistAcross);
+            if (across.Count == 0) ba.AddBoltDistY(0);
+            foreach (double d in across) ba.AddBoltDistY(d);
+            return ba;
+        }
+
+        /// <summary>BoltXYList: X = khoang cach tu hang tren cung xuong (doc First->Second), Y = lech ngang so voi tim (sign = dao chieu).</summary>
+        static BoltXYList XYList(SpliceLayout lay, double zc, int sign)
+        {
+            var xy = new BoltXYList();
+            foreach (V2 k in lay.BoltKeep)
+            {
+                xy.AddBoltDistX(Math.Round(lay.BoltY[0] - k.X, 2));
+                xy.AddBoltDistY(Math.Round(sign * (k.Y - zc), 2));
+            }
+            return xy;
+        }
+
+        /// <summary>Sai lech lon nhat (mm) giua vi tri bolt Tekla tao va vi tri mong muon.</summary>
+        static double PosError(BoltGroup b, List<V3> expect)
+        {
+            b.Select();
+            ArrayList pos = b.BoltPositions;
+            if (pos == null || pos.Count != expect.Count) return 1e5;
+            double worst = 0;
+            foreach (Point q in pos)
+            {
+                V3 v = new V3(q.X, q.Y, q.Z);
+                worst = Math.Max(worst, expect.Min(x => (x - v).Len));
+            }
+            return worst;
         }
 
         void AddToAssembly(Part main, Part sec)

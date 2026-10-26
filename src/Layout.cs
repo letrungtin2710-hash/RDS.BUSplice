@@ -43,12 +43,14 @@ namespace RDS.BUSplice
     {
         public double X0, FitSmallX, FitLargeX;        // mat splice, mat fitting rafter nho / lon
         public List<double> BoltY = new List<double>(), BoltZ = new List<double>();
+        public List<int> BoltDeleted = new List<int>();     // so thu tu bolt bi xoa (1-based)
+        public List<V2> BoltKeep = new List<V2>();          // bolt con lai: X = Y local (hang), Y = Z local (cot)
         public RectPlate Ep1, Ep2;
 
         // Flange (1)
         public bool HasFlange;
         public double FlT, FlB;
-        public V2 FlStart, FlEnd;          // duong tim (giua be day) cua tam, da keo dai 2 dau de fitting cat
+        public V2 FlStart, FlEnd;          // duong tim (giua be day) cua tam; 2 dau cat VUONG theo phuong tam
         public double FlZ;                 // tim tam theo Z (= tim web rafter lon)
         public V2 FarPoint, FarNormal;     // mat F: qua FarPoint, phap tuyen FarNormal (doc top flange rafter lon)
         public V2 FlDir;
@@ -83,6 +85,20 @@ namespace RDS.BUSplice
             foreach (double d in Geo.ParseList(p.BoltDistDown)) { y -= d; r.BoltY.Add(y); }
             foreach (double z in Geo.CenteredPositions(Geo.ParseList(p.BoltDistAcross))) r.BoltZ.Add(S.WebZc + z);
 
+            // Bolt bi xoa (kieu Joining plates 14): danh so theo hang tu TREN xuong, trong hang tu TRAI sang PHAI
+            // (trai = phia -Z, dung o rafter nho nhin sang rafter lon). Kich thuoc endplate van tinh theo luoi day du.
+            int nc = r.BoltZ.Count, nTotal = r.BoltY.Count * nc;
+            foreach (double v in Geo.ParseList(p.BoltDelete))
+            {
+                int k = (int)Math.Round(v);
+                if (k < 1 || k > nTotal) { r.Warnings.Add("Bolt xoa so " + k + " ngoai luoi 1.." + nTotal); continue; }
+                if (!r.BoltDeleted.Contains(k)) r.BoltDeleted.Add(k);
+            }
+            for (int i = 0; i < r.BoltY.Count; i++)
+                for (int j = 0; j < nc; j++)
+                    if (!r.BoltDeleted.Contains(i * nc + j + 1)) r.BoltKeep.Add(new V2(r.BoltY[i], r.BoltZ[j]));
+            if (r.BoltKeep.Count == 0) r.Warnings.Add("Da xoa het bolt");
+
             double bTop = r.BoltY[0], bBot = r.BoltY[r.BoltY.Count - 1];
             double bL = r.BoltZ[0], bR = r.BoltZ[r.BoltZ.Count - 1];
 
@@ -113,10 +129,14 @@ namespace RDS.BUSplice
                 V2 d = Geo.PlateDirThrough(a, r.FarPoint, t);
                 V2 n = d.Left;
                 r.FlDir = d;
-                double len = (r.FarPoint - a).Dot(d);
-                double ext = 2 * t + 20;                       // keo dai 2 dau, fitting se cat dung mat
-                r.FlStart = a - n * (t / 2) - d * ext;
-                r.FlEnd = a + d * (len + ext) - n * (t / 2);
+                // Tam (1) CAT VUONG theo phuong cua no (Snit 26-Oct): KHONG fitting theo mat endplate / mat F.
+                // Dau endplate: dich dau vuong toi khi ca 2 goc nam ngoai mat endplate (x >= s2), goc gan nhat cham mat.
+                // Dau xa: goc duoi dau vuong = FarPoint (bottom tam = bottom top flange lon).
+                double u0 = d.X > 1e-9 ? Math.Max(0, -d.Y * t / d.X) : 0;
+                double u1 = (r.FarPoint - a).Dot(d);
+                if (u1 - u0 <= t) throw new InvalidOperationException("Chieu dai flange (1) qua ngan");
+                r.FlStart = a + d * u0 - n * (t / 2);
+                r.FlEnd = a + d * u1 - n * (t / 2);
 
                 // polygon cat web rafter lon: phan nam TREN mat duoi tam (1), ben trai mat F
                 Line2 under = Line2.Through(r.FarPoint, d);

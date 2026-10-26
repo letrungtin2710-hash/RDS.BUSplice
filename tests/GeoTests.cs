@@ -77,6 +77,21 @@ static class GeoTests
         Eq("Bottom (1) di qua FarPoint", botLine.N.Dot(lay.FarPoint) - botLine.C, 0, 0.05);
         Eq("FarPoint nam tren mat duoi top flange lon", L.Top.Bottom.N.Dot(lay.FarPoint) - L.Top.Bottom.C, 0, 0.05);
         Eq("L doc top flange lon", (lay.FarPoint - L.Top.Bottom.At(12)).Len, 600, 0.05);
+        // 2 dau tam (1) cat VUONG theo phuong tam: goc dau = tim +- n*t/2
+        V2 sTop = lay.FlStart + n * (lay.FlT / 2), sBot = lay.FlStart - n * (lay.FlT / 2);
+        V2 eBot = lay.FlEnd - n * (lay.FlT / 2);
+        Eq("Dau endplate: goc gan nhat cham mat endplate", Math.Min(sTop.X, sBot.X), lay.FitLargeX, 0.01);
+        True("Dau endplate: khong goc nao lan vao endplate", sTop.X >= lay.FitLargeX - 1e-6 && sBot.X >= lay.FitLargeX - 1e-6);
+        Eq("Dau xa: goc duoi = FarPoint", (eBot - lay.FarPoint).Len, 0, 0.01);
+        Eq("Duong dau (start->end) // huong tam", Math.Abs((lay.FlEnd - lay.FlStart).Unit.Dot(lay.FlDir.Left)), 0, 1e-9);
+
+        // tam doc xuong (rafter lon thap hon top nho) -> van khong lan vao endplate
+        var Ld = Member(0, 5000, 290, 0.05, -560, -0.02, 12, 230, 10);
+        var layD = SpliceLayout.Compute(new Settings { StiffOn = false }, S, Ld);
+        V2 nd = layD.FlDir.Left;
+        V2 dTop = layD.FlStart + nd * (layD.FlT / 2), dBot = layD.FlStart - nd * (layD.FlT / 2);
+        Eq("Tam doc xuong: goc gan nhat cham endplate", Math.Min(dTop.X, dBot.X), layD.FitLargeX, 0.01);
+
         True("Polygon cat web 5 dinh", lay.WebCut.Count == 5);
         True("Polygon: dinh 2 = FarPoint", (lay.WebCut[1] - lay.FarPoint).Len < 1e-6);
 
@@ -95,6 +110,15 @@ static class GeoTests
         p.FlangeOn = false; p.StiffOn = false;
         var lay2 = SpliceLayout.Compute(p, S, L);
         True("Tat flange/stiff", !lay2.HasFlange && lay2.Stiffs.Length == 0);
+
+        // xoa bolt: luoi 5 hang x 2 cot (mac dinh), xoa 1 (tren-trai) va 10 (duoi-phai)
+        var pd = new Settings { BoltDelete = "1 10 99" };
+        var layB = SpliceLayout.Compute(pd, S, L);
+        True("Xoa bolt: con 8", layB.BoltKeep.Count == 8);
+        True("Xoa bolt: so 99 bao loi", layB.Warnings.Exists(w => w.Contains("99")));
+        True("Bolt so 1 (tren-trai) bi xoa", !layB.BoltKeep.Exists(k => k.X == layB.BoltY[0] && k.Y == layB.BoltZ[0]));
+        True("Bolt so 2 (tren-phai) con", layB.BoltKeep.Exists(k => k.X == layB.BoltY[0] && k.Y == layB.BoltZ[1]));
+        Eq("Endplate van theo luoi day du", layB.Ep1.YTop, lay.Ep1.YTop);
 
         // settings ini round-trip
         string tmp = System.IO.Path.GetTempFileName();
