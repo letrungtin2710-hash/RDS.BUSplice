@@ -15,9 +15,9 @@ Log: `RDS_BUSplice.log` trong thư mục model. Cảnh báo hiện ở thanh pro
 ## Dialog
 | Tab | Nội dung |
 |---|---|
-| Endplate / Bolts | Hình Joining plates: t1 / t2, mép trên / dưới / trái / phải từng endplate (tính từ bolt ngoài cùng), tâm hàng bolt trên cùng → top rafter nhỏ, khoảng cách cột. Cột phải: khoảng cách hàng, xoá bolt số, bolt size / standard / tolerance |
-| Flange / Stiffener | Hình splice: L flange (1), L stiff (2). Cột phải: bật/tắt (No/Yes), profile PLTt*b, t / b / chamfer stiff |
-| Parts | Name / Prefix / Start / Material / Class / Finish của endplate, flange, stiff (Class / Finish trống = lấy theo web rafter) |
+| Endplate / Bolts | Hình Joining plates: mép trên / dưới từng endplate, mép trái / phải chung, gốc bolt **Top / Middle** + offset, khoảng cách cột. Cột phải: khoảng cách hàng, xoá bolt số, bolt size / standard / tolerance |
+| Flange / Stiffener | Hình splice: L flange (1), L stiff (2). Cột phải: bật/tắt (No/Yes, lăn chuột được), chamfer stiff |
+| Parts | t1 / t2 endplate, profile flange (1), t / b stiff; Name / Prefix / Start / Material / Class (Class trống = theo web rafter; Finish luôn theo web rafter) |
 
 Sửa dialog: mở `MainForm.cs` bằng **View Designer** (Shift+F7). Quy tắc bind ghi ở đầu `MainForm.cs`.
 - Ô chiều dài: AttributeTypeName = **Distance** → Tekla hiện dạng thập phân (45.00). Ô căn lề trái (TextAlign mặc định).
