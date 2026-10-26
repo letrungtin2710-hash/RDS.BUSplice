@@ -29,7 +29,9 @@ namespace RDS.BUSplice
         public double EpLeft = 45, EpRight = 45;
 
         // ---------- Bolt (tham chieu Joining plates 14) ----------
-        public double BoltTopOffset = 56;           // tam hang bolt tren cung -> top rafter nho (duong = phia tren)
+        public int BoltVertRef = 0;                 // 0 = Top: BoltTopOffset = tam hang tren cung -> top rafter nho
+                                                    // 1 = Middle: BoltTopOffset = tam nhom bolt -> giua chieu cao rafter nho
+        public double BoltTopOffset = 56;           // (duong = phia tren)
         public string BoltDistDown = "125 600 170 125";   // khoang cach cac hang, tinh xuong
         public string BoltDistAcross = "140";        // khoang cach cac cot (doi xung quanh tim web)
         public string BoltDelete = "";               // so bolt bi xoa, vd "1 2" (hang tren -> duoi, trai -> phai)

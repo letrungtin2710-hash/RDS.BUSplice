@@ -23,6 +23,7 @@ namespace RDS.BUSplice
         {
             InitializeComponent();
             SetComboDefaults();
+            WheelOnHover(this);
             cboFlangeOn.SelectedIndexChanged += (s, e) => EnableGroup(cboFlangeOn, "FlangeProfile", "FlangeLength", "FlName", "FlPrefix", "FlStart", "FlMaterial", "FlClass");
             cboStiffOn.SelectedIndexChanged += (s, e) => EnableGroup(cboStiffOn, "StiffT", "StiffB", "StiffL", "StiffChamX", "StiffChamY", "StName", "StPrefix", "StStart", "StMaterial", "StClass");
         }
@@ -41,6 +42,21 @@ namespace RDS.BUSplice
             }
         }
 
+        /// <summary>
+        /// Lan chuot tren ComboBox (No/Yes, Top/Middle) doi gia tri ngay khi re chuot len, khong can click truoc:
+        /// WinForms chi gui MouseWheel cho control dang focus -> focus combo khi chuot vao.
+        /// </summary>
+        private static void WheelOnHover(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                var cb = c as ComboBox;
+                if (cb != null && cb.DropDownStyle == ComboBoxStyle.DropDownList)
+                    cb.MouseEnter += (s, e) => { if (cb.Enabled && !cb.ContainsFocus) cb.Focus(); };
+                if (c.HasChildren) WheelOnHover(c);
+            }
+        }
+
         /// <summary>Flange / Stiff = No -> khoa o nhap cua nhom (gia tri van luu, chi khong dung).</summary>
         private void EnableGroup(ComboBox onOff, params string[] attrs)
         {
@@ -55,5 +71,12 @@ namespace RDS.BUSplice
         private void okApply_GetClicked(object sender, EventArgs e) { Get(); }
         private void okApply_OnOffClicked(object sender, EventArgs e) { ToggleSelection(); }
         private void okApply_CancelClicked(object sender, EventArgs e) { Close(); }
+
+        // Handler rong do VS Designer sinh (Designer.cs dang tham chieu) - xoa thi phai go dong "+=" trong Designer truoc.
+        private void lbl1_Click(object sender, EventArgs e) { }
+        private void lbl6_Click(object sender, EventArgs e) { }
+        private void lbl26_Click(object sender, EventArgs e) { }
+        private void chkEpClass_CheckedChanged(object sender, EventArgs e) { }
+        private void txtEpClass_TextChanged(object sender, EventArgs e) { }
     }
 }

@@ -31,6 +31,8 @@
             this.txtEp1Top = new System.Windows.Forms.TextBox();
             this.chkBoltTopOffset = new System.Windows.Forms.CheckBox();
             this.txtBoltTopOffset = new System.Windows.Forms.TextBox();
+            this.chkBoltVertRef = new System.Windows.Forms.CheckBox();
+            this.cboBoltVertRef = new System.Windows.Forms.ComboBox();
             this.chkEp1Bot = new System.Windows.Forms.CheckBox();
             this.txtEp1Bot = new System.Windows.Forms.TextBox();
             this.chkEp2Top = new System.Windows.Forms.CheckBox();
@@ -162,6 +164,8 @@
             this.tabEndplate.Controls.Add(this.txtEp1Top);
             this.tabEndplate.Controls.Add(this.chkBoltTopOffset);
             this.tabEndplate.Controls.Add(this.txtBoltTopOffset);
+            this.tabEndplate.Controls.Add(this.chkBoltVertRef);
+            this.tabEndplate.Controls.Add(this.cboBoltVertRef);
             this.tabEndplate.Controls.Add(this.chkEp1Bot);
             this.tabEndplate.Controls.Add(this.txtEp1Bot);
             this.tabEndplate.Controls.Add(this.chkEp2Top);
@@ -250,6 +254,36 @@
             this.chkBoltTopOffset.Size = new System.Drawing.Size(15, 14);
             this.chkBoltTopOffset.TabIndex = 13;
             this.chkBoltTopOffset.UseVisualStyleBackColor = true;
+            // 
+            // chkBoltVertRef
+            // 
+            this.structuresExtender.SetAttributeName(this.chkBoltVertRef, "BoltVertRef");
+            this.structuresExtender.SetAttributeTypeName(this.chkBoltVertRef, null);
+            this.chkBoltVertRef.AutoSize = true;
+            this.structuresExtender.SetBindPropertyName(this.chkBoltVertRef, "Checked");
+            this.chkBoltVertRef.Checked = true;
+            this.chkBoltVertRef.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkBoltVertRef, true);
+            this.chkBoltVertRef.Location = new System.Drawing.Point(34, 28);
+            this.chkBoltVertRef.Name = "chkBoltVertRef";
+            this.chkBoltVertRef.Size = new System.Drawing.Size(15, 14);
+            this.chkBoltVertRef.TabIndex = 200;
+            this.chkBoltVertRef.UseVisualStyleBackColor = true;
+            // 
+            // cboBoltVertRef
+            // 
+            this.structuresExtender.SetAttributeName(this.cboBoltVertRef, "BoltVertRef");
+            this.structuresExtender.SetAttributeTypeName(this.cboBoltVertRef, "Integer");
+            this.structuresExtender.SetBindPropertyName(this.cboBoltVertRef, "SelectedIndex");
+            this.cboBoltVertRef.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBoltVertRef.FormattingEnabled = true;
+            this.cboBoltVertRef.Items.AddRange(new object[] {
+            "Top",
+            "Middle"});
+            this.cboBoltVertRef.Location = new System.Drawing.Point(52, 24);
+            this.cboBoltVertRef.Name = "cboBoltVertRef";
+            this.cboBoltVertRef.Size = new System.Drawing.Size(60, 21);
+            this.cboBoltVertRef.TabIndex = 201;
             // 
             // txtBoltTopOffset
             // 
@@ -1661,6 +1695,8 @@
         private System.Windows.Forms.CheckBox chkEp1Top;
         private System.Windows.Forms.TextBox txtEp1Top;
         private System.Windows.Forms.CheckBox chkBoltTopOffset;
+        private System.Windows.Forms.CheckBox chkBoltVertRef;
+        private System.Windows.Forms.ComboBox cboBoltVertRef;
         private System.Windows.Forms.TextBox txtBoltTopOffset;
         private System.Windows.Forms.CheckBox chkEp1Bot;
         private System.Windows.Forms.TextBox txtEp1Bot;

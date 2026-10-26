@@ -53,7 +53,8 @@ namespace RDS.BUSplice
             y = Row(t1, y, "Cả 2 endplate", null, new[] { "EpLeft", "EpRight" });
             Note(t1, y, "Trái / phải: đứng ở rafter nhỏ nhìn sang rafter lớn."); y += 26;
             y = Header(t1, "Bolt", y);
-            y = Field(t1, y, "Hàng trên cùng → top rafter nhỏ (+ = phía trên)", "BoltTopOffset", 80);
+            y = Field(t1, y, "Gốc bolt: 0 = Top, 1 = Middle", "BoltVertRef", 80);
+            y = Field(t1, y, "Offset (Top: hàng trên → top nhỏ; Middle: tâm)", "BoltTopOffset", 80);
             y = Field(t1, y, "Khoảng cách hàng, tính xuống (vd 125 600 3*100)", "BoltDistDown", 200);
             y = Field(t1, y, "Khoảng cách cột (đối xứng tim web)", "BoltDistAcross", 200);
             y = Field(t1, y, "Xoá bolt số (hàng trên→dưới, trái→phải; vd 1 2)", "BoltDelete", 200);

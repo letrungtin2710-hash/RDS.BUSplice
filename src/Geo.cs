@@ -64,6 +64,19 @@ namespace RDS.BUSplice
             return new Frame { O = origin, X = x, Y = y, Z = z };
         }
 
+        /// <summary>
+        /// Frame cua 1 rafter BU: truc X = phuong TOP FLANGE (tam phang dai -> PCA dinh = dung canh dai),
+        /// huong ve diem 'toward'. KHONG dung PCA ca tiet dien: rafter tapered / ngan lam truc lech
+        /// (bug 26-Oct: endplate nghieng ~4.7 do, do 80 ra 79.73).
+        /// </summary>
+        public static Frame FromMember(IList<V3> topFlange, IList<V3> all, V3 toward)
+        {
+            V3 c = Geo.Centroid(all);
+            V3 ax = Geo.Principal(topFlange);
+            if (ax.Dot(toward - c) < 0) ax = ax * -1;
+            return FromAxis(c, ax);
+        }
+
         public V3 ToLocal(V3 p) { V3 d = p - O; return new V3(d.Dot(X), d.Dot(Y), d.Dot(Z)); }
         public V3 ToGlobal(double x, double y, double z) => O + X * x + Y * y + Z * z;
         public V3 ToGlobal(V2 p, double z) => ToGlobal(p.X, p.Y, z);

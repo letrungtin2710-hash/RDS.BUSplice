@@ -20,7 +20,8 @@ namespace RDS.BUSplice
         [StructuresField("EpRight")] public double EpRight;
 
         // ---------- Bolt ----------
-        [StructuresField("BoltTopOffset")] public double BoltTopOffset;   // tam hang tren cung -> top rafter nho (+ = phia tren)
+        [StructuresField("BoltVertRef")] public int BoltVertRef;          // 0 = Top, 1 = Middle (giong Joining plates 14)
+        [StructuresField("BoltTopOffset")] public double BoltTopOffset;   // Top: hang tren cung -> top rafter nho; Middle: tam nhom bolt -> giua rafter nho (+ = len)
         [StructuresField("BoltDistDown")] public string BoltDistDown;     // list khoang cach hang, tinh xuong
         [StructuresField("BoltDistAcross")] public string BoltDistAcross; // list khoang cach cot
         [StructuresField("BoltDelete")] public string BoltDelete;         // so bolt bi xoa
@@ -68,6 +69,7 @@ namespace RDS.BUSplice
         {
             { "FlangeOn", 1 },
             { "StiffOn", 1 },
+            { "BoltVertRef", 0 },
         };
     }
 }

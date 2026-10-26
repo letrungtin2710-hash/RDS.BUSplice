@@ -100,7 +100,8 @@ namespace RDS.BUSplice
             s.Ep2T = D(d.Ep2T, s.Ep2T); s.Ep2Top = D(d.Ep2Top, s.Ep2Top); s.Ep2Bot = D(d.Ep2Bot, s.Ep2Bot);
             s.EpLeft = D(d.EpLeft, s.EpLeft); s.EpRight = D(d.EpRight, s.EpRight);
 
-            s.BoltTopOffset = D(d.BoltTopOffset, s.BoltTopOffset);
+            s.BoltVertRef = I(d.BoltVertRef, 0);
+            s.BoltTopOffset = D(d.BoltTopOffset, s.BoltVertRef == 1 ? 0 : s.BoltTopOffset);
             s.BoltDistDown = S(d.BoltDistDown, s.BoltDistDown);
             s.BoltDistAcross = S(d.BoltDistAcross, s.BoltDistAcross);
             s.BoltDelete = S(d.BoltDelete, "", true);
