@@ -16,10 +16,12 @@ Giai đoạn 1 = **macro** (test không cần tắt Tekla), giai đoạn 2 = plu
 | B3 | Bolt | Tham chiếu Joining plates (14). Layout: tâm hàng trên cùng → top rafter nhỏ (dương = phía trên), list khoảng cách dọc xuống (hỗ trợ `3*100`), list khoảng cách ngang (Tekla dist Y, đối xứng quanh tim web). |
 | C1 | Flange (1) | Profile `PLTt*b` nhập tay. Đầu sát endplate: top tấm = top flange rafter nhỏ. Đầu xa (L đo theo trục rafter lớn từ mặt ngoài endplate 2): bottom tấm = bottom top flange rafter lớn. |
 | C2 | Cắt rafter lớn | Khi có flange (1): cắt ngắn top flange rafter lớn tới mặt F; cắt web rafter lớn phần trên mặt dưới tấm (1). |
-| C3 | Đầu xa tấm (1) | (Claude chốt, Snit chưa phản đối) Cắt theo **cùng mặt F** với top flange rafter lớn (F ⊥ trục rafter lớn) → mối butt weld (FSBW) khít. Đầu sát endplate fitting theo mặt endplate. |
+| C3 | Đầu tấm (1) | **Cắt vuông theo phương của tấm, không fitting xiên** (Snit 26-Oct, sửa quyết định cũ). Đầu endplate: góc gần nhất chạm mặt endplate, không góc nào lấn vào endplate. Đầu xa: góc dưới = mặt dưới top flange lớn tại L. Top flange rafter lớn vẫn cắt tại F ⊥ chính nó. |
 | D1 | Stiff (2) | 2 tấm, mỗi bên web rafter lớn 1 tấm, song song bottom flange rafter nhỏ, **bottom stiff = bottom face bottom flange rafter nhỏ**. Ô nhập t, b (0 = tự = mép flange rafter lớn), L (từ mặt ngoài endplate 2). |
 | D2 | Chamfer stiff | Góc giáp web + endplate, mặc định 15×15. |
 | E1 | Assembly | Endplate 1 → assembly rafter nhỏ; endplate 2, flange (1), stiff (2) → assembly rafter lớn (`Assembly.Add`). Bolt Site. |
+| B4 | Xoá bolt | Ô "xoá bolt số" kiểu Joining plates (14): đánh số hàng trên→dưới, trong hàng trái→phải (trái = −Z). Có xoá thì dùng BoltXYList, không xoá dùng BoltArray. Kích thước endplate vẫn theo lưới đầy đủ. |
+| F1 | Bật/tắt | Checkbox Flange (1) / Stiffener (2) nằm ngoài tab (luôn thấy), tắt thì khoá các ô của nhóm. |
 | E2 | Weld | Không tạo. Snit tự key trong bản vẽ. |
 
 ## Rủi ro đã biết
