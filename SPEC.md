@@ -11,7 +11,7 @@ Giai đoạn 1 = **macro** (test không cần tắt Tekla), giai đoạn 2 = plu
 | A1 | Input | Pick 1 part bất kỳ của BU 1, rồi BU 2. Tool leo lên component cha (`GetFatherComponent`) lấy đủ part con; không có component cha thì lấy assembly (main + secondaries). |
 | A2 | Nhận diện | Part tên chứa `FLANGE` = flange (luôn như vậy). Web = part còn lại, tên theo main part (RAFTER, COLUMN…), chọn bằng hình học: plate mỏng theo pháp tuyến mặt phẳng rafter, cao nhất. Top/bottom flange theo cao độ trong hệ toạ độ rafter. |
 | A3 | Nhỏ / lớn | So chiều cao (top flange top → bottom flange bottom) tại mặt splice. Bằng nhau (±2 mm) thì rafter có top cao hơn (Z) = "lớn" (nơi đặt flange + stiff). Flange (1) và stiff (2) đều tuỳ chọn → dùng cho splice thường chỉ có endplate + bolt. |
-| B1 | Mặt splice | Mặt phẳng ⊥ trục rafter nhỏ, qua đầu rafter nhỏ (điểm xa nhất của rafter nhỏ theo trục, hướng về rafter lớn). Mỗi rafter fitting lùi đúng 1 bề dày endplate của nó. **Endplate không vát**: tấm chữ nhật, nằm trong mặt phẳng splice; rafter lớn được fitting theo mặt phẳng đó (đầu rafter lớn có thể xiên). |
+| B1 | Mặt splice | Mặt phẳng ⊥ trục rafter nhỏ (**trục = phương top flange rafter nhỏ**, sửa 26-Oct: PCA cả tiết diện làm endplate nghiêng ~4.7° với rafter tapered), qua đầu rafter nhỏ (điểm xa nhất của rafter nhỏ theo trục, hướng về rafter lớn). Mỗi rafter fitting lùi đúng 1 bề dày endplate của nó. **Endplate không vát**: tấm chữ nhật, nằm trong mặt phẳng splice; rafter lớn được fitting theo mặt phẳng đó (đầu rafter lớn có thể xiên). |
 | B2 | Kích thước endplate | t, mép trên / dưới nhập riêng từng tấm; mép **trái / phải dùng chung cho 2 tấm** (Snit 26-Oct). Tất cả tính từ **bolt ngoài cùng**. Trái/phải nhìn từ rafter nhỏ sang rafter lớn. |
 | B3 | Bolt | Tham chiếu Joining plates (14). Layout: tâm hàng trên cùng → top rafter nhỏ (dương = phía trên), list khoảng cách dọc xuống (hỗ trợ `3*100`), list khoảng cách ngang (Tekla dist Y, đối xứng quanh tim web). |
 | C1 | Flange (1) | Profile `PLTt*b` nhập tay. Đầu sát endplate: top tấm = top flange rafter nhỏ. Đầu xa (L đo theo trục rafter lớn từ mặt ngoài endplate 2): bottom tấm = bottom top flange rafter lớn. |
@@ -20,11 +20,12 @@ Giai đoạn 1 = **macro** (test không cần tắt Tekla), giai đoạn 2 = plu
 | D1 | Stiff (2) | 2 tấm, mỗi bên web rafter lớn 1 tấm, song song bottom flange rafter nhỏ, **bottom stiff = bottom face bottom flange rafter nhỏ**. Ô nhập t, b (0 = tự = mép flange rafter lớn), L (từ mặt ngoài endplate 2). |
 | D2 | Chamfer stiff | Góc giáp web + endplate, mặc định 15×15. |
 | E1 | Assembly | Endplate 1 → assembly rafter nhỏ; endplate 2, flange (1), stiff (2) → assembly rafter lớn (`Assembly.Add`). Bolt Site. |
+| B5 | Gốc bolt dọc | ComboBox Top / Middle (giống Joining plates 14). Top: offset = tâm hàng trên cùng → top rafter nhỏ. Middle: offset = tâm nhóm bolt → giữa chiều cao rafter nhỏ (+ = lên, mặc định 0). |
 | B4 | Xoá bolt | Ô "xoá bolt số" kiểu Joining plates (14): đánh số hàng trên→dưới, trong hàng trái→phải (trái = −Z). Có xoá thì dùng BoltXYList, không xoá dùng BoltArray. Kích thước endplate vẫn theo lưới đầy đủ. |
 | F1 | Bật/tắt | Checkbox Flange (1) / Stiffener (2) nằm ngoài tab (luôn thấy), tắt thì khoá các ô của nhóm. |
 | E2 | Weld | Không tạo. Snit tự key trong bản vẽ. |
 | E3 | Finish | Không có ô Finish: mọi part hàn vào rafter → finish lấy theo web rafter (26-Oct). Class trống = theo web. |
-| G1 | Plugin (26-Oct) | `RDS _ BU Splice` (PluginBase, thư mục `plugin\`), dùng chung `src\Geo/Layout/Settings/Engine.cs`. Input: pick 2 part → chuột giữa. Dialog 3 tab dùng 2 hình Snit gửi (Joining plates + splice), MainForm sửa được bằng VS Designer. Mọi ô có checkbox lọc; ô chiều dài kiểu Distance (hiện thập phân); ô căn lề trái; font Microsoft Sans Serif 8.25 (mặc định WinForms / Tekla). Bật/tắt flange / stiff = ComboBox No/Yes. |
+| G1 | Plugin (26-Oct) | `RDS _ BU Splice` (PluginBase, thư mục `plugin\`), dùng chung `src\Geo/Layout/Settings/Engine.cs`. Input: pick 2 part → chuột giữa. Dialog 3 tab dùng 2 hình Snit gửi (Joining plates + splice), MainForm sửa được bằng VS Designer. Mọi ô có checkbox lọc; ô chiều dài kiểu Distance (hiện thập phân); ô căn lề trái; font Microsoft Sans Serif 8.25 (mặc định WinForms / Tekla). Bật/tắt flange / stiff = ComboBox No/Yes; lăn chuột trên combo đổi giá trị ngay (không cần click). |
 
 ## Rủi ro đã biết
 - PEB Member chạy lại thì tạo lại part (KNOWLEDGE §7.31): fitting / cut / assembly do tool gắn lên part PEB có thể mất → chạy lại tool sau khi modify PEB.
