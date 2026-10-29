@@ -69,12 +69,26 @@ namespace RDS.BUSplice
         /// huong ve diem 'toward'. KHONG dung PCA ca tiet dien: rafter tapered / ngan lam truc lech
         /// (bug 26-Oct: endplate nghieng ~4.7 do, do 80 ra 79.73).
         /// </summary>
-        public static Frame FromMember(IList<V3> topFlange, IList<V3> all, V3 toward)
+        public static Frame FromMember(IList<V3> topFlange, IList<V3> all, V3 toward, V3 up)
         {
             V3 c = Geo.Centroid(all);
             V3 ax = Geo.Principal(topFlange);
             if (ax.Dot(toward - c) < 0) ax = ax * -1;
-            return FromAxis(c, ax);
+            return FromAxisUp(c, ax, up);
+        }
+
+        /// <summary>
+        /// Frame KHONG phu thuoc Z global (dung cho ca cot thang dung): X = truc, Y = phan cua 'up' vuong goc X
+        /// (up = huong bottom flange -> top flange), Z = X x Y.
+        /// </summary>
+        public static Frame FromAxisUp(V3 origin, V3 axis, V3 up)
+        {
+            V3 x = axis.Unit;
+            V3 y = up - x * up.Dot(x);
+            if (y.Len < 1e-6) throw new InvalidOperationException("Huong flange song song truc member");
+            y = y.Unit;
+            V3 z = x.Cross(y).Unit;
+            return new Frame { O = origin, X = x, Y = y, Z = z };
         }
 
         public V3 ToLocal(V3 p) { V3 d = p - O; return new V3(d.Dot(X), d.Dot(Y), d.Dot(Z)); }
@@ -151,6 +165,30 @@ namespace RDS.BUSplice
             V3 s = new V3();
             foreach (V3 p in pts) s = s + p;
             return s * (1.0 / pts.Count);
+        }
+
+        /// <summary>Nguong coi member la "cot dung": huong flange->flange gan nam ngang (|d.Zg| &lt; 0.1, ~6 do).</summary>
+        public const double VerticalTol = 0.1;
+
+        /// <summary>
+        /// Chon flange nao la "top" (tra 0 hoac 1). d = tam flange 0 - tam flange 1 (vuong goc truc).
+        /// - Rafter / cot xien (d co thanh phan Z): flange cao hon (Z global) = top - giu nguyen hanh vi cu.
+        /// - Cot dung (d gan nam ngang): flange da pick (picked = 0/1) = top; pick web (picked = -1) -> flange phia +X global, roi +Y.
+        /// - flip = dao ket qua (Snit 29-Oct).
+        /// </summary>
+        public static int ChooseTop(V3 d, int picked, bool flip, out bool vertical)
+        {
+            V3 u = d.Unit;
+            vertical = Math.Abs(u.Z) < VerticalTol;
+            int top;
+            if (!vertical) top = u.Z > 0 ? 0 : 1;
+            else if (picked == 0 || picked == 1) top = picked;
+            else
+            {
+                double s = Math.Abs(u.X) > VerticalTol ? u.X : u.Y;
+                top = s > 0 ? 0 : 1;
+            }
+            return flip ? 1 - top : top;
         }
 
         /// <summary>Truc chinh 2D (PCA) cua cac diem trong mat phang (X,Y), huong +X.</summary>

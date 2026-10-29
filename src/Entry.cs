@@ -68,7 +68,8 @@ namespace RDS.MacroImpl
             try
             {
                 wph.SetCurrentTransformationPlane(new TransformationPlane());   // moi toa do = global
-                BuMember ma = eng.Resolve(a), mb = eng.Resolve(b);
+                BuMember ma, mb;
+                eng.ResolvePair(a, b, p.Flip == 1, out ma, out mb);
                 if (ma.Web.Identifier.ID == mb.Web.Identifier.ID) throw new InvalidOperationException("2 lan pick cung 1 rafter");
                 eng.Build(p, ma, mb);
             }

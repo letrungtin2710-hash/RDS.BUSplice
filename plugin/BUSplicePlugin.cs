@@ -68,7 +68,8 @@ namespace RDS.BUSplice
 
                 wph.SetCurrentTransformationPlane(new TransformationPlane());   // toan bo toa do = global
                 eng = new Engine(_model, s => lines.Add(s)) { CommitAtEnd = false };
-                BuMember ma = eng.Resolve(a), mb = eng.Resolve(b);
+                BuMember ma, mb;
+                eng.ResolvePair(a, b, p.Flip == 1, out ma, out mb);
                 if (ma.Web.Identifier.ID == mb.Web.Identifier.ID) throw new InvalidOperationException("2 lan pick cung 1 rafter");
                 eng.Build(p, ma, mb);
                 return true;
@@ -100,6 +101,7 @@ namespace RDS.BUSplice
             s.Ep2T = D(d.Ep2T, s.Ep2T); s.Ep2Top = D(d.Ep2Top, s.Ep2Top); s.Ep2Bot = D(d.Ep2Bot, s.Ep2Bot);
             s.EpLeft = D(d.EpLeft, s.EpLeft); s.EpRight = D(d.EpRight, s.EpRight);
 
+            s.Flip = I(d.Flip, 0);
             s.BoltVertRef = I(d.BoltVertRef, 0);
             s.BoltTopOffset = D(d.BoltTopOffset, s.BoltVertRef == 1 ? 0 : s.BoltTopOffset);
             s.BoltDistDown = S(d.BoltDistDown, s.BoltDistDown);

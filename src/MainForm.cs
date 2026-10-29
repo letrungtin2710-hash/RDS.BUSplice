@@ -29,7 +29,7 @@ namespace RDS.BUSplice
             MaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
             TopMost = true;
-            ClientSize = new Size(560, 724);
+            ClientSize = new Size(560, 754);
 
             // ---------------- bat / tat flange (1) + stiff (2): luon thay, ngoai tab ----------------
             var onFl = new CheckBox { Text = "Flange (1)", Location = new Point(12, 10), AutoSize = true, ForeColor = CNavy, Font = new Font("Segoe UI", 9.5f, FontStyle.Bold) };
@@ -39,7 +39,7 @@ namespace RDS.BUSplice
             onFl.CheckedChanged += (s, e) => EnableGroup(onFl.Checked, "Flange", "PFlange.");
             onSt.CheckedChanged += (s, e) => EnableGroup(onSt.Checked, "Stiff", "PStiff.");
 
-            var tabs = new TabControl { Location = new Point(8, 36), Size = new Size(544, 440) };
+            var tabs = new TabControl { Location = new Point(8, 36), Size = new Size(544, 470) };
             Controls.Add(tabs);
 
             // ---------------- Tab Endplate / Bolt ----------------
@@ -53,6 +53,7 @@ namespace RDS.BUSplice
             y = Row(t1, y, "Cả 2 endplate", null, new[] { "EpLeft", "EpRight" });
             Note(t1, y, "Trái / phải: đứng ở rafter nhỏ nhìn sang rafter lớn."); y += 26;
             y = Header(t1, "Bolt", y);
+            y = Field(t1, y, "Flip flange top (0 = No, 1 = Yes)", "Flip", 80);
             y = Field(t1, y, "Gốc bolt: 0 = Top, 1 = Middle", "BoltVertRef", 80);
             y = Field(t1, y, "Offset (Top: hàng trên → top nhỏ; Middle: tâm)", "BoltTopOffset", 80);
             y = Field(t1, y, "Khoảng cách hàng, tính xuống (vd 125 600 3*100)", "BoltDistDown", 200);
@@ -86,22 +87,22 @@ namespace RDS.BUSplice
             Note(t3, y + 4, "Class trống = theo web rafter. Finish luôn theo web rafter.");
 
             // ---------------- nut ----------------
-            var run = Btn("Pick 2 rafter → Tạo", true); run.Location = new Point(8, 484); run.Size = new Size(200, 32);
+            var run = Btn("Pick 2 rafter → Tạo", true); run.Location = new Point(8, 514); run.Size = new Size(200, 32);
             run.Click += (s, e) => { if (!Busy) RunClicked?.Invoke(); };
-            var undo = Btn("Xoá lần chạy trước", false); undo.ForeColor = CErr; undo.Location = new Point(216, 484); undo.Size = new Size(150, 32);
+            var undo = Btn("Xoá lần chạy trước", false); undo.ForeColor = CErr; undo.Location = new Point(216, 514); undo.Size = new Size(150, 32);
             undo.Click += (s, e) => { if (!Busy) UndoClicked?.Invoke(); };
-            var def = Btn("Mặc định", false); def.Location = new Point(374, 484); def.Size = new Size(90, 32);
+            var def = Btn("Mặc định", false); def.Location = new Point(374, 514); def.Size = new Size(90, 32);
             def.Click += (s, e) => { if (!Busy) { SetSettings(new Settings()); Log("Đã nạp giá trị mặc định", CNavy); } };
             Controls.AddRange(new Control[] { run, undo, def });
 
-            _log = new RichTextBox { Location = new Point(8, 524), Size = new Size(544, 172), ReadOnly = true, BackColor = CLogBg, Font = new Font("Consolas", 8.5f), BorderStyle = BorderStyle.FixedSingle };
+            _log = new RichTextBox { Location = new Point(8, 554), Size = new Size(544, 172), ReadOnly = true, BackColor = CLogBg, Font = new Font("Consolas", 8.5f), BorderStyle = BorderStyle.FixedSingle };
             Controls.Add(_log);
 
             var cr = new Label
             {
                 Text = "(c) 2026 Rockford Drafting Services (RDS). All rights reserved.   Create by Snit",
                 ForeColor = CRed, Font = new Font("Segoe UI", 8.5f, FontStyle.Bold),
-                TextAlign = ContentAlignment.MiddleCenter, Location = new Point(0, 700), Size = new Size(560, 20)
+                TextAlign = ContentAlignment.MiddleCenter, Location = new Point(0, 730), Size = new Size(560, 20)
             };
             Controls.Add(cr);
             Shown += (s, e) => Activate();

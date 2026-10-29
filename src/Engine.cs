@@ -23,6 +23,8 @@ namespace RDS.BUSplice
         public string Source;            // ten component cha / assembly
         public Part Web, TopFl, BotFl;
         public List<V3> WebPts, TopPts, BotPts;
+        public V3 Up;                    // huong bottom flange -> top flange (vuong goc truc), global
+        public bool Vertical;            // cot dung: "top" chon theo pick / Flip, khong theo Z
         public IEnumerable<V3> AllPts => WebPts.Concat(TopPts).Concat(BotPts);
         public IEnumerable<Part> Parts => new[] { Web, TopFl, BotFl };
     }
@@ -42,8 +44,18 @@ namespace RDS.BUSplice
 
         // ============================ doc rafter ============================
 
+        /// <summary>
+        /// Doc 2 BU. BU 1 quyet dinh "top" (Z cao hon; cot dung = flange da pick, pick web = +X/+Y global; flip dao).
+        /// BU 2 lay top = flange cung phia voi top cua BU 1 -> 2 member luon dong nhat.
+        /// </summary>
+        public void ResolvePair(Part a, Part b, bool flip, out BuMember ma, out BuMember mb)
+        {
+            ma = Resolve(a, null, flip);
+            mb = Resolve(b, ma.Up, false);
+        }
+
         /// <summary>A1/A2: tu part pick -> component cha (hoac assembly) -> FLANGE x2 + web.</summary>
-        public BuMember Resolve(Part picked)
+        public BuMember Resolve(Part picked, V3? upHint, bool flip)
         {
             var parts = new List<Part>();
             string src;
@@ -69,11 +81,21 @@ namespace RDS.BUSplice
             // truc rafter tu 2 flange dai nhat -> frame tam de phan top / bottom / web
             var fl = flanges.Select(f => new { P = f, V = Verts(f) }).OrderByDescending(f => Extent(f.V)).Take(2).ToList();
             List<V3> fpts = fl[0].V.Concat(fl[1].V).ToList();
-            Frame fr = Frame.FromAxis(Geo.Centroid(fpts), Geo.Principal(fpts));
-            double y0 = Geo.Centroid(fl[0].V.Select(fr.ToLocal).ToList()).Y;
-            double y1 = Geo.Centroid(fl[1].V.Select(fr.ToLocal).ToList()).Y;
-            var top = y0 > y1 ? fl[0] : fl[1];
-            var bot = y0 > y1 ? fl[1] : fl[0];
+            V3 axis = Geo.Principal(fpts);
+            V3 d = Geo.Centroid(fl[0].V) - Geo.Centroid(fl[1].V);
+            d = d - axis.Unit * d.Dot(axis.Unit);          // chi lay phan vuong goc truc
+            bool vertical;
+            int ti;
+            if (upHint.HasValue) { ti = d.Dot(upHint.Value) > 0 ? 0 : 1; vertical = Math.Abs(d.Unit.Z) < Geo.VerticalTol; }
+            else
+            {
+                int pickedIdx = fl[0].P.Identifier.ID == picked.Identifier.ID ? 0 : fl[1].P.Identifier.ID == picked.Identifier.ID ? 1 : -1;
+                ti = Geo.ChooseTop(d, pickedIdx, flip, out vertical);
+            }
+            var top = fl[ti];
+            var bot = fl[1 - ti];
+            V3 up = ti == 0 ? d : d * -1;
+            Frame fr = Frame.FromAxisUp(Geo.Centroid(fpts), axis, up);
 
             // web = part khong phai FLANGE, mong theo phap tuyen mat phang rafter (Z), cao nhat theo Y
             Part web = null; List<V3> webPts = null; double bestH = 0;
@@ -90,8 +112,9 @@ namespace RDS.BUSplice
             }
             if (web == null) throw new InvalidOperationException("Khong thay web trong " + src);
 
-            var m = new BuMember { Source = src, Web = web, TopFl = top.P, BotFl = bot.P, WebPts = webPts, TopPts = top.V, BotPts = bot.V };
-            _log(string.Format("Resolve {0}: web={1} '{2}' top={3} bot={4} ({5} part)", src, web.Identifier.ID, web.Name, top.P.Identifier.ID, bot.P.Identifier.ID, parts.Count));
+            var m = new BuMember { Source = src, Web = web, TopFl = top.P, BotFl = bot.P, WebPts = webPts, TopPts = top.V, BotPts = bot.V, Up = up.Unit, Vertical = vertical };
+            _log(string.Format("Resolve {0}: web={1} '{2}' top={3} bot={4} ({5} part) vertical={6} flip={7} up={8}", src, web.Identifier.ID, web.Name,
+                top.P.Identifier.ID, bot.P.Identifier.ID, parts.Count, vertical, flip, m.Up));
             return m;
         }
 
@@ -111,7 +134,7 @@ namespace RDS.BUSplice
 
         /// <summary>Dung frame theo rafter "from", truc X huong ve rafter "to".</summary>
         public static Frame FrameOf(BuMember from, BuMember to) =>
-            Frame.FromMember(from.TopPts, from.AllPts.ToList(), Geo.Centroid(to.AllPts.ToList()));
+            Frame.FromMember(from.TopPts, from.AllPts.ToList(), Geo.Centroid(to.AllPts.ToList()), from.Up);
 
         // ============================ tao splice ============================
 

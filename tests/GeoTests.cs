@@ -133,9 +133,27 @@ static class GeoTests
         var topF = new List<V3>(); var all = new List<V3>();
         foreach (double x in new[] { 0.0, 1500.0 }) foreach (double z in new[] { -115.0, 115.0 }) foreach (double dy in new[] { 0.0, -12.0 })
         { topF.Add(new V3(x, 0, 600 + dy)); all.Add(new V3(x, 0, 600 + dy)); all.Add(new V3(x, 0, -0.15 * x + dy)); }
-        Frame ft = Frame.FromMember(topF, all, new V3(5000, 0, 0));
+        Frame ft = Frame.FromMember(topF, all, new V3(5000, 0, 0), new V3(0, 0, 1));
         Eq("Frame X // top flange (tapered)", ft.X.X, 1, 1e-9);
         True("PCA ca tiet dien lech (ly do sua)", Math.Abs(Geo.Principal(all).Unit.Z) > 0.01);
+
+        // ---- Cot thang dung (Snit 29-Oct) ----
+        bool vert;
+        // rafter: flange cao hon = top (giu hanh vi cu), flip dao
+        Eq("Rafter: flange Z cao = top", Geo.ChooseTop(new V3(0, 0, 600), -1, false, out vert), 0); True("Rafter khong la cot dung", !vert);
+        Eq("Rafter + Flip", Geo.ChooseTop(new V3(0, 0, 600), -1, true, out vert), 1);
+        // cot dung: d nam ngang
+        Eq("Cot: pick flange 1 -> top = 1", Geo.ChooseTop(new V3(600, 0, 0), 1, false, out vert), 1); True("Cot dung nhan dien", vert);
+        Eq("Cot: pick web, flange 0 o +X -> top = 0", Geo.ChooseTop(new V3(600, 0, 0), -1, false, out vert), 0);
+        Eq("Cot: pick web, flange 0 o -X -> top = 1", Geo.ChooseTop(new V3(-600, 0, 0), -1, false, out vert), 1);
+        Eq("Cot: bung // X -> xet +Y", Geo.ChooseTop(new V3(0, -600, 0), -1, false, out vert), 1);
+        Eq("Cot: pick flange 0 + Flip", Geo.ChooseTop(new V3(600, 0, 0), 0, true, out vert), 1);
+        // frame cot dung: truc Z global, up = +X -> Y = +X, Z = X x Y khong NaN
+        Frame fc = Frame.FromAxisUp(new V3(0, 0, 0), new V3(0, 0, 1), new V3(1, 0, 0.3));
+        Eq("Frame cot: X = Zg", fc.X.Z, 1, 1e-9); Eq("Frame cot: Y = +Xg (bo thanh phan doc truc)", fc.Y.X, 1, 1e-9);
+        Eq("Frame cot: truc giao", fc.Y.Dot(fc.Z) + fc.X.Dot(fc.Z), 0, 1e-9);
+        bool threw = false; try { Frame.FromAxis(new V3(0, 0, 0), new V3(0, 0, 1)); } catch (InvalidOperationException) { threw = true; }
+        True("FromAxis cu van tu choi cot (ly do sua)", threw);
 
         // settings ini round-trip
         string tmp = System.IO.Path.GetTempFileName();

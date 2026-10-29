@@ -29,6 +29,7 @@ namespace RDS.BUSplice
         public double EpLeft = 45, EpRight = 45;
 
         // ---------- Bolt (tham chieu Joining plates 14) ----------
+        public int Flip = 0;                        // 1 = dao flange "top" (cot dung / muon lat phia flange (1), stiff, goc bolt)
         public int BoltVertRef = 0;                 // 0 = Top: BoltTopOffset = tam hang tren cung -> top rafter nho
                                                     // 1 = Middle: BoltTopOffset = tam nhom bolt -> giua chieu cao rafter nho
         public double BoltTopOffset = 56;           // (duong = phia tren)

@@ -60,6 +60,9 @@
             this.lbl9 = new System.Windows.Forms.Label();
             this.chkBoltTolerance = new System.Windows.Forms.CheckBox();
             this.txtBoltTolerance = new System.Windows.Forms.TextBox();
+            this.lblFlip = new System.Windows.Forms.Label();
+            this.chkFlip = new System.Windows.Forms.CheckBox();
+            this.cboFlip = new System.Windows.Forms.ComboBox();
             this.tabFlange = new System.Windows.Forms.TabPage();
             this.chkFlangeLength = new System.Windows.Forms.CheckBox();
             this.txtFlangeLength = new System.Windows.Forms.TextBox();
@@ -193,6 +196,9 @@
             this.tabEndplate.Controls.Add(this.lbl9);
             this.tabEndplate.Controls.Add(this.chkBoltTolerance);
             this.tabEndplate.Controls.Add(this.txtBoltTolerance);
+            this.tabEndplate.Controls.Add(this.lblFlip);
+            this.tabEndplate.Controls.Add(this.chkFlip);
+            this.tabEndplate.Controls.Add(this.cboFlip);
             this.tabEndplate.Controls.Add(this.picEndplate);
             this.tabEndplate.Location = new System.Drawing.Point(4, 22);
             this.tabEndplate.Name = "tabEndplate";
@@ -254,6 +260,48 @@
             this.chkBoltTopOffset.Size = new System.Drawing.Size(15, 14);
             this.chkBoltTopOffset.TabIndex = 13;
             this.chkBoltTopOffset.UseVisualStyleBackColor = true;
+            // 
+            // lblFlip
+            // 
+            this.structuresExtender.SetAttributeName(this.lblFlip, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblFlip, null);
+            this.lblFlip.AutoSize = true;
+            this.structuresExtender.SetBindPropertyName(this.lblFlip, null);
+            this.lblFlip.Location = new System.Drawing.Point(559, 168);
+            this.lblFlip.Name = "lblFlip";
+            this.lblFlip.Size = new System.Drawing.Size(23, 13);
+            this.lblFlip.TabIndex = 202;
+            this.lblFlip.Text = "Flip";
+            // 
+            // chkFlip
+            // 
+            this.structuresExtender.SetAttributeName(this.chkFlip, "Flip");
+            this.structuresExtender.SetAttributeTypeName(this.chkFlip, null);
+            this.chkFlip.AutoSize = true;
+            this.structuresExtender.SetBindPropertyName(this.chkFlip, "Checked");
+            this.chkFlip.Checked = true;
+            this.chkFlip.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkFlip, true);
+            this.chkFlip.Location = new System.Drawing.Point(641, 169);
+            this.chkFlip.Name = "chkFlip";
+            this.chkFlip.Size = new System.Drawing.Size(15, 14);
+            this.chkFlip.TabIndex = 203;
+            this.chkFlip.UseVisualStyleBackColor = true;
+            // 
+            // cboFlip
+            // 
+            this.structuresExtender.SetAttributeName(this.cboFlip, "Flip");
+            this.structuresExtender.SetAttributeTypeName(this.cboFlip, "Integer");
+            this.structuresExtender.SetBindPropertyName(this.cboFlip, "SelectedIndex");
+            this.cboFlip.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFlip.FormattingEnabled = true;
+            this.cboFlip.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.cboFlip.Location = new System.Drawing.Point(659, 165);
+            this.cboFlip.Name = "cboFlip";
+            this.cboFlip.Size = new System.Drawing.Size(60, 21);
+            this.cboFlip.TabIndex = 204;
             // 
             // chkBoltVertRef
             // 
@@ -1695,6 +1743,9 @@
         private System.Windows.Forms.CheckBox chkEp1Top;
         private System.Windows.Forms.TextBox txtEp1Top;
         private System.Windows.Forms.CheckBox chkBoltTopOffset;
+        private System.Windows.Forms.Label lblFlip;
+        private System.Windows.Forms.CheckBox chkFlip;
+        private System.Windows.Forms.ComboBox cboFlip;
         private System.Windows.Forms.CheckBox chkBoltVertRef;
         private System.Windows.Forms.ComboBox cboBoltVertRef;
         private System.Windows.Forms.TextBox txtBoltTopOffset;
