@@ -20,6 +20,7 @@ Giai đoạn 1 = **macro** (test không cần tắt Tekla), giai đoạn 2 = plu
 | D1 | Stiff (2) | 2 tấm, mỗi bên web rafter lớn 1 tấm, song song bottom flange rafter nhỏ, **bottom stiff = bottom face bottom flange rafter nhỏ**. Ô nhập t, b (0 = tự = mép flange rafter lớn), L (từ mặt ngoài endplate 2). |
 | D2 | Chamfer stiff | Góc giáp web + endplate, mặc định 15×15. |
 | E1 | Assembly | Endplate 1 → assembly rafter nhỏ; endplate 2, flange (1), stiff (2) → assembly rafter lớn (`Assembly.Add`). Bolt Site. |
+| A4 | Cột thẳng đứng (29-Oct) | Frame không dùng Z global: X = trục member, Y = hướng bottom → top flange, Z = X × Y. "Top": rafter / cột xiên = flange có Z cao hơn (như cũ); **cột đứng** (hướng flange→flange gần ngang, \|d·Zg\| < 0.1 ≈ 6°) = **flange đã pick ở BU 1**; pick web → flange phía +X global (bụng // X thì +Y). Combo **Flip** (No/Yes) đảo top, dùng được cả cho rafter. BU 2 lấy top cùng phía BU 1. |
 | B5 | Gốc bolt dọc | ComboBox Top / Middle (giống Joining plates 14). Top: offset = tâm hàng trên cùng → top rafter nhỏ. Middle: offset = tâm nhóm bolt → giữa chiều cao rafter nhỏ (+ = lên, mặc định 0). |
 | B4 | Xoá bolt | Ô "xoá bolt số" kiểu Joining plates (14): đánh số hàng trên→dưới, trong hàng trái→phải (trái = −Z). Có xoá thì dùng BoltXYList, không xoá dùng BoltArray. Kích thước endplate vẫn theo lưới đầy đủ. |
 | F1 | Bật/tắt | Checkbox Flange (1) / Stiffener (2) nằm ngoài tab (luôn thấy), tắt thì khoá các ô của nhóm. |
@@ -30,4 +31,4 @@ Giai đoạn 1 = **macro** (test không cần tắt Tekla), giai đoạn 2 = plu
 ## Rủi ro đã biết
 - PEB Member chạy lại thì tạo lại part (KNOWLEDGE §7.31): fitting / cut / assembly do tool gắn lên part PEB có thể mất → chạy lại tool sau khi modify PEB.
 - Flange nhận diện bằng PCA đỉnh solid trong mặt phẳng rafter: flange phải thẳng (không gãy khúc).
-- Rafter giả định nằm trong mặt phẳng đứng (web ⊥ phương ngang), 2 rafter cùng mặt phẳng.
+- 2 member phải đồng phẳng (cùng mặt phẳng web); không còn giả định rafter nằm trong mặt phẳng đứng.

@@ -9,7 +9,7 @@ Splice 2 rafter BU (PEB Member / S94): 2 endplate + bolt, tuỳ chọn flange (1
 4. Mở Tekla → Applications & components → **RDS _ BU Splice**.
 
 ## Dùng
-Pick 1 part bất kỳ (web / flange) của BU 1 → BU 2 → **chuột giữa**. Thứ tự pick không quan trọng: tool tự xác định rafter nhỏ / lớn. Modify: chọn biểu tượng component → sửa ô (đang tick) → Modify.
+Pick 1 part bất kỳ (web / flange) của BU 1 → BU 2 → **chuột giữa**. Tool tự xác định member nhỏ / lớn. **Cột thẳng đứng**: flange pick ở BU 1 là phía "top" (gốc bolt Top, flange (1), stiff); pick web thì lấy flange phía +X global. Combo **Flip** (tab Endplate / Bolts) đảo phía top. Modify: chọn biểu tượng component → sửa ô (đang tick) → Modify.
 Log: `RDS_BUSplice.log` trong thư mục model. Cảnh báo hiện ở thanh prompt dưới đáy Tekla.
 
 ## Dialog
