@@ -24,6 +24,8 @@
   </BoltTopOffset>
   <BoltDistDown>125 170 125</BoltDistDown>
   <BoltDistAcross>140</BoltDistAcross>
+  <BoltSize>20</BoltSize>
+  <BoltStandard>8.8S</BoltStandard>
   <BoltTolerance>
     <Millimeters>2</Millimeters>
   </BoltTolerance>
