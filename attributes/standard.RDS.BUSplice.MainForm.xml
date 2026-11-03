@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <Ep1Top>
+    <Millimeters>45</Millimeters>
+  </Ep1Top>
+  <Ep1Bot>
+    <Millimeters>45</Millimeters>
+  </Ep1Bot>
+  <Ep2Top>
+    <Millimeters>45</Millimeters>
+  </Ep2Top>
+  <Ep2Bot>
+    <Millimeters>45</Millimeters>
+  </Ep2Bot>
+  <EpLeft>
+    <Millimeters>45</Millimeters>
+  </EpLeft>
+  <EpRight>
+    <Millimeters>45</Millimeters>
+  </EpRight>
+  <BoltVertRef>0</BoltVertRef>
+  <BoltTopOffset>
+    <Millimeters>56</Millimeters>
+  </BoltTopOffset>
+  <BoltDistDown>125 170 125</BoltDistDown>
+  <BoltDistAcross>140</BoltDistAcross>
+  <BoltTolerance>
+    <Millimeters>2</Millimeters>
+  </BoltTolerance>
+  <Flip>0</Flip>
+  <FlangeOn>1</FlangeOn>
+  <FlangeLength>
+    <Millimeters>600</Millimeters>
+  </FlangeLength>
+  <StiffOn>1</StiffOn>
+  <StiffL>
+    <Millimeters>300</Millimeters>
+  </StiffL>
+  <StiffChamX>
+    <Millimeters>15</Millimeters>
+  </StiffChamX>
+  <StiffChamY>
+    <Millimeters>15</Millimeters>
+  </StiffChamY>
+  <Ep1T>
+    <Millimeters>12</Millimeters>
+  </Ep1T>
+  <Ep2T>
+    <Millimeters>12</Millimeters>
+  </Ep2T>
+  <FlangeProfile>PLT20*230</FlangeProfile>
+  <StiffT>
+    <Millimeters>16</Millimeters>
+  </StiffT>
+  <StiffB>
+    <Millimeters>90</Millimeters>
+  </StiffB>
+  <EpName>END PLATE</EpName>
+  <prefix_pos1>f</prefix_pos1>
+  <EpStart>1</EpStart>
+  <EpMaterial>250</EpMaterial>
+  <FlName>FLANGE PLATE</FlName>
+  <prefix_pos2>f</prefix_pos2>
+  <FlStart>1</FlStart>
+  <FlMaterial>250</FlMaterial>
+  <StName>STIFFENER</StName>
+  <prefix_pos3>f</prefix_pos3>
+  <StStart>1</StStart>
+  <StMaterial>250</StMaterial>
+</config>

@@ -7,4 +7,6 @@ for /f "delims=" %%F in ('powershell -NoProfile -Command "Get-ChildItem -Path '%
 if "%SRC%"=="" (echo Khong tim thay RDS.BUSplice.dll - hay Build truoc & pause & exit /b)
 copy /Y "%SRC%" "%DEST%\RDS.BUSplice.dll" && echo Da copy: %SRC%
 copy /Y "%~dp0et_element_RDS _ BU Splice.bmp" "C:\Program Files\Tekla Structures\2020.0\nt\bitmaps\" >nul 2>&1
+:: File attribute standard (o prefix_posN co gia tri -> RDS Part Standards doi stage duoc)
+copy /Y "%~dp0..\attributes\standard.RDS.BUSplice.MainForm.xml" "C:\ProgramData\Trimble\Tekla Structures\2020.0\Environments\Australasia\General\component_attribute_files\" && echo Da copy file attribute standard
 pause

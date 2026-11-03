@@ -1122,7 +1122,7 @@
             // 
             // chkEpPrefix
             // 
-            this.structuresExtender.SetAttributeName(this.chkEpPrefix, "EpPrefix");
+            this.structuresExtender.SetAttributeName(this.chkEpPrefix, "prefix_pos1");
             this.structuresExtender.SetAttributeTypeName(this.chkEpPrefix, null);
             this.chkEpPrefix.AutoSize = true;
             this.structuresExtender.SetBindPropertyName(this.chkEpPrefix, "Checked");
@@ -1137,7 +1137,7 @@
             // 
             // txtEpPrefix
             // 
-            this.structuresExtender.SetAttributeName(this.txtEpPrefix, "EpPrefix");
+            this.structuresExtender.SetAttributeName(this.txtEpPrefix, "prefix_pos1");
             this.structuresExtender.SetAttributeTypeName(this.txtEpPrefix, "String");
             this.structuresExtender.SetBindPropertyName(this.txtEpPrefix, "Text");
             this.txtEpPrefix.Location = new System.Drawing.Point(281, 26);
@@ -1265,7 +1265,7 @@
             // 
             // chkFlPrefix
             // 
-            this.structuresExtender.SetAttributeName(this.chkFlPrefix, "FlPrefix");
+            this.structuresExtender.SetAttributeName(this.chkFlPrefix, "prefix_pos2");
             this.structuresExtender.SetAttributeTypeName(this.chkFlPrefix, null);
             this.chkFlPrefix.AutoSize = true;
             this.structuresExtender.SetBindPropertyName(this.chkFlPrefix, "Checked");
@@ -1280,7 +1280,7 @@
             // 
             // txtFlPrefix
             // 
-            this.structuresExtender.SetAttributeName(this.txtFlPrefix, "FlPrefix");
+            this.structuresExtender.SetAttributeName(this.txtFlPrefix, "prefix_pos2");
             this.structuresExtender.SetAttributeTypeName(this.txtFlPrefix, "String");
             this.structuresExtender.SetBindPropertyName(this.txtFlPrefix, "Text");
             this.txtFlPrefix.Location = new System.Drawing.Point(281, 80);
@@ -1406,7 +1406,7 @@
             // 
             // chkStPrefix
             // 
-            this.structuresExtender.SetAttributeName(this.chkStPrefix, "StPrefix");
+            this.structuresExtender.SetAttributeName(this.chkStPrefix, "prefix_pos3");
             this.structuresExtender.SetAttributeTypeName(this.chkStPrefix, null);
             this.chkStPrefix.AutoSize = true;
             this.structuresExtender.SetBindPropertyName(this.chkStPrefix, "Checked");
@@ -1421,7 +1421,7 @@
             // 
             // txtStPrefix
             // 
-            this.structuresExtender.SetAttributeName(this.txtStPrefix, "StPrefix");
+            this.structuresExtender.SetAttributeName(this.txtStPrefix, "prefix_pos3");
             this.structuresExtender.SetAttributeTypeName(this.txtStPrefix, "String");
             this.structuresExtender.SetBindPropertyName(this.txtStPrefix, "Text");
             this.txtStPrefix.Location = new System.Drawing.Point(281, 108);

@@ -43,21 +43,28 @@ namespace RDS.BUSplice
         [StructuresField("StiffChamX")] public double StiffChamX;
         [StructuresField("StiffChamY")] public double StiffChamY;
 
+        // ---------- Prefix (rule RDS Part Standards): o prefix tren dialog = prefix_posN ----------
+        // pos1 = endplate (1 va 2), pos2 = flange (1), pos3 = stiffener (2). Chi la PartNumber.Prefix:
+        // ca 3 tam deu han vao assembly rafter nen khong co assembly prefix rieng.
+        [StructuresField("prefix_pos1")] public string prefix_pos1;
+        [StructuresField("prefix_pos2")] public string prefix_pos2;
+        [StructuresField("prefix_pos3")] public string prefix_pos3;
+
         // ---------- Parts (Class trong = lay theo web rafter; Finish luon theo web rafter) ----------
         [StructuresField("EpName")] public string EpName;
-        [StructuresField("EpPrefix")] public string EpPrefix;
+        [StructuresField("EpPrefix")] public string EpPrefix;     // ten cu (truoc 03-Nov), khong con tren dialog
         [StructuresField("EpStart")] public int EpStart;
         [StructuresField("EpMaterial")] public string EpMaterial;
         [StructuresField("EpClass")] public string EpClass;
 
         [StructuresField("FlName")] public string FlName;
-        [StructuresField("FlPrefix")] public string FlPrefix;
+        [StructuresField("FlPrefix")] public string FlPrefix;     // ten cu
         [StructuresField("FlStart")] public int FlStart;
         [StructuresField("FlMaterial")] public string FlMaterial;
         [StructuresField("FlClass")] public string FlClass;
 
         [StructuresField("StName")] public string StName;
-        [StructuresField("StPrefix")] public string StPrefix;
+        [StructuresField("StPrefix")] public string StPrefix;     // ten cu
         [StructuresField("StStart")] public int StStart;
         [StructuresField("StMaterial")] public string StMaterial;
         [StructuresField("StClass")] public string StClass;

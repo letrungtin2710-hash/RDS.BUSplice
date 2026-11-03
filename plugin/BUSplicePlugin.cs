@@ -97,8 +97,9 @@ namespace RDS.BUSplice
         private Settings ToSettings()
         {
             var d = _data; var s = new Settings();
-            s.Ep1T = D(d.Ep1T, s.Ep1T); s.Ep1Top = D(d.Ep1Top, s.Ep1Top); s.Ep1Bot = D(d.Ep1Bot, s.Ep1Bot);
-            s.Ep2T = D(d.Ep2T, s.Ep2T); s.Ep2Top = D(d.Ep2Top, s.Ep2Top); s.Ep2Bot = D(d.Ep2Bot, s.Ep2Bot);
+            // Z(): o so tuy chon de trong tren dialog Tekla luu thanh 0 -> 0 = mac dinh (day / size / chieu dai / start = 0 vo nghia)
+            s.Ep1T = Z(d.Ep1T, s.Ep1T); s.Ep1Top = D(d.Ep1Top, s.Ep1Top); s.Ep1Bot = D(d.Ep1Bot, s.Ep1Bot);
+            s.Ep2T = Z(d.Ep2T, s.Ep2T); s.Ep2Top = D(d.Ep2Top, s.Ep2Top); s.Ep2Bot = D(d.Ep2Bot, s.Ep2Bot);
             s.EpLeft = D(d.EpLeft, s.EpLeft); s.EpRight = D(d.EpRight, s.EpRight);
 
             s.Flip = I(d.Flip, 0);
@@ -107,31 +108,34 @@ namespace RDS.BUSplice
             s.BoltDistDown = S(d.BoltDistDown, s.BoltDistDown);
             s.BoltDistAcross = S(d.BoltDistAcross, s.BoltDistAcross);
             s.BoltDelete = S(d.BoltDelete, "", true);
-            s.BoltSize = D(d.BoltSize, s.BoltSize);
+            s.BoltSize = Z(d.BoltSize, s.BoltSize);
             s.BoltStandard = S(d.BoltStandard, s.BoltStandard);
             s.BoltTolerance = D(d.BoltTolerance, s.BoltTolerance);
 
             s.FlangeOn = I(d.FlangeOn, 1) == 1;
             s.FlangeProfile = S(d.FlangeProfile, s.FlangeProfile);
-            s.FlangeLength = D(d.FlangeLength, s.FlangeLength);
+            s.FlangeLength = Z(d.FlangeLength, s.FlangeLength);
 
             s.StiffOn = I(d.StiffOn, 1) == 1;
-            s.StiffT = D(d.StiffT, s.StiffT); s.StiffB = D(d.StiffB, s.StiffB); s.StiffL = D(d.StiffL, s.StiffL);
+            s.StiffT = Z(d.StiffT, s.StiffT); s.StiffB = D(d.StiffB, s.StiffB); s.StiffL = Z(d.StiffL, s.StiffL);
             s.StiffChamX = D(d.StiffChamX, s.StiffChamX); s.StiffChamY = D(d.StiffChamY, s.StiffChamY);
 
-            Part(s.PEndplate, d.EpName, d.EpPrefix, d.EpStart, d.EpMaterial, d.EpClass);
-            Part(s.PFlange, d.FlName, d.FlPrefix, d.FlStart, d.FlMaterial, d.FlClass);
-            Part(s.PStiff, d.StName, d.StPrefix, d.StStart, d.StMaterial, d.StClass);
+            // Prefix (rule Part Standards): prefix_posN; trong ("" hoac IsDefaultValue) -> ten cu EpPrefix/FlPrefix/StPrefix
+            // cua component dat truoc 03-Nov -> mac dinh. Moi lan Run doc lai, Engine.ApplyInfo gan PartNumber.Prefix.
+            Part(s.PEndplate, d.EpName, S(d.prefix_pos1, d.EpPrefix), d.EpStart, d.EpMaterial, d.EpClass);
+            Part(s.PFlange, d.FlName, S(d.prefix_pos2, d.FlPrefix), d.FlStart, d.FlMaterial, d.FlClass);
+            Part(s.PStiff, d.StName, S(d.prefix_pos3, d.StPrefix), d.StStart, d.StMaterial, d.StClass);
             return s;
         }
 
         private void Part(PartInfo pi, string name, string pre, int start, string mat, string cls)
         {
-            pi.Name = S(name, pi.Name); pi.Prefix = S(pre, pi.Prefix); pi.Start = I(start, pi.Start);
+            pi.Name = S(name, pi.Name); pi.Prefix = S(pre, pi.Prefix); pi.Start = start == 0 ? pi.Start : I(start, pi.Start);
             pi.Material = S(mat, pi.Material); pi.Class = S(cls, "", true);
         }
 
         private double D(double v, double def) { return IsDefaultValue(v) ? def : v; }
+        private double Z(double v, double def) { return v == 0 ? def : D(v, def); }
         private int I(int v, int def) { return IsDefaultValue(v) ? def : v; }
         /// <summary>allowEmpty = o de trong la co nghia (Class / xoa bolt).</summary>
         private string S(string v, string def, bool allowEmpty = false)

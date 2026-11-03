@@ -10,6 +10,20 @@
 - Compile OK bằng mcs với DLL Tekla 2020 (`D:\Tools\RDS.RakerBolt\lib`); test toán thuần **58/58 PASS**.
 - Plugin đã chạy live lần đầu (máy nhà): dialog lên, tạo được endplate + bolt; lỗi endplate nghiêng (đã sửa, chờ test lại).
 - Dialog = bản Snit tự chỉnh bằng Designer trên máy nhà (t1/t2, flange profile, stiff t/b dời sang tab Parts) + combo `cboBoltVertRef` Top/Middle (đặt trên ô Ep1Top, Snit chỉnh lại vị trí nếu cần). 41 ô bind + 41 checkbox lọc (thêm Flip 29-Oct).
+- **Prefix theo rule RDS Part Standards (03-Nov)**: 3 ô prefix tab Parts đổi AttributeName (TextBox + checkbox lọc), tên control giữ nguyên:
+
+  | Tên cũ | Tên mới | Mặc định | Dùng cho |
+  |---|---|---|---|
+  | `EpPrefix` | `prefix_pos1` | `f` | PartNumber endplate (1) và (2) |
+  | `FlPrefix` | `prefix_pos2` | `f` | PartNumber flange plate (1) |
+  | `StPrefix` | `prefix_pos3` | `f` | PartNumber stiffener (2) |
+
+  - Không có assembly prefix: cả 3 tấm hàn vào assembly rafter (`AddToAssembly`).
+  - Tên cũ vẫn trong `PluginData` (không trên dialog) để component đặt trước 03-Nov đọc được. Thứ tự đọc mỗi lần Run: `prefix_posN` → tên cũ → `Settings` (`f`).
+  - File `attributes\standard.RDS.BUSplice.MainForm.xml` (mọi ô có giá trị mặc định trong Designer / `Defaults`; bỏ BoltSize, BoltStandard, BoltDelete, *Class vì Designer trống). `CopyToTekla.bat` copy thêm file này vào `ProgramData\...\Australasia\General\component_attribute_files`.
+  - Ô số trống (Tekla lưu 0) → mặc định: `Ep1T`, `Ep2T`, `StiffT`, `BoltSize`, `FlangeLength`, `StiffL`, `EpStart` / `FlStart` / `StStart`. `StiffB` = 0 vẫn = tự tính (nghĩa cũ).
+  - Run() không có MessageBox (đã vậy từ trước); lỗi → `Operation.DisplayPrompt` + `RDS_BUSplice.log`.
+  - Build Release OK, test toán 58/58. **Chưa test live** (chèn bằng dialog, `GetAttribute("prefix_pos1")`, Part Standards APPLY stage 2, Undo).
 
 ## Máy mới (nhà) — chuẩn bị 1 lần
 1. `git clone https://github.com/letrungtin2710-hash/RDS.BUSplice.git` (đặt ở đâu cũng được, vd `D:\Tools\RDS.BUSplice`).
