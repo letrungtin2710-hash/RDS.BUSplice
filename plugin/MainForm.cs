@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Forms;
 using Tekla.Structures.Dialog;
@@ -27,6 +28,50 @@ namespace RDS.BUSplice
             cboFlangeOn.SelectedIndexChanged += (s, e) => EnableGroup(cboFlangeOn, "FlangeProfile", "FlangeLength", "FlName", "FlPrefix", "FlStart", "FlMaterial", "FlClass");
             cboStiffOn.SelectedIndexChanged += (s, e) => EnableGroup(cboStiffOn, "StiffT", "StiffB", "StiffL", "StiffChamX", "StiffChamY", "StName", "StPrefix", "StStart", "StMaterial", "StClass");
         }
+
+        #region All tab pages created before Tekla binds the values
+
+        /// <summary>
+        /// WinForms chi tao control cua TabPage khi tab do duoc mo lan dau; Tekla chi bind / nap gia tri cho control
+        /// da tao. Khong co doan nay: lan dau mo dialog, o o tab chua mo (vd prefix_posN tab Parts) khong nhan file
+        /// standard va Apply gui o trong cho plugin. Tao het tab page TRUOC base.OnLoad (luc Tekla nap gia tri).
+        /// </summary>
+        protected override void OnLoad(EventArgs e)
+        {
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                try { CreateAllTabPages(this); }
+                catch { }
+            }
+            base.OnLoad(e);
+        }
+
+        private static void CreateAllTabPages(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                TabControl tc = c as TabControl;
+                if (tc != null)
+                {
+                    int keep = Math.Max(0, tc.SelectedIndex);
+                    for (int i = 0; i < tc.TabCount; i++)
+                    {
+                        tc.SelectedIndex = i;            // hien page -> WinForms tao page va control con
+                        CreateTree(tc.TabPages[i]);
+                    }
+                    tc.SelectedIndex = keep;
+                }
+                else if (c.HasChildren) CreateAllTabPages(c);
+            }
+        }
+
+        private static void CreateTree(Control c)
+        {
+            c.CreateControl();
+            foreach (Control k in c.Controls) CreateTree(k);
+        }
+
+        #endregion
 
         /// <summary>ComboBox trong Designer khong luu SelectedIndex - dat mac dinh o day (Tekla ghi de bang file attribute neu co).</summary>
         private void SetComboDefaults()

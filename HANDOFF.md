@@ -25,6 +25,8 @@
   - Run() không có MessageBox (đã vậy từ trước); lỗi → `Operation.DisplayPrompt` + `RDS_BUSplice.log`.
   - Build Release OK, test toán 58/58. **Chưa test live** (chèn bằng dialog, `GetAttribute("prefix_pos1")`, Part Standards APPLY stage 2, Undo).
 
+- **Dialog nhận standard lần đầu (03-Nov, brief 2)**: `MainForm.OnLoad` gọi `CreateAllTabPages` trước `base.OnLoad` (chép RDS.PackingPlate) → ô ở tab chưa mở (Parts: `prefix_posN`...) được Tekla nạp file standard và gửi đúng khi Apply. Lỗi B (gán giá trị bằng code sau load): không có — `SetComboDefaults` chạy trong constructor, `EnableGroup` chỉ đổi Enabled. Chưa test live: mở dialog lần đầu không bấm tab Parts → Apply → kiểm tra prefix.
+
 ## Máy mới (nhà) — chuẩn bị 1 lần
 1. `git clone https://github.com/letrungtin2710-hash/RDS.BUSplice.git` (đặt ở đâu cũng được, vd `D:\Tools\RDS.BUSplice`).
 2. Cần: Tekla Structures 2020 cài ở `C:\Program Files\Tekla Structures\2020.0` (hoặc sửa `TeklaBin` trong csproj), Visual Studio có .NET Framework 4.8 targeting pack.
@@ -44,4 +46,4 @@
 - Không tạo weld (Snit tự key trong bản vẽ).
 - Chưa có ProfileCatalog / MaterialCatalog trong dialog plugin.
 
-_Last commit: xem `git log -1` · Cập nhật: 29-Oct-2026_
+_Last commit: xem `git log -1` · Cập nhật: 03-Nov-2026_
