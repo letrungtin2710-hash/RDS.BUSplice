@@ -47,3 +47,10 @@
 - Chưa có ProfileCatalog / MaterialCatalog trong dialog plugin.
 
 _Last commit: xem `git log -1` · Cập nhật: 03-Nov-2026_
+
+## 21-Nov-2026: tab Tri stiffener theo chuẩn dialog
+- Hình `plugin\Images\Tri.png` (660 x 342) vẽ bằng `tools\make_tri_image.py` (thay `Make-TriImage.ps1`): bolt + số 1 / 2 chép pixel từ `Endplate.png`,
+  thép / plate có viền sáng trên-trái, xám + đen dưới-phải như tab Endplate / Flange. Script ghi luôn vào `MainForm.resx` (picTri.Image).
+- 4 combo bật tắt đặt cạnh từng tấm trên hình; bỏ label Create / Top 1 / Top 2 / Bottom 1 / Bottom 2 / Top / Bottom / t; Chamfer + Nose (trên, dưới) nằm trên hình
+  phía BU 1; `TriTT` / `TriBT` (t) chuyển sang tab Parts, hàng Tri stiffener (hàng trên = Top, hàng dưới = Bottom). AttributeName không đổi.
+- Build Release OK, copy vào `extensions\RDS.BUSplice`. Bản trong `nt\bin\plugins` (10:36 21-Nov) CHƯA thay (cần Admin): chạy `plugin\CopyToTekla.bat`.
