@@ -83,6 +83,49 @@
             this.lbl21 = new System.Windows.Forms.Label();
             this.chkStiffChamY = new System.Windows.Forms.CheckBox();
             this.txtStiffChamY = new System.Windows.Forms.TextBox();
+            this.tabTri = new System.Windows.Forms.TabPage();
+            this.chkTriTL = new System.Windows.Forms.CheckBox();
+            this.txtTriTL = new System.Windows.Forms.TextBox();
+            this.chkTriTB = new System.Windows.Forms.CheckBox();
+            this.txtTriTB = new System.Windows.Forms.TextBox();
+            this.chkTriBL = new System.Windows.Forms.CheckBox();
+            this.txtTriBL = new System.Windows.Forms.TextBox();
+            this.chkTriBB = new System.Windows.Forms.CheckBox();
+            this.txtTriBB = new System.Windows.Forms.TextBox();
+            this.lblTriCreate = new System.Windows.Forms.Label();
+            this.lblTri1TOn = new System.Windows.Forms.Label();
+            this.chkTri1TOn = new System.Windows.Forms.CheckBox();
+            this.cboTri1TOn = new System.Windows.Forms.ComboBox();
+            this.lblTri2TOn = new System.Windows.Forms.Label();
+            this.chkTri2TOn = new System.Windows.Forms.CheckBox();
+            this.cboTri2TOn = new System.Windows.Forms.ComboBox();
+            this.lblTri1BOn = new System.Windows.Forms.Label();
+            this.chkTri1BOn = new System.Windows.Forms.CheckBox();
+            this.cboTri1BOn = new System.Windows.Forms.ComboBox();
+            this.lblTri2BOn = new System.Windows.Forms.Label();
+            this.chkTri2BOn = new System.Windows.Forms.CheckBox();
+            this.cboTri2BOn = new System.Windows.Forms.ComboBox();
+            this.lblTriT = new System.Windows.Forms.Label();
+            this.lblTriTT = new System.Windows.Forms.Label();
+            this.chkTriTT = new System.Windows.Forms.CheckBox();
+            this.txtTriTT = new System.Windows.Forms.TextBox();
+            this.lblTriTCham = new System.Windows.Forms.Label();
+            this.chkTriTCham = new System.Windows.Forms.CheckBox();
+            this.txtTriTCham = new System.Windows.Forms.TextBox();
+            this.lblTriTNose = new System.Windows.Forms.Label();
+            this.chkTriTNose = new System.Windows.Forms.CheckBox();
+            this.txtTriTNose = new System.Windows.Forms.TextBox();
+            this.lblTriB = new System.Windows.Forms.Label();
+            this.lblTriBT = new System.Windows.Forms.Label();
+            this.chkTriBT = new System.Windows.Forms.CheckBox();
+            this.txtTriBT = new System.Windows.Forms.TextBox();
+            this.lblTriBCham = new System.Windows.Forms.Label();
+            this.chkTriBCham = new System.Windows.Forms.CheckBox();
+            this.txtTriBCham = new System.Windows.Forms.TextBox();
+            this.lblTriBNose = new System.Windows.Forms.Label();
+            this.chkTriBNose = new System.Windows.Forms.CheckBox();
+            this.txtTriBNose = new System.Windows.Forms.TextBox();
+            this.picTri = new System.Windows.Forms.PictureBox();
             this.tabParts = new System.Windows.Forms.TabPage();
             this.lbl22 = new System.Windows.Forms.Label();
             this.lbl23 = new System.Windows.Forms.Label();
@@ -121,6 +164,17 @@
             this.txtStMaterial = new System.Windows.Forms.TextBox();
             this.chkStClass = new System.Windows.Forms.CheckBox();
             this.txtStClass = new System.Windows.Forms.TextBox();
+            this.lblTrRow = new System.Windows.Forms.Label();
+            this.chkTrPrefix = new System.Windows.Forms.CheckBox();
+            this.txtTrPrefix = new System.Windows.Forms.TextBox();
+            this.chkTrStart = new System.Windows.Forms.CheckBox();
+            this.txtTrStart = new System.Windows.Forms.TextBox();
+            this.chkTrMaterial = new System.Windows.Forms.CheckBox();
+            this.txtTrMaterial = new System.Windows.Forms.TextBox();
+            this.chkTrName = new System.Windows.Forms.CheckBox();
+            this.txtTrName = new System.Windows.Forms.TextBox();
+            this.chkTrClass = new System.Windows.Forms.CheckBox();
+            this.txtTrClass = new System.Windows.Forms.TextBox();
             this.lblCredit = new System.Windows.Forms.Label();
             this.okApplyModifyGetOnOffCancel = new Tekla.Structures.Dialog.UIControls.OkApplyModifyGetOnOffCancel();
             this.saveLoad = new Tekla.Structures.Dialog.UIControls.SaveLoad();
@@ -140,6 +194,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEndplate)).BeginInit();
             this.tabFlange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFlange)).BeginInit();
+            this.tabTri.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTri)).BeginInit();
             this.tabParts.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,6 +206,7 @@
             this.structuresExtender.SetBindPropertyName(this.tabControl, null);
             this.tabControl.Controls.Add(this.tabEndplate);
             this.tabControl.Controls.Add(this.tabFlange);
+            this.tabControl.Controls.Add(this.tabTri);
             this.tabControl.Controls.Add(this.tabParts);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(6, 45);
@@ -972,6 +1029,612 @@
             this.txtStiffChamY.TabIndex = 74;
             this.txtStiffChamY.Text = "15.00";
             // 
+            // tabTri
+            // 
+            this.structuresExtender.SetAttributeName(this.tabTri, null);
+            this.structuresExtender.SetAttributeTypeName(this.tabTri, null);
+            this.structuresExtender.SetBindPropertyName(this.tabTri, null);
+            this.tabTri.Controls.Add(this.chkTriTL);
+            this.tabTri.Controls.Add(this.txtTriTL);
+            this.tabTri.Controls.Add(this.chkTriTB);
+            this.tabTri.Controls.Add(this.txtTriTB);
+            this.tabTri.Controls.Add(this.chkTriBL);
+            this.tabTri.Controls.Add(this.txtTriBL);
+            this.tabTri.Controls.Add(this.chkTriBB);
+            this.tabTri.Controls.Add(this.txtTriBB);
+            this.tabTri.Controls.Add(this.lblTriCreate);
+            this.tabTri.Controls.Add(this.lblTri1TOn);
+            this.tabTri.Controls.Add(this.chkTri1TOn);
+            this.tabTri.Controls.Add(this.cboTri1TOn);
+            this.tabTri.Controls.Add(this.lblTri2TOn);
+            this.tabTri.Controls.Add(this.chkTri2TOn);
+            this.tabTri.Controls.Add(this.cboTri2TOn);
+            this.tabTri.Controls.Add(this.lblTri1BOn);
+            this.tabTri.Controls.Add(this.chkTri1BOn);
+            this.tabTri.Controls.Add(this.cboTri1BOn);
+            this.tabTri.Controls.Add(this.lblTri2BOn);
+            this.tabTri.Controls.Add(this.chkTri2BOn);
+            this.tabTri.Controls.Add(this.cboTri2BOn);
+            this.tabTri.Controls.Add(this.lblTriT);
+            this.tabTri.Controls.Add(this.lblTriTT);
+            this.tabTri.Controls.Add(this.chkTriTT);
+            this.tabTri.Controls.Add(this.txtTriTT);
+            this.tabTri.Controls.Add(this.lblTriTCham);
+            this.tabTri.Controls.Add(this.chkTriTCham);
+            this.tabTri.Controls.Add(this.txtTriTCham);
+            this.tabTri.Controls.Add(this.lblTriTNose);
+            this.tabTri.Controls.Add(this.chkTriTNose);
+            this.tabTri.Controls.Add(this.txtTriTNose);
+            this.tabTri.Controls.Add(this.lblTriB);
+            this.tabTri.Controls.Add(this.lblTriBT);
+            this.tabTri.Controls.Add(this.chkTriBT);
+            this.tabTri.Controls.Add(this.txtTriBT);
+            this.tabTri.Controls.Add(this.lblTriBCham);
+            this.tabTri.Controls.Add(this.chkTriBCham);
+            this.tabTri.Controls.Add(this.txtTriBCham);
+            this.tabTri.Controls.Add(this.lblTriBNose);
+            this.tabTri.Controls.Add(this.chkTriBNose);
+            this.tabTri.Controls.Add(this.txtTriBNose);
+            this.tabTri.Controls.Add(this.picTri);
+            this.tabTri.Location = new System.Drawing.Point(4, 22);
+            this.tabTri.Name = "tabTri";
+            this.tabTri.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTri.Size = new System.Drawing.Size(788, 426);
+            this.tabTri.TabIndex = 4;
+            this.tabTri.Text = "Tri stiffener";
+            this.tabTri.UseVisualStyleBackColor = true;
+            // 
+            // chkTriTL
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTriTL, "TriTL");
+            this.structuresExtender.SetAttributeTypeName(this.chkTriTL, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTriTL, "Checked");
+            this.chkTriTL.AutoSize = true;
+            this.chkTriTL.Checked = true;
+            this.chkTriTL.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTriTL, true);
+            this.chkTriTL.Location = new System.Drawing.Point(162, 44);
+            this.chkTriTL.Name = "chkTriTL";
+            this.chkTriTL.Size = new System.Drawing.Size(15, 14);
+            this.chkTriTL.TabIndex = 301;
+            this.chkTriTL.UseVisualStyleBackColor = true;
+            // 
+            // txtTriTL
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTriTL, "TriTL");
+            this.structuresExtender.SetAttributeTypeName(this.txtTriTL, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtTriTL, "Text");
+            this.txtTriTL.Location = new System.Drawing.Point(180, 40);
+            this.txtTriTL.Name = "txtTriTL";
+            this.txtTriTL.Size = new System.Drawing.Size(50, 20);
+            this.txtTriTL.TabIndex = 302;
+            this.txtTriTL.Text = "100.00";
+            // 
+            // chkTriTB
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTriTB, "TriTB");
+            this.structuresExtender.SetAttributeTypeName(this.chkTriTB, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTriTB, "Checked");
+            this.chkTriTB.AutoSize = true;
+            this.chkTriTB.Checked = true;
+            this.chkTriTB.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTriTB, true);
+            this.chkTriTB.Location = new System.Drawing.Point(382, 108);
+            this.chkTriTB.Name = "chkTriTB";
+            this.chkTriTB.Size = new System.Drawing.Size(15, 14);
+            this.chkTriTB.TabIndex = 303;
+            this.chkTriTB.UseVisualStyleBackColor = true;
+            // 
+            // txtTriTB
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTriTB, "TriTB");
+            this.structuresExtender.SetAttributeTypeName(this.txtTriTB, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtTriTB, "Text");
+            this.txtTriTB.Location = new System.Drawing.Point(400, 104);
+            this.txtTriTB.Name = "txtTriTB";
+            this.txtTriTB.Size = new System.Drawing.Size(50, 20);
+            this.txtTriTB.TabIndex = 304;
+            this.txtTriTB.Text = "0.00";
+            // 
+            // chkTriBL
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTriBL, "TriBL");
+            this.structuresExtender.SetAttributeTypeName(this.chkTriBL, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTriBL, "Checked");
+            this.chkTriBL.AutoSize = true;
+            this.chkTriBL.Checked = true;
+            this.chkTriBL.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTriBL, true);
+            this.chkTriBL.Location = new System.Drawing.Point(162, 372);
+            this.chkTriBL.Name = "chkTriBL";
+            this.chkTriBL.Size = new System.Drawing.Size(15, 14);
+            this.chkTriBL.TabIndex = 305;
+            this.chkTriBL.UseVisualStyleBackColor = true;
+            // 
+            // txtTriBL
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTriBL, "TriBL");
+            this.structuresExtender.SetAttributeTypeName(this.txtTriBL, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtTriBL, "Text");
+            this.txtTriBL.Location = new System.Drawing.Point(180, 368);
+            this.txtTriBL.Name = "txtTriBL";
+            this.txtTriBL.Size = new System.Drawing.Size(50, 20);
+            this.txtTriBL.TabIndex = 306;
+            this.txtTriBL.Text = "100.00";
+            // 
+            // chkTriBB
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTriBB, "TriBB");
+            this.structuresExtender.SetAttributeTypeName(this.chkTriBB, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTriBB, "Checked");
+            this.chkTriBB.AutoSize = true;
+            this.chkTriBB.Checked = true;
+            this.chkTriBB.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTriBB, true);
+            this.chkTriBB.Location = new System.Drawing.Point(382, 308);
+            this.chkTriBB.Name = "chkTriBB";
+            this.chkTriBB.Size = new System.Drawing.Size(15, 14);
+            this.chkTriBB.TabIndex = 307;
+            this.chkTriBB.UseVisualStyleBackColor = true;
+            // 
+            // txtTriBB
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTriBB, "TriBB");
+            this.structuresExtender.SetAttributeTypeName(this.txtTriBB, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtTriBB, "Text");
+            this.txtTriBB.Location = new System.Drawing.Point(400, 304);
+            this.txtTriBB.Name = "txtTriBB";
+            this.txtTriBB.Size = new System.Drawing.Size(50, 20);
+            this.txtTriBB.TabIndex = 308;
+            this.txtTriBB.Text = "0.00";
+            // 
+            // lblTriCreate
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTriCreate, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTriCreate, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTriCreate, null);
+            this.lblTriCreate.AutoSize = true;
+            this.lblTriCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblTriCreate.Location = new System.Drawing.Point(527, 44);
+            this.lblTriCreate.Name = "lblTriCreate";
+            this.lblTriCreate.Size = new System.Drawing.Size(40, 13);
+            this.lblTriCreate.TabIndex = 309;
+            this.lblTriCreate.Text = "Create";
+            // 
+            // lblTri1TOn
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTri1TOn, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTri1TOn, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTri1TOn, null);
+            this.lblTri1TOn.AutoSize = true;
+            this.lblTri1TOn.Location = new System.Drawing.Point(527, 74);
+            this.lblTri1TOn.Name = "lblTri1TOn";
+            this.lblTri1TOn.Size = new System.Drawing.Size(40, 13);
+            this.lblTri1TOn.TabIndex = 310;
+            this.lblTri1TOn.Text = "Top 1";
+            // 
+            // chkTri1TOn
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTri1TOn, "Tri1TOn");
+            this.structuresExtender.SetAttributeTypeName(this.chkTri1TOn, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTri1TOn, "Checked");
+            this.chkTri1TOn.AutoSize = true;
+            this.chkTri1TOn.Checked = true;
+            this.chkTri1TOn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTri1TOn, true);
+            this.chkTri1TOn.Location = new System.Drawing.Point(607, 74);
+            this.chkTri1TOn.Name = "chkTri1TOn";
+            this.chkTri1TOn.Size = new System.Drawing.Size(15, 14);
+            this.chkTri1TOn.TabIndex = 311;
+            this.chkTri1TOn.UseVisualStyleBackColor = true;
+            // 
+            // cboTri1TOn
+            // 
+            this.structuresExtender.SetAttributeName(this.cboTri1TOn, "Tri1TOn");
+            this.structuresExtender.SetAttributeTypeName(this.cboTri1TOn, "Integer");
+            this.structuresExtender.SetBindPropertyName(this.cboTri1TOn, "SelectedIndex");
+            this.cboTri1TOn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTri1TOn.FormattingEnabled = true;
+            this.cboTri1TOn.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.cboTri1TOn.Location = new System.Drawing.Point(625, 70);
+            this.cboTri1TOn.Name = "cboTri1TOn";
+            this.cboTri1TOn.Size = new System.Drawing.Size(60, 21);
+            this.cboTri1TOn.TabIndex = 312;
+            // 
+            // lblTri2TOn
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTri2TOn, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTri2TOn, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTri2TOn, null);
+            this.lblTri2TOn.AutoSize = true;
+            this.lblTri2TOn.Location = new System.Drawing.Point(527, 100);
+            this.lblTri2TOn.Name = "lblTri2TOn";
+            this.lblTri2TOn.Size = new System.Drawing.Size(40, 13);
+            this.lblTri2TOn.TabIndex = 313;
+            this.lblTri2TOn.Text = "Top 2";
+            // 
+            // chkTri2TOn
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTri2TOn, "Tri2TOn");
+            this.structuresExtender.SetAttributeTypeName(this.chkTri2TOn, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTri2TOn, "Checked");
+            this.chkTri2TOn.AutoSize = true;
+            this.chkTri2TOn.Checked = true;
+            this.chkTri2TOn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTri2TOn, true);
+            this.chkTri2TOn.Location = new System.Drawing.Point(607, 100);
+            this.chkTri2TOn.Name = "chkTri2TOn";
+            this.chkTri2TOn.Size = new System.Drawing.Size(15, 14);
+            this.chkTri2TOn.TabIndex = 314;
+            this.chkTri2TOn.UseVisualStyleBackColor = true;
+            // 
+            // cboTri2TOn
+            // 
+            this.structuresExtender.SetAttributeName(this.cboTri2TOn, "Tri2TOn");
+            this.structuresExtender.SetAttributeTypeName(this.cboTri2TOn, "Integer");
+            this.structuresExtender.SetBindPropertyName(this.cboTri2TOn, "SelectedIndex");
+            this.cboTri2TOn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTri2TOn.FormattingEnabled = true;
+            this.cboTri2TOn.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.cboTri2TOn.Location = new System.Drawing.Point(625, 96);
+            this.cboTri2TOn.Name = "cboTri2TOn";
+            this.cboTri2TOn.Size = new System.Drawing.Size(60, 21);
+            this.cboTri2TOn.TabIndex = 315;
+            // 
+            // lblTri1BOn
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTri1BOn, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTri1BOn, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTri1BOn, null);
+            this.lblTri1BOn.AutoSize = true;
+            this.lblTri1BOn.Location = new System.Drawing.Point(527, 126);
+            this.lblTri1BOn.Name = "lblTri1BOn";
+            this.lblTri1BOn.Size = new System.Drawing.Size(40, 13);
+            this.lblTri1BOn.TabIndex = 316;
+            this.lblTri1BOn.Text = "Bottom 1";
+            // 
+            // chkTri1BOn
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTri1BOn, "Tri1BOn");
+            this.structuresExtender.SetAttributeTypeName(this.chkTri1BOn, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTri1BOn, "Checked");
+            this.chkTri1BOn.AutoSize = true;
+            this.chkTri1BOn.Checked = true;
+            this.chkTri1BOn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTri1BOn, true);
+            this.chkTri1BOn.Location = new System.Drawing.Point(607, 126);
+            this.chkTri1BOn.Name = "chkTri1BOn";
+            this.chkTri1BOn.Size = new System.Drawing.Size(15, 14);
+            this.chkTri1BOn.TabIndex = 317;
+            this.chkTri1BOn.UseVisualStyleBackColor = true;
+            // 
+            // cboTri1BOn
+            // 
+            this.structuresExtender.SetAttributeName(this.cboTri1BOn, "Tri1BOn");
+            this.structuresExtender.SetAttributeTypeName(this.cboTri1BOn, "Integer");
+            this.structuresExtender.SetBindPropertyName(this.cboTri1BOn, "SelectedIndex");
+            this.cboTri1BOn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTri1BOn.FormattingEnabled = true;
+            this.cboTri1BOn.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.cboTri1BOn.Location = new System.Drawing.Point(625, 122);
+            this.cboTri1BOn.Name = "cboTri1BOn";
+            this.cboTri1BOn.Size = new System.Drawing.Size(60, 21);
+            this.cboTri1BOn.TabIndex = 318;
+            // 
+            // lblTri2BOn
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTri2BOn, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTri2BOn, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTri2BOn, null);
+            this.lblTri2BOn.AutoSize = true;
+            this.lblTri2BOn.Location = new System.Drawing.Point(527, 152);
+            this.lblTri2BOn.Name = "lblTri2BOn";
+            this.lblTri2BOn.Size = new System.Drawing.Size(40, 13);
+            this.lblTri2BOn.TabIndex = 319;
+            this.lblTri2BOn.Text = "Bottom 2";
+            // 
+            // chkTri2BOn
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTri2BOn, "Tri2BOn");
+            this.structuresExtender.SetAttributeTypeName(this.chkTri2BOn, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTri2BOn, "Checked");
+            this.chkTri2BOn.AutoSize = true;
+            this.chkTri2BOn.Checked = true;
+            this.chkTri2BOn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTri2BOn, true);
+            this.chkTri2BOn.Location = new System.Drawing.Point(607, 152);
+            this.chkTri2BOn.Name = "chkTri2BOn";
+            this.chkTri2BOn.Size = new System.Drawing.Size(15, 14);
+            this.chkTri2BOn.TabIndex = 320;
+            this.chkTri2BOn.UseVisualStyleBackColor = true;
+            // 
+            // cboTri2BOn
+            // 
+            this.structuresExtender.SetAttributeName(this.cboTri2BOn, "Tri2BOn");
+            this.structuresExtender.SetAttributeTypeName(this.cboTri2BOn, "Integer");
+            this.structuresExtender.SetBindPropertyName(this.cboTri2BOn, "SelectedIndex");
+            this.cboTri2BOn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTri2BOn.FormattingEnabled = true;
+            this.cboTri2BOn.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.cboTri2BOn.Location = new System.Drawing.Point(625, 148);
+            this.cboTri2BOn.Name = "cboTri2BOn";
+            this.cboTri2BOn.Size = new System.Drawing.Size(60, 21);
+            this.cboTri2BOn.TabIndex = 321;
+            // 
+            // lblTriT
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTriT, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTriT, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTriT, null);
+            this.lblTriT.AutoSize = true;
+            this.lblTriT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblTriT.Location = new System.Drawing.Point(527, 184);
+            this.lblTriT.Name = "lblTriT";
+            this.lblTriT.Size = new System.Drawing.Size(40, 13);
+            this.lblTriT.TabIndex = 322;
+            this.lblTriT.Text = "Top";
+            // 
+            // lblTriTT
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTriTT, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTriTT, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTriTT, null);
+            this.lblTriTT.AutoSize = true;
+            this.lblTriTT.Location = new System.Drawing.Point(527, 214);
+            this.lblTriTT.Name = "lblTriTT";
+            this.lblTriTT.Size = new System.Drawing.Size(40, 13);
+            this.lblTriTT.TabIndex = 323;
+            this.lblTriTT.Text = "t";
+            // 
+            // chkTriTT
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTriTT, "TriTT");
+            this.structuresExtender.SetAttributeTypeName(this.chkTriTT, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTriTT, "Checked");
+            this.chkTriTT.AutoSize = true;
+            this.chkTriTT.Checked = true;
+            this.chkTriTT.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTriTT, true);
+            this.chkTriTT.Location = new System.Drawing.Point(607, 214);
+            this.chkTriTT.Name = "chkTriTT";
+            this.chkTriTT.Size = new System.Drawing.Size(15, 14);
+            this.chkTriTT.TabIndex = 324;
+            this.chkTriTT.UseVisualStyleBackColor = true;
+            // 
+            // txtTriTT
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTriTT, "TriTT");
+            this.structuresExtender.SetAttributeTypeName(this.txtTriTT, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtTriTT, "Text");
+            this.txtTriTT.Location = new System.Drawing.Point(625, 210);
+            this.txtTriTT.Name = "txtTriTT";
+            this.txtTriTT.Size = new System.Drawing.Size(60, 20);
+            this.txtTriTT.TabIndex = 325;
+            this.txtTriTT.Text = "16.00";
+            // 
+            // lblTriTCham
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTriTCham, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTriTCham, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTriTCham, null);
+            this.lblTriTCham.AutoSize = true;
+            this.lblTriTCham.Location = new System.Drawing.Point(527, 240);
+            this.lblTriTCham.Name = "lblTriTCham";
+            this.lblTriTCham.Size = new System.Drawing.Size(40, 13);
+            this.lblTriTCham.TabIndex = 326;
+            this.lblTriTCham.Text = "Chamfer";
+            // 
+            // chkTriTCham
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTriTCham, "TriTCham");
+            this.structuresExtender.SetAttributeTypeName(this.chkTriTCham, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTriTCham, "Checked");
+            this.chkTriTCham.AutoSize = true;
+            this.chkTriTCham.Checked = true;
+            this.chkTriTCham.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTriTCham, true);
+            this.chkTriTCham.Location = new System.Drawing.Point(607, 240);
+            this.chkTriTCham.Name = "chkTriTCham";
+            this.chkTriTCham.Size = new System.Drawing.Size(15, 14);
+            this.chkTriTCham.TabIndex = 327;
+            this.chkTriTCham.UseVisualStyleBackColor = true;
+            // 
+            // txtTriTCham
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTriTCham, "TriTCham");
+            this.structuresExtender.SetAttributeTypeName(this.txtTriTCham, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtTriTCham, "Text");
+            this.txtTriTCham.Location = new System.Drawing.Point(625, 236);
+            this.txtTriTCham.Name = "txtTriTCham";
+            this.txtTriTCham.Size = new System.Drawing.Size(60, 20);
+            this.txtTriTCham.TabIndex = 328;
+            this.txtTriTCham.Text = "15.00";
+            // 
+            // lblTriTNose
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTriTNose, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTriTNose, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTriTNose, null);
+            this.lblTriTNose.AutoSize = true;
+            this.lblTriTNose.Location = new System.Drawing.Point(527, 266);
+            this.lblTriTNose.Name = "lblTriTNose";
+            this.lblTriTNose.Size = new System.Drawing.Size(40, 13);
+            this.lblTriTNose.TabIndex = 329;
+            this.lblTriTNose.Text = "Nose";
+            // 
+            // chkTriTNose
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTriTNose, "TriTNose");
+            this.structuresExtender.SetAttributeTypeName(this.chkTriTNose, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTriTNose, "Checked");
+            this.chkTriTNose.AutoSize = true;
+            this.chkTriTNose.Checked = true;
+            this.chkTriTNose.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTriTNose, true);
+            this.chkTriTNose.Location = new System.Drawing.Point(607, 266);
+            this.chkTriTNose.Name = "chkTriTNose";
+            this.chkTriTNose.Size = new System.Drawing.Size(15, 14);
+            this.chkTriTNose.TabIndex = 330;
+            this.chkTriTNose.UseVisualStyleBackColor = true;
+            // 
+            // txtTriTNose
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTriTNose, "TriTNose");
+            this.structuresExtender.SetAttributeTypeName(this.txtTriTNose, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtTriTNose, "Text");
+            this.txtTriTNose.Location = new System.Drawing.Point(625, 262);
+            this.txtTriTNose.Name = "txtTriTNose";
+            this.txtTriTNose.Size = new System.Drawing.Size(60, 20);
+            this.txtTriTNose.TabIndex = 331;
+            this.txtTriTNose.Text = "0.00";
+            // 
+            // lblTriB
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTriB, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTriB, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTriB, null);
+            this.lblTriB.AutoSize = true;
+            this.lblTriB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblTriB.Location = new System.Drawing.Point(527, 298);
+            this.lblTriB.Name = "lblTriB";
+            this.lblTriB.Size = new System.Drawing.Size(40, 13);
+            this.lblTriB.TabIndex = 332;
+            this.lblTriB.Text = "Bottom";
+            // 
+            // lblTriBT
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTriBT, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTriBT, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTriBT, null);
+            this.lblTriBT.AutoSize = true;
+            this.lblTriBT.Location = new System.Drawing.Point(527, 328);
+            this.lblTriBT.Name = "lblTriBT";
+            this.lblTriBT.Size = new System.Drawing.Size(40, 13);
+            this.lblTriBT.TabIndex = 333;
+            this.lblTriBT.Text = "t";
+            // 
+            // chkTriBT
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTriBT, "TriBT");
+            this.structuresExtender.SetAttributeTypeName(this.chkTriBT, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTriBT, "Checked");
+            this.chkTriBT.AutoSize = true;
+            this.chkTriBT.Checked = true;
+            this.chkTriBT.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTriBT, true);
+            this.chkTriBT.Location = new System.Drawing.Point(607, 328);
+            this.chkTriBT.Name = "chkTriBT";
+            this.chkTriBT.Size = new System.Drawing.Size(15, 14);
+            this.chkTriBT.TabIndex = 334;
+            this.chkTriBT.UseVisualStyleBackColor = true;
+            // 
+            // txtTriBT
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTriBT, "TriBT");
+            this.structuresExtender.SetAttributeTypeName(this.txtTriBT, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtTriBT, "Text");
+            this.txtTriBT.Location = new System.Drawing.Point(625, 324);
+            this.txtTriBT.Name = "txtTriBT";
+            this.txtTriBT.Size = new System.Drawing.Size(60, 20);
+            this.txtTriBT.TabIndex = 335;
+            this.txtTriBT.Text = "16.00";
+            // 
+            // lblTriBCham
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTriBCham, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTriBCham, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTriBCham, null);
+            this.lblTriBCham.AutoSize = true;
+            this.lblTriBCham.Location = new System.Drawing.Point(527, 354);
+            this.lblTriBCham.Name = "lblTriBCham";
+            this.lblTriBCham.Size = new System.Drawing.Size(40, 13);
+            this.lblTriBCham.TabIndex = 336;
+            this.lblTriBCham.Text = "Chamfer";
+            // 
+            // chkTriBCham
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTriBCham, "TriBCham");
+            this.structuresExtender.SetAttributeTypeName(this.chkTriBCham, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTriBCham, "Checked");
+            this.chkTriBCham.AutoSize = true;
+            this.chkTriBCham.Checked = true;
+            this.chkTriBCham.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTriBCham, true);
+            this.chkTriBCham.Location = new System.Drawing.Point(607, 354);
+            this.chkTriBCham.Name = "chkTriBCham";
+            this.chkTriBCham.Size = new System.Drawing.Size(15, 14);
+            this.chkTriBCham.TabIndex = 337;
+            this.chkTriBCham.UseVisualStyleBackColor = true;
+            // 
+            // txtTriBCham
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTriBCham, "TriBCham");
+            this.structuresExtender.SetAttributeTypeName(this.txtTriBCham, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtTriBCham, "Text");
+            this.txtTriBCham.Location = new System.Drawing.Point(625, 350);
+            this.txtTriBCham.Name = "txtTriBCham";
+            this.txtTriBCham.Size = new System.Drawing.Size(60, 20);
+            this.txtTriBCham.TabIndex = 338;
+            this.txtTriBCham.Text = "15.00";
+            // 
+            // lblTriBNose
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTriBNose, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTriBNose, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTriBNose, null);
+            this.lblTriBNose.AutoSize = true;
+            this.lblTriBNose.Location = new System.Drawing.Point(527, 380);
+            this.lblTriBNose.Name = "lblTriBNose";
+            this.lblTriBNose.Size = new System.Drawing.Size(40, 13);
+            this.lblTriBNose.TabIndex = 339;
+            this.lblTriBNose.Text = "Nose";
+            // 
+            // chkTriBNose
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTriBNose, "TriBNose");
+            this.structuresExtender.SetAttributeTypeName(this.chkTriBNose, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTriBNose, "Checked");
+            this.chkTriBNose.AutoSize = true;
+            this.chkTriBNose.Checked = true;
+            this.chkTriBNose.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTriBNose, true);
+            this.chkTriBNose.Location = new System.Drawing.Point(607, 380);
+            this.chkTriBNose.Name = "chkTriBNose";
+            this.chkTriBNose.Size = new System.Drawing.Size(15, 14);
+            this.chkTriBNose.TabIndex = 340;
+            this.chkTriBNose.UseVisualStyleBackColor = true;
+            // 
+            // txtTriBNose
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTriBNose, "TriBNose");
+            this.structuresExtender.SetAttributeTypeName(this.txtTriBNose, "Distance");
+            this.structuresExtender.SetBindPropertyName(this.txtTriBNose, "Text");
+            this.txtTriBNose.Location = new System.Drawing.Point(625, 376);
+            this.txtTriBNose.Name = "txtTriBNose";
+            this.txtTriBNose.Size = new System.Drawing.Size(60, 20);
+            this.txtTriBNose.TabIndex = 341;
+            this.txtTriBNose.Text = "0.00";
+            // 
+            // picTri
+            // 
+            this.structuresExtender.SetAttributeName(this.picTri, null);
+            this.structuresExtender.SetAttributeTypeName(this.picTri, null);
+            this.structuresExtender.SetBindPropertyName(this.picTri, null);
+            this.picTri.Image = ((System.Drawing.Image)(resources.GetObject("picTri.Image")));
+            this.picTri.Location = new System.Drawing.Point(20, 44);
+            this.picTri.Name = "picTri";
+            this.picTri.Size = new System.Drawing.Size(478, 342);
+            this.picTri.TabIndex = 342;
+            this.picTri.TabStop = false;
+            // 
             // tabParts
             // 
             this.structuresExtender.SetAttributeName(this.tabParts, null);
@@ -1025,6 +1688,17 @@
             this.tabParts.Controls.Add(this.txtStMaterial);
             this.tabParts.Controls.Add(this.chkStClass);
             this.tabParts.Controls.Add(this.txtStClass);
+            this.tabParts.Controls.Add(this.lblTrRow);
+            this.tabParts.Controls.Add(this.chkTrPrefix);
+            this.tabParts.Controls.Add(this.txtTrPrefix);
+            this.tabParts.Controls.Add(this.chkTrStart);
+            this.tabParts.Controls.Add(this.txtTrStart);
+            this.tabParts.Controls.Add(this.chkTrMaterial);
+            this.tabParts.Controls.Add(this.txtTrMaterial);
+            this.tabParts.Controls.Add(this.chkTrName);
+            this.tabParts.Controls.Add(this.txtTrName);
+            this.tabParts.Controls.Add(this.chkTrClass);
+            this.tabParts.Controls.Add(this.txtTrClass);
             this.tabParts.Location = new System.Drawing.Point(4, 22);
             this.tabParts.Name = "tabParts";
             this.tabParts.Padding = new System.Windows.Forms.Padding(3);
@@ -1507,6 +2181,147 @@
             this.txtStClass.Size = new System.Drawing.Size(50, 20);
             this.txtStClass.TabIndex = 112;
             // 
+            // lblTrRow
+            // 
+            this.structuresExtender.SetAttributeName(this.lblTrRow, null);
+            this.structuresExtender.SetAttributeTypeName(this.lblTrRow, null);
+            this.structuresExtender.SetBindPropertyName(this.lblTrRow, null);
+            this.lblTrRow.AutoSize = true;
+            this.lblTrRow.Location = new System.Drawing.Point(12, 141);
+            this.lblTrRow.Name = "lblTrRow";
+            this.lblTrRow.Size = new System.Drawing.Size(40, 13);
+            this.lblTrRow.TabIndex = 343;
+            this.lblTrRow.Text = "Tri stiffener";
+            // 
+            // chkTrPrefix
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTrPrefix, "prefix_pos4");
+            this.structuresExtender.SetAttributeTypeName(this.chkTrPrefix, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTrPrefix, "Checked");
+            this.chkTrPrefix.AutoSize = true;
+            this.chkTrPrefix.Checked = true;
+            this.chkTrPrefix.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTrPrefix, true);
+            this.chkTrPrefix.Location = new System.Drawing.Point(263, 142);
+            this.chkTrPrefix.Name = "chkTrPrefix";
+            this.chkTrPrefix.Size = new System.Drawing.Size(15, 14);
+            this.chkTrPrefix.TabIndex = 344;
+            this.chkTrPrefix.UseVisualStyleBackColor = true;
+            // 
+            // txtTrPrefix
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTrPrefix, "prefix_pos4");
+            this.structuresExtender.SetAttributeTypeName(this.txtTrPrefix, "String");
+            this.structuresExtender.SetBindPropertyName(this.txtTrPrefix, "Text");
+            this.txtTrPrefix.Location = new System.Drawing.Point(281, 138);
+            this.txtTrPrefix.Name = "txtTrPrefix";
+            this.txtTrPrefix.Size = new System.Drawing.Size(55, 20);
+            this.txtTrPrefix.TabIndex = 345;
+            this.txtTrPrefix.Text = "f";
+            // 
+            // chkTrStart
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTrStart, "TrStart");
+            this.structuresExtender.SetAttributeTypeName(this.chkTrStart, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTrStart, "Checked");
+            this.chkTrStart.AutoSize = true;
+            this.chkTrStart.Checked = true;
+            this.chkTrStart.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTrStart, true);
+            this.chkTrStart.Location = new System.Drawing.Point(346, 142);
+            this.chkTrStart.Name = "chkTrStart";
+            this.chkTrStart.Size = new System.Drawing.Size(15, 14);
+            this.chkTrStart.TabIndex = 346;
+            this.chkTrStart.UseVisualStyleBackColor = true;
+            // 
+            // txtTrStart
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTrStart, "TrStart");
+            this.structuresExtender.SetAttributeTypeName(this.txtTrStart, "Integer");
+            this.structuresExtender.SetBindPropertyName(this.txtTrStart, "Text");
+            this.txtTrStart.Location = new System.Drawing.Point(364, 138);
+            this.txtTrStart.Name = "txtTrStart";
+            this.txtTrStart.Size = new System.Drawing.Size(50, 20);
+            this.txtTrStart.TabIndex = 347;
+            this.txtTrStart.Text = "1";
+            // 
+            // chkTrMaterial
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTrMaterial, "TrMaterial");
+            this.structuresExtender.SetAttributeTypeName(this.chkTrMaterial, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTrMaterial, "Checked");
+            this.chkTrMaterial.AutoSize = true;
+            this.chkTrMaterial.Checked = true;
+            this.chkTrMaterial.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTrMaterial, true);
+            this.chkTrMaterial.Location = new System.Drawing.Point(424, 142);
+            this.chkTrMaterial.Name = "chkTrMaterial";
+            this.chkTrMaterial.Size = new System.Drawing.Size(15, 14);
+            this.chkTrMaterial.TabIndex = 348;
+            this.chkTrMaterial.UseVisualStyleBackColor = true;
+            // 
+            // txtTrMaterial
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTrMaterial, "TrMaterial");
+            this.structuresExtender.SetAttributeTypeName(this.txtTrMaterial, "String");
+            this.structuresExtender.SetBindPropertyName(this.txtTrMaterial, "Text");
+            this.txtTrMaterial.Location = new System.Drawing.Point(442, 138);
+            this.txtTrMaterial.Name = "txtTrMaterial";
+            this.txtTrMaterial.Size = new System.Drawing.Size(80, 20);
+            this.txtTrMaterial.TabIndex = 349;
+            this.txtTrMaterial.Text = "250";
+            // 
+            // chkTrName
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTrName, "TrName");
+            this.structuresExtender.SetAttributeTypeName(this.chkTrName, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTrName, "Checked");
+            this.chkTrName.AutoSize = true;
+            this.chkTrName.Checked = true;
+            this.chkTrName.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTrName, true);
+            this.chkTrName.Location = new System.Drawing.Point(528, 142);
+            this.chkTrName.Name = "chkTrName";
+            this.chkTrName.Size = new System.Drawing.Size(15, 14);
+            this.chkTrName.TabIndex = 350;
+            this.chkTrName.UseVisualStyleBackColor = true;
+            // 
+            // txtTrName
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTrName, "TrName");
+            this.structuresExtender.SetAttributeTypeName(this.txtTrName, "String");
+            this.structuresExtender.SetBindPropertyName(this.txtTrName, "Text");
+            this.txtTrName.Location = new System.Drawing.Point(546, 138);
+            this.txtTrName.Name = "txtTrName";
+            this.txtTrName.Size = new System.Drawing.Size(110, 20);
+            this.txtTrName.TabIndex = 351;
+            this.txtTrName.Text = "STIFFENER";
+            // 
+            // chkTrClass
+            // 
+            this.structuresExtender.SetAttributeName(this.chkTrClass, "TrClass");
+            this.structuresExtender.SetAttributeTypeName(this.chkTrClass, null);
+            this.structuresExtender.SetBindPropertyName(this.chkTrClass, "Checked");
+            this.chkTrClass.AutoSize = true;
+            this.chkTrClass.Checked = true;
+            this.chkTrClass.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.structuresExtender.SetIsFilter(this.chkTrClass, true);
+            this.chkTrClass.Location = new System.Drawing.Point(662, 142);
+            this.chkTrClass.Name = "chkTrClass";
+            this.chkTrClass.Size = new System.Drawing.Size(15, 14);
+            this.chkTrClass.TabIndex = 352;
+            this.chkTrClass.UseVisualStyleBackColor = true;
+            // 
+            // txtTrClass
+            // 
+            this.structuresExtender.SetAttributeName(this.txtTrClass, "TrClass");
+            this.structuresExtender.SetAttributeTypeName(this.txtTrClass, "String");
+            this.structuresExtender.SetBindPropertyName(this.txtTrClass, "Text");
+            this.txtTrClass.Location = new System.Drawing.Point(680, 138);
+            this.txtTrClass.Name = "txtTrClass";
+            this.txtTrClass.Size = new System.Drawing.Size(50, 20);
+            this.txtTrClass.TabIndex = 353;
+            // 
             // lblCredit
             // 
             this.structuresExtender.SetAttributeName(this.lblCredit, null);
@@ -1727,6 +2542,9 @@
             this.tabFlange.ResumeLayout(false);
             this.tabFlange.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFlange)).EndInit();
+            this.tabTri.ResumeLayout(false);
+            this.tabTri.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTri)).EndInit();
             this.tabParts.ResumeLayout(false);
             this.tabParts.PerformLayout();
             this.ResumeLayout(false);
@@ -1832,6 +2650,60 @@
         private System.Windows.Forms.TextBox txtStMaterial;
         private System.Windows.Forms.CheckBox chkStClass;
         private System.Windows.Forms.TextBox txtStClass;
+        private System.Windows.Forms.TabPage tabTri;
+        private System.Windows.Forms.CheckBox chkTriTL;
+        private System.Windows.Forms.TextBox txtTriTL;
+        private System.Windows.Forms.CheckBox chkTriTB;
+        private System.Windows.Forms.TextBox txtTriTB;
+        private System.Windows.Forms.CheckBox chkTriBL;
+        private System.Windows.Forms.TextBox txtTriBL;
+        private System.Windows.Forms.CheckBox chkTriBB;
+        private System.Windows.Forms.TextBox txtTriBB;
+        private System.Windows.Forms.Label lblTriCreate;
+        private System.Windows.Forms.Label lblTri1TOn;
+        private System.Windows.Forms.CheckBox chkTri1TOn;
+        private System.Windows.Forms.ComboBox cboTri1TOn;
+        private System.Windows.Forms.Label lblTri2TOn;
+        private System.Windows.Forms.CheckBox chkTri2TOn;
+        private System.Windows.Forms.ComboBox cboTri2TOn;
+        private System.Windows.Forms.Label lblTri1BOn;
+        private System.Windows.Forms.CheckBox chkTri1BOn;
+        private System.Windows.Forms.ComboBox cboTri1BOn;
+        private System.Windows.Forms.Label lblTri2BOn;
+        private System.Windows.Forms.CheckBox chkTri2BOn;
+        private System.Windows.Forms.ComboBox cboTri2BOn;
+        private System.Windows.Forms.Label lblTriT;
+        private System.Windows.Forms.Label lblTriTT;
+        private System.Windows.Forms.CheckBox chkTriTT;
+        private System.Windows.Forms.TextBox txtTriTT;
+        private System.Windows.Forms.Label lblTriTCham;
+        private System.Windows.Forms.CheckBox chkTriTCham;
+        private System.Windows.Forms.TextBox txtTriTCham;
+        private System.Windows.Forms.Label lblTriTNose;
+        private System.Windows.Forms.CheckBox chkTriTNose;
+        private System.Windows.Forms.TextBox txtTriTNose;
+        private System.Windows.Forms.Label lblTriB;
+        private System.Windows.Forms.Label lblTriBT;
+        private System.Windows.Forms.CheckBox chkTriBT;
+        private System.Windows.Forms.TextBox txtTriBT;
+        private System.Windows.Forms.Label lblTriBCham;
+        private System.Windows.Forms.CheckBox chkTriBCham;
+        private System.Windows.Forms.TextBox txtTriBCham;
+        private System.Windows.Forms.Label lblTriBNose;
+        private System.Windows.Forms.CheckBox chkTriBNose;
+        private System.Windows.Forms.TextBox txtTriBNose;
+        private System.Windows.Forms.PictureBox picTri;
+        private System.Windows.Forms.Label lblTrRow;
+        private System.Windows.Forms.CheckBox chkTrPrefix;
+        private System.Windows.Forms.TextBox txtTrPrefix;
+        private System.Windows.Forms.CheckBox chkTrStart;
+        private System.Windows.Forms.TextBox txtTrStart;
+        private System.Windows.Forms.CheckBox chkTrMaterial;
+        private System.Windows.Forms.TextBox txtTrMaterial;
+        private System.Windows.Forms.CheckBox chkTrName;
+        private System.Windows.Forms.TextBox txtTrName;
+        private System.Windows.Forms.CheckBox chkTrClass;
+        private System.Windows.Forms.TextBox txtTrClass;
         private System.Windows.Forms.Label lblCredit;
         private Tekla.Structures.Dialog.UIControls.OkApplyModifyGetOnOffCancel okApplyModifyGetOnOffCancel;
         private Tekla.Structures.Dialog.UIControls.SaveLoad saveLoad;

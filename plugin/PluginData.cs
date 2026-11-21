@@ -43,12 +43,29 @@ namespace RDS.BUSplice
         [StructuresField("StiffChamX")] public double StiffChamX;
         [StructuresField("StiffChamY")] public double StiffChamY;
 
+        // ---------- Tri stiffener: 4 tam bat tat rieng (0 = No, 1 = Yes), kich thuoc rieng Top (T) / Bottom (B) ----------
+        [StructuresField("Tri1TOn")] public int Tri1TOn;
+        [StructuresField("Tri2TOn")] public int Tri2TOn;
+        [StructuresField("Tri1BOn")] public int Tri1BOn;
+        [StructuresField("Tri2BOn")] public int Tri2BOn;
+        [StructuresField("TriTT")] public double TriTT;
+        [StructuresField("TriTL")] public double TriTL;
+        [StructuresField("TriTB")] public double TriTB;                   // 0 = toi mep endplate
+        [StructuresField("TriTCham")] public double TriTCham;
+        [StructuresField("TriTNose")] public double TriTNose;
+        [StructuresField("TriBT")] public double TriBT;
+        [StructuresField("TriBL")] public double TriBL;
+        [StructuresField("TriBB")] public double TriBB;
+        [StructuresField("TriBCham")] public double TriBCham;
+        [StructuresField("TriBNose")] public double TriBNose;
+
         // ---------- Prefix (rule RDS Part Standards): o prefix tren dialog = prefix_posN ----------
-        // pos1 = endplate (1 va 2), pos2 = flange (1), pos3 = stiffener (2). Chi la PartNumber.Prefix:
-        // ca 3 tam deu han vao assembly rafter nen khong co assembly prefix rieng.
+        // pos1 = endplate (1 va 2), pos2 = flange (1), pos3 = stiffener (2), pos4 = tri stiffener. Chi la PartNumber.Prefix:
+        // moi tam deu han vao assembly rafter nen khong co assembly prefix rieng.
         [StructuresField("prefix_pos1")] public string prefix_pos1;
         [StructuresField("prefix_pos2")] public string prefix_pos2;
         [StructuresField("prefix_pos3")] public string prefix_pos3;
+        [StructuresField("prefix_pos4")] public string prefix_pos4;
 
         // ---------- Parts (Class trong = lay theo web rafter; Finish luon theo web rafter) ----------
         [StructuresField("EpName")] public string EpName;
@@ -68,6 +85,11 @@ namespace RDS.BUSplice
         [StructuresField("StStart")] public int StStart;
         [StructuresField("StMaterial")] public string StMaterial;
         [StructuresField("StClass")] public string StClass;
+
+        [StructuresField("TrName")] public string TrName;
+        [StructuresField("TrStart")] public int TrStart;
+        [StructuresField("TrMaterial")] public string TrMaterial;
+        [StructuresField("TrClass")] public string TrClass;
     }
 
     /// <summary>Gia tri mac dinh cho ComboBox (index) - dat trong constructor MainForm.</summary>
@@ -79,6 +101,10 @@ namespace RDS.BUSplice
             { "StiffOn", 1 },
             { "BoltVertRef", 0 },
             { "Flip", 0 },
+            { "Tri1TOn", 0 },
+            { "Tri2TOn", 0 },
+            { "Tri1BOn", 0 },
+            { "Tri2BOn", 0 },
         };
     }
 }

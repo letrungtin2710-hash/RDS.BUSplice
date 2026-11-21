@@ -52,10 +52,20 @@ namespace RDS.BUSplice
         public double StiffL = 300;
         public double StiffChamX = 15, StiffChamY = 15;
 
+        // ---------- Tri stiffener (21-Nov): tam giac trong mat phang web, ngoai flange, ap vao endplate ----------
+        // 4 vi tri bat tat rieng: BU 1 (nho) / BU 2 (lon) x Top / Bottom. Kich thuoc rieng Top / Bottom.
+        public bool Tri1TOn = false, Tri2TOn = false, Tri1BOn = false, Tri2BOn = false;
+        public double TriTT = 16, TriBT = 16;        // be day
+        public double TriTL = 100, TriBL = 100;      // canh doc flange, tu mat endplate
+        public double TriTB = 0, TriBB = 0;          // canh ap endplate; 0 = tu mat ngoai flange toi mep endplate
+        public double TriTCham = 15, TriBCham = 15;  // chamfer goc trong (flange + endplate)
+        public double TriTNose = 0, TriBNose = 0;    // cat mui 2 dau nhon; 0 = nhon
+
         // ---------- Part info ----------
         public PartInfo PEndplate = new PartInfo { Name = "END PLATE" };
         public PartInfo PFlange = new PartInfo { Name = "FLANGE PLATE" };
         public PartInfo PStiff = new PartInfo { Name = "STIFFENER" };
+        public PartInfo PTri = new PartInfo { Name = "STIFFENER" };
 
         // ================= luu / doc ini (key=value, InvariantCulture) =================
         public static string DefaultPath =>

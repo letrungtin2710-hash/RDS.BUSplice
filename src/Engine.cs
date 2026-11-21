@@ -192,6 +192,18 @@ namespace RDS.BUSplice
                 if (cp != null) largeExtras.Add(cp);
             }
 
+            // ---- tri stiffener (trong mat phang web, ngoai flange) ----
+            foreach (TriPlate t in lay.Tris)
+            {
+                var pts = t.Pts.Select(q => f.ToGlobal(q, t.Z)).ToList();
+                Part owner = t.Large ? L.Web : S.Web;
+                Chamfer ch = t.Cham > 0 ? new Chamfer(t.Cham, t.Cham, Chamfer.ChamferTypeEnum.CHAMFER_LINE) : null;
+                ContourPlate cp = Plate(pts, "PL" + Num(t.T), p.PTri, owner, ch);
+                _log("Tri stiff " + t.Tag + ": " + string.Join(" ", t.Pts.Select(q => q.ToString())));
+                if (cp == null) continue;
+                if (t.Large) largeExtras.Add(cp); else AddToAssembly(S.Web, cp);
+            }
+
             foreach (Part x in largeExtras) AddToAssembly(L.Web, x);
             if (CommitAtEnd) _model.CommitChanges();
         }

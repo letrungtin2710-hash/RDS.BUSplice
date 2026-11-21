@@ -69,4 +69,42 @@
   <prefix_pos3>f</prefix_pos3>
   <StStart>1</StStart>
   <StMaterial>250</StMaterial>
+  <Tri1TOn>0</Tri1TOn>
+  <Tri2TOn>0</Tri2TOn>
+  <Tri1BOn>0</Tri1BOn>
+  <Tri2BOn>0</Tri2BOn>
+  <TriTL>
+    <Millimeters>100</Millimeters>
+  </TriTL>
+  <TriTB>
+    <Millimeters>0</Millimeters>
+  </TriTB>
+  <TriTT>
+    <Millimeters>16</Millimeters>
+  </TriTT>
+  <TriTCham>
+    <Millimeters>15</Millimeters>
+  </TriTCham>
+  <TriTNose>
+    <Millimeters>0</Millimeters>
+  </TriTNose>
+  <TriBL>
+    <Millimeters>100</Millimeters>
+  </TriBL>
+  <TriBB>
+    <Millimeters>0</Millimeters>
+  </TriBB>
+  <TriBT>
+    <Millimeters>16</Millimeters>
+  </TriBT>
+  <TriBCham>
+    <Millimeters>15</Millimeters>
+  </TriBCham>
+  <TriBNose>
+    <Millimeters>0</Millimeters>
+  </TriBNose>
+  <TrName>STIFFENER</TrName>
+  <prefix_pos4>f</prefix_pos4>
+  <TrStart>1</TrStart>
+  <TrMaterial>250</TrMaterial>
 </config>

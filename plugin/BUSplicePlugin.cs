@@ -120,11 +120,19 @@ namespace RDS.BUSplice
             s.StiffT = Z(d.StiffT, s.StiffT); s.StiffB = D(d.StiffB, s.StiffB); s.StiffL = Z(d.StiffL, s.StiffL);
             s.StiffChamX = D(d.StiffChamX, s.StiffChamX); s.StiffChamY = D(d.StiffChamY, s.StiffChamY);
 
+            s.Tri1TOn = I(d.Tri1TOn, 0) == 1; s.Tri2TOn = I(d.Tri2TOn, 0) == 1;
+            s.Tri1BOn = I(d.Tri1BOn, 0) == 1; s.Tri2BOn = I(d.Tri2BOn, 0) == 1;
+            s.TriTT = Z(d.TriTT, s.TriTT); s.TriTL = Z(d.TriTL, s.TriTL); s.TriTB = D(d.TriTB, s.TriTB);
+            s.TriTCham = D(d.TriTCham, s.TriTCham); s.TriTNose = D(d.TriTNose, s.TriTNose);
+            s.TriBT = Z(d.TriBT, s.TriBT); s.TriBL = Z(d.TriBL, s.TriBL); s.TriBB = D(d.TriBB, s.TriBB);
+            s.TriBCham = D(d.TriBCham, s.TriBCham); s.TriBNose = D(d.TriBNose, s.TriBNose);
+
             // Prefix (rule Part Standards): prefix_posN; trong ("" hoac IsDefaultValue) -> ten cu EpPrefix/FlPrefix/StPrefix
             // cua component dat truoc 03-Nov -> mac dinh. Moi lan Run doc lai, Engine.ApplyInfo gan PartNumber.Prefix.
             Part(s.PEndplate, d.EpName, S(d.prefix_pos1, d.EpPrefix), d.EpStart, d.EpMaterial, d.EpClass);
             Part(s.PFlange, d.FlName, S(d.prefix_pos2, d.FlPrefix), d.FlStart, d.FlMaterial, d.FlClass);
             Part(s.PStiff, d.StName, S(d.prefix_pos3, d.StPrefix), d.StStart, d.StMaterial, d.StClass);
+            Part(s.PTri, d.TrName, d.prefix_pos4, d.TrStart, d.TrMaterial, d.TrClass);
             return s;
         }
 

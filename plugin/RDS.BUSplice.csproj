@@ -57,6 +57,7 @@
   <ItemGroup>
     <None Include="Images\Endplate.png" />
     <None Include="Images\Flange.png" />
+    <None Include="Images\Tri.png" />
     <None Include="et_element_RDS _ BU Splice.bmp" />
     <None Include="CopyToTekla.bat" />
   </ItemGroup>

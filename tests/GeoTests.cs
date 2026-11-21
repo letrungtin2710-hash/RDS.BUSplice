@@ -111,6 +111,37 @@ static class GeoTests
         var lay2 = SpliceLayout.Compute(p, S, L);
         True("Tat flange/stiff", !lay2.HasFlange && lay2.Stiffs.Length == 0);
 
+        // ---- Tri stiffener (21-Nov): tam giac ngoai flange, ap endplate ----
+        True("Tri mac dinh tat", lay2.Tris.Count == 0);
+        var pt = new Settings { FlangeOn = false, StiffOn = false, Tri1TOn = true, Tri2TOn = true, Tri1BOn = true, Tri2BOn = true, TriBL = 80, TriBB = 50 };
+        var layT = SpliceLayout.Compute(pt, S, L);
+        True("Tri: 4 tam", layT.Tris.Count == 4);
+        TriPlate t1 = layT.Tris.Find(q => q.Tag == "1T"), t2 = layT.Tris.Find(q => q.Tag == "2T"), b1 = layT.Tris.Find(q => q.Tag == "1B"), b2 = layT.Tris.Find(q => q.Tag == "2B");
+        Eq("Tri 1T goc X = mat endplate 1", t1.Pts[0].X, -12); Eq("Tri 1T goc Y = top nho", t1.Pts[0].Y, 300, 0.05);
+        Eq("Tri 1T L doc flange, ra xa endplate", t1.Pts[1].X, -112, 0.05);
+        Eq("Tri 1T B auto = toi mep endplate 1", t1.Pts[2].Y, layT.Ep1.YTop); Eq("Tri 1T canh B nam tren mat endplate", t1.Pts[2].X, -12);
+        True("Tri 1T thuoc BU nho, 3 dinh", !t1.Large && t1.Pts.Length == 3);
+        Eq("Tri 2T goc = top lon tai mat endplate 2", t2.Pts[0].Y, L.TopY(12), 0.05);
+        Eq("Tri 2T L do doc flange doc 5%", (t2.Pts[1] - t2.Pts[0]).Len, 100, 0.01);
+        Eq("Tri 2T dau L nam tren top flange lon", t2.Pts[1].Y, L.TopY(t2.Pts[1].X), 0.05);
+        True("Tri 2T huong +X, thuoc BU lon", t2.Pts[1].X > 12 && t2.Large);
+        Eq("Tri 1B goc = bottom nho", b1.Pts[0].Y, -300, 0.05);
+        Eq("Tri 1B L rieng bottom", b1.Pts[0].X - b1.Pts[1].X, 80, 0.05); Eq("Tri 1B B nhap tay, huong xuong", b1.Pts[2].Y, -350, 0.05);
+        Eq("Tri 2B goc = bottom lon", b2.Pts[0].Y, L.BotY(12), 0.05);
+        Eq("Tri chamfer / t", t1.Cham + t1.T, 31);
+        pt.FlangeOn = true;
+        var layTf = SpliceLayout.Compute(pt, S, L);
+        True("Flange (1) bat: bo tam 2T, con 3", layTf.Tris.Count == 3 && !layTf.Tris.Exists(q => q.Tag == "2T"));
+        pt.FlangeOn = false; pt.TriTNose = 10;
+        var layTn = SpliceLayout.Compute(pt, S, L);
+        TriPlate n1 = layTn.Tris.Find(q => q.Tag == "1T");
+        True("Nose: 5 dinh", n1.Pts.Length == 5);
+        Eq("Nose mui flange: len 10", n1.Pts[2].Y, 310, 0.05); Eq("Nose mui flange X", n1.Pts[2].X, -112, 0.05);
+        Eq("Nose mui endplate: ra xa endplate 10", n1.Pts[3].X, -22, 0.05); Eq("Nose mui endplate Y", n1.Pts[3].Y, layTn.Ep1.YTop, 0.05);
+        // endplate khong nho ra ngoai flange -> bo qua + canh bao
+        var layT0 = SpliceLayout.Compute(new Settings { FlangeOn = false, Tri1TOn = true, BoltTopOffset = -60, Ep1Top = 45 }, S, L);
+        True("Endplate khong nho ra: bo tri + canh bao", layT0.Tris.Count == 0 && layT0.Warnings.Exists(w => w.Contains("Tri stiff 1T")));
+
         // xoa bolt: luoi 5 hang x 2 cot (mac dinh), xoa 1 (tren-trai) va 10 (duoi-phai)
         var pd = new Settings { BoltDelete = "1 10 99" };
         var layB = SpliceLayout.Compute(pd, S, L);

@@ -39,6 +39,15 @@ namespace RDS.BUSplice
         public double T;
     }
 
+    /// <summary>Tri stiffener: contour trong mat phang web (z = Z). Pts[0] = goc trong (flange + endplate, co chamfer).</summary>
+    public sealed class TriPlate
+    {
+        public string Tag;      // "1T" / "1B" / "2T" / "2B"
+        public bool Large;      // thuoc BU lon (2)
+        public V2[] Pts;
+        public double Z, T, Cham;
+    }
+
     public sealed class SpliceLayout
     {
         public double X0, FitSmallX, FitLargeX;        // mat splice, mat fitting rafter nho / lon
@@ -59,6 +68,9 @@ namespace RDS.BUSplice
         // Stiffener (2)
         public bool HasStiff;
         public StiffPlate[] Stiffs = new StiffPlate[0];
+
+        // Tri stiffener
+        public List<TriPlate> Tris = new List<TriPlate>();
 
         public List<string> Warnings = new List<string>();
 
@@ -188,7 +200,43 @@ namespace RDS.BUSplice
                 if (sb.YAt(s2) < L.Bot.Top.YAt(s2) - 0.5)
                     r.Warnings.Add("Stiff nam duoi mat tren bottom flange rafter lon");
             }
+
+            // ---------------- Tri stiffener ----------------
+            // Tam top cua BU lon bi bo khi co flange (1) (cho do la tam (1)).
+            if (p.Tri1TOn) r.AddTri("1T", false, true, S.Top.Top, r.FitSmallX, r.Ep1.YTop, S.WebZc, p.TriTT, p.TriTL, p.TriTB, p.TriTCham, p.TriTNose);
+            if (p.Tri2TOn && !r.HasFlange) r.AddTri("2T", true, true, L.Top.Top, r.FitLargeX, r.Ep2.YTop, L.WebZc, p.TriTT, p.TriTL, p.TriTB, p.TriTCham, p.TriTNose);
+            if (p.Tri1BOn) r.AddTri("1B", false, false, S.Bot.Bottom, r.FitSmallX, r.Ep1.YBot, S.WebZc, p.TriBT, p.TriBL, p.TriBB, p.TriBCham, p.TriBNose);
+            if (p.Tri2BOn) r.AddTri("2B", true, false, L.Bot.Bottom, r.FitLargeX, r.Ep2.YBot, L.WebZc, p.TriBT, p.TriBL, p.TriBB, p.TriBCham, p.TriBNose);
             return r;
+        }
+
+        /// <summary>
+        /// 1 tam tri: goc trong C = mat ngoai flange x mat endplate (xFace). Canh L chay doc flange ra xa endplate,
+        /// canh B chay doc mat endplate ra ngoai flange (b = 0 -> toi mep endplate yEdge). nose > 0: cat phang 2 mui.
+        /// </summary>
+        void AddTri(string tag, bool large, bool top, Line2 face, double xFace, double yEdge, double z,
+                    double t, double len, double b, double cham, double nose)
+        {
+            V2 c = face.At(xFace);
+            double sy = top ? 1 : -1;
+            double room = sy * (yEdge - c.Y);              // phan endplate nho ra ngoai flange
+            if (b <= 0) b = room;
+            if (b <= 1 || len <= 1 || t <= 0) { Warnings.Add("Tri stiff " + tag + ": endplate khong nho ra ngoai flange / kich thuoc <= 0 - bo qua"); return; }
+            if (b > room + 0.5) Warnings.Add(string.Format(CultureInfo.InvariantCulture, "Tri stiff {0}: B={1:0.#} lon hon phan endplate nho ra {2:0.#}", tag, b, room));
+            if (nose < 0 || nose >= Math.Min(b, len)) { Warnings.Add("Tri stiff " + tag + ": nose khong hop le - bo qua nose"); nose = 0; }
+            if (cham < 0 || cham >= Math.Min(b, len)) { Warnings.Add("Tri stiff " + tag + ": chamfer khong hop le - bo qua chamfer"); cham = 0; }
+
+            V2 u = face.Dir * (large ? 1 : -1);            // doc flange, ra xa endplate
+            V2 v = new V2(0, sy);                          // doc mat endplate, ra ngoai flange
+            V2 pL = c + u * len, pB = c + v * b;
+            var pts = new List<V2> { c, pL };
+            if (nose > 0)
+            {
+                pts.Add(pL + face.N * (sy * nose));        // mui phia flange: cat vuong goc flange
+                pts.Add(pB + new V2(large ? nose : -nose, 0));   // mui phia endplate: cat vuong goc endplate
+            }
+            pts.Add(pB);
+            Tris.Add(new TriPlate { Tag = tag, Large = large, Pts = pts.ToArray(), Z = z, T = t, Cham = cham });
         }
     }
 }
